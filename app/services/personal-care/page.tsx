@@ -4,14 +4,14 @@ import ServiceDetailLayout from "@/components/ServiceDetailLayout";
 export const metadata: Metadata = {
   title: "Personal Care Services Richmond & Mechanicsville, VA | Archangels Personal Care",
   description:
-    "CNA & PCA personal care assistance with bathing, dressing, mobility, meal prep & medication reminders. RN-supervised, VDH-licensed home care in Richmond, Mechanicsville & Hanover County. Call 804-903-8133.",
+    "Non-skilled personal care assistance with bathing, dressing, hygiene, mobility, meal preparation & medication reminders. RN-supervised, VDH-licensed home care in Richmond, Mechanicsville & Hanover County. Call 804-903-8133.",
   alternates: {
     canonical: "https://www.archangelspersonalcare.com/services/personal-care",
   },
   openGraph: {
     title: "Personal Care Services Richmond & Mechanicsville, VA | Archangels Personal Care",
     description:
-      "CNA & PCA personal care assistance with bathing, dressing, mobility, meal prep & medication reminders. RN-supervised home care in Richmond, Mechanicsville & Hanover County.",
+      "Compassionate, non-skilled personal care assistance with bathing, dressing, mobility, meal prep & medication reminders. RN-supervised home care in Richmond, Mechanicsville & Hanover County.",
     url: "https://www.archangelspersonalcare.com/services/personal-care",
     siteName: "Archangels Personal Care",
     type: "website",
@@ -24,85 +24,130 @@ export default function PersonalCarePage() {
       slug="personal-care"
       eyebrow="Personal Care Services"
       title="Personal Care Services in Richmond & Mechanicsville, VA"
-      intro="Non-skilled personal care assistance with daily living, delivered by CNAs and PCAs under RN supervision — so your loved one stays safe, comfortable, and independent at home."
+      intro="Compassionate, non-skilled personal care assistance with activities of daily living — delivered by Certified Nursing Assistants (CNAs) and Personal Care Aides (PCAs) under Registered Nurse supervision, helping seniors remain safe, dignified, and independent in the comfort of home."
       heroImg="https://www.archangelspersonalcare.com/images/caregiver-black-with-elderly.jpg"
-      heroAlt="Compassionate caregiver providing personal care services"
+      heroAlt="Compassionate caregiver assisting an older adult with daily personal care routine"
       whoFor={[
-        "Seniors who need help with bathing, dressing, or getting around safely",
-        "Anyone recovering from a hospital stay, surgery, or fall who isn't quite back to full independence",
-        "Families who want a trusted, RN-supervised caregiver instead of piecing together support themselves",
-        "Clients who need occasional help a few hours a week, not full-time care",
+        "Seniors who face physical challenges or safety concerns when managing bathing, showering, dressing, or daily personal grooming independently",
+        "Individuals recovering from joint replacement surgery, a stroke, illness, or a recent hospital stay who need physical support while regaining strength",
+        "Older adults managing chronic mobility limitations, arthritis, or progressive weakness who require steady transfer and walking assistance throughout the day",
+        "Aging adults experiencing mild cognitive changes or fatigue who benefit from patient structure and gentle reminders for personal hygiene and nutrition",
+        "Family caregivers experiencing physical strain or emotional fatigue from assisting a loved one with sensitive intimate hygiene and daily transfers",
+        "Seniors living alone across Richmond, Mechanicsville, and Hanover County whose families want reliable, professional hands on deck to prevent falls and accidents",
       ]}
       signs={[
-        "Skipping showers or wearing the same clothes for several days",
-        "Unexplained bruises, weight loss, or missed medications",
-        "A recent fall, hospital stay, or new mobility limitation",
-        "Family members feeling stretched too thin to help every day",
+        "Noticing unwashed hair, body odor, unkempt grooming, or wearing the same soiled clothes across consecutive days",
+        "Hesitation, fear, or outright avoidance of entering the bathtub, shower, or bathroom due to instability or previous near-falls",
+        "Visible bruising, skin tears, balance wobbles, or grasping onto furniture and walls while navigating the hallway or kitchen",
+        "Weight loss, spoiled food in the refrigerator, or skipping meals because standing at the stove or preparing food has become exhausting",
+        "Bottles of prescribed medications remaining full, disorganized pill organizers, or uncertainty about whether morning and evening doses were taken",
+        "Family members feeling physically overwhelmed, missing work commitments, or worrying constantly about safety when their loved one is home alone",
       ]}
       included={[
-        "Bathing, grooming & dressing",
-        "Toileting & incontinence care",
-        "Transferring & mobility assistance",
-        "Feeding assistance",
-        "Meal preparation",
-        "Light housekeeping & laundry",
-        "Medication reminders & fall prevention",
-        "Companion care & emotional support",
-        "Grocery shopping & light errands",
-        "Appointment escorts & transportation coordination",
+        "Assistance with bathing, showering, sponge baths, and hair washing with safety benches and non-slip protocols",
+        "Dressing and wardrobe selection assistance, including compression socks, buttons, zippers, and adaptive footwear",
+        "Comprehensive personal grooming, including oral hygiene, denture cleaning, gentle hair brushing, and skin hydration care",
+        "Discreet, dignified toileting support, commode assistance, and incontinence management to protect skin integrity",
+        "Safe transferring support using proper body mechanics between beds, wheelchairs, recliners, and standard seating",
+        "Mobility ambulation assistance and proactive fall-prevention monitoring throughout the living environment",
+        "Fresh, wholesome meal planning and preparation aligned with dietary preferences, physician recommendations, and chewing needs",
+        "Timely medication reminders, pillbox schedule prompting, and hydration tracking within non-skilled guidelines",
+        "Light household upkeep including bed linen changes, client laundry, dishwashing, and keeping walkways clear of clutter",
+        "Accompaniment and transportation coordination for medical appointments, pharmacy visits, grocery shopping, and local errands",
       ]}
       scenario={{
-        title: "A Morning With an Archangels Caregiver",
-        text: "A caregiver arrives in the morning and starts by checking in on how the night went. She helps her client safely get out of bed, assists with bathing and dressing, and helps with grooming so the day starts off comfortable and put together. In the kitchen, she prepares a warm breakfast, offers a medication reminder, and tidies up while they talk about weekend plans. Before wrapping up the visit, she encourages a short walk around the living room to keep mobility up, then makes sure the home is safe and organized before heading out until the next scheduled visit.",
+        title: "A Morning Routine Centered on Dignity and Comfort",
+        text: "A caregiver arrives promptly at 8:00 AM, greeted warmly at the door. She starts by checking how the client slept and reviewing the morning's schedule. Moving at an unhurried, comfortable pace, she assists the client out of bed, steadying her footing with a supportive arm. In the bathroom, she prepares a warm shower with safety grab bars, providing attentive hands-on help with washing and hair care while ensuring privacy and comfort. After helping the client dress in freshly laundered clothes and applying skin lotion, they head to the kitchen. The caregiver prepares scrambled eggs and sliced melon, offers a medication reminder alongside a fresh glass of water, and cleans the kitchen surfaces. Before completing the visit, she changes the bed linens, tidies the hallway to eliminate trip hazards, and notes the morning's activities in the care log for the supervising RN and family to review.",
       }}
       steps={[
-        { title: "Call or request care online", desc: "Reach us at 804-903-8133 — a real caregiver coordinator responds, usually the same day." },
-        { title: "Free in-home RN assessment", desc: "An RN evaluates daily living needs, mobility, medications, and home safety." },
-        { title: "Caregiver matching", desc: "We match a CNA or PCA whose experience and personality fit your loved one." },
-        { title: "Care begins", desc: "Your caregiver starts on the agreed schedule, often within days." },
-        { title: "Ongoing RN check-ins", desc: "Your RN reviews and adjusts the plan as needs change over time." },
+        {
+          title: "Initial Consultation & Care Discovery",
+          desc: "You connect directly with our local Richmond care coordination team by calling 804-903-8133 or requesting care online. We discuss your loved one's daily challenges, current living environment, preferred schedule, and immediate priorities.",
+        },
+        {
+          title: "Comprehensive In-Home RN Assessment",
+          desc: "A Virginia-licensed Registered Nurse conducts a thorough in-home evaluation. We assess mobility, transfer safety, hygiene needs, nutritional considerations, and home environmental risks to design a customized written Plan of Care.",
+        },
+        {
+          title: "Thoughtful Caregiver Matching",
+          desc: "We match your family with a credentialed CNA or PCA based on specific care requirements, experience with your loved one's conditions, personality compatibility, and cultural preferences, ensuring a comfortable personal connection.",
+        },
+        {
+          title: "Care Delivery Begins Seamlessly",
+          desc: "Your matched caregiver arrives on time, fully briefed on the individualized Plan of Care. From the very first visit, support is delivered with patience, warmth, respect, and strict adherence to established safety protocols.",
+        },
+        {
+          title: "Ongoing RN Supervision & Plan Revisions",
+          desc: "Our Registered Nurse performs regular supervisory visits, reviews daily care documentation, communicates with your family, and proactively updates the care plan as your loved one's strength, routine, or preferences evolve.",
+        },
       ]}
       benefits={[
-        { title: "Consistent, trusted caregivers", desc: "We prioritize keeping the same CNA or PCA on your case, not a rotating cast of strangers." },
-        { title: "RN oversight, built in", desc: "Every plan is supervised by a registered nurse at no extra step required from you." },
-        { title: "No long-term contracts", desc: "Start small and adjust up or down anytime as needs change." },
-        { title: "Support for a range of conditions", desc: "A strong fit for Parkinson's-related mobility needs and post-hospital recovery." },
+        {
+          title: "Consistent, Dedicated Caregivers",
+          desc: "We prioritize scheduling consistency so your loved one receives care from the same familiar, trusted CNAs and PCAs rather than an ever-changing rotation of strangers entering the home.",
+        },
+        {
+          title: "Built-In Registered Nurse Oversight",
+          desc: "Every personal care plan is supervised by a licensed Registered Nurse in full compliance with Virginia Department of Health standards, ensuring continuous quality and safety without extra management burden on you.",
+        },
+        {
+          title: "Flexible Scheduling with No Long-Term Lock-In",
+          desc: "Whether you need four hours a day a few mornings a week or comprehensive seven-day assistance, our services scale flexibly up or down to match your family's evolving requirements without rigid binding contracts.",
+        },
+        {
+          title: "Dignified Support for Sensitive Daily Tasks",
+          desc: "Our trained caregivers understand that accepting help with bathing, dressing, and toileting can feel vulnerable; we handle every intimate hygiene task with consummate empathy, patience, and professional discretion.",
+        },
       ]}
       approach={[
-        "Every personal care plan starts with an in-home assessment, so the caregiver we match your family with actually fits your loved one's routine, personality, and needs — not a generic template.",
-        "Caregivers are Certified Nursing Assistants (CNAs) or Personal Care Aides (PCAs), background-checked and trained specifically in non-skilled personal care under Virginia Department of Health guidelines.",
-        "A registered nurse supervises every plan from day one, checking in regularly and adjusting care as needs change — so small issues get caught before they become big ones.",
-        "Personal care also supports clients managing Parkinson's disease with mobility and daily-living assistance, and families navigating the weeks after a hospital discharge or surgery who need extra hands at home during recovery — always within non-skilled, non-clinical guidelines.",
-        "Getting started is simple: call 804-903-8133 or request care online, our RN completes a free in-home assessment, and we match a caregiver within days — often the same week, sometimes the same day for urgent situations.",
+        "Personal care is deeply intimate, and we believe it should always be delivered with profound respect for an individual's dignity, personal history, and established daily rhythm. When an older adult struggles with bathing, getting dressed, or moving safely from bed to chair, it can be emotionally difficult to accept outside assistance. Our caregivers approach every personal care task not as a mechanical checklist, but as a relationship of trust. We meet clients where they are, encouraging them to perform whatever portions of their morning or evening routine they can safely manage on their own, while providing confident, steady hands for the steps where physical support is necessary to prevent injury or exhaustion.",
+        "Every personal care assignment is carried out by Certified Nursing Assistants (CNAs) or Personal Care Aides (PCAs) who have completed thorough background investigations, identity verifications, reference reviews, and hands-on skill evaluations. We look beyond basic certifications to select caregivers who exhibit genuine warmth, patience, and active listening skills. When assigning a caregiver to your home in the Greater Richmond or Mechanicsville area, we carefully consider factors such as language, personal interests, temperament, and specialized care experience. This intentional matching process ensures that having a caregiver in the home feels natural, comfortable, and reassuring rather than intrusive.",
+        "In strict compliance with Virginia Department of Health (VDH) regulations for licensed Home Care Organizations, every Archangels personal care plan operates under the direct oversight of a Registered Nurse. Before services begin, our RN meets with the client and family in the home to perform a comprehensive nursing assessment. This includes evaluating musculoskeletal strength, balance, transfer mechanics, skin integrity, chronic condition management, cognitive orientation, medication reminder schedules, and bathroom layout safety. The RN drafts a detailed, individualized Plan of Care that instructs caregivers on exact transfer methods, bathing preferences, dietary guidelines, and specific warning signs to observe.",
+        "Personal care needs are rarely static; they evolve as individuals recover from medical episodes or as age-related conditions progress. Our supervising RN maintains regular supervisory check-ins, observes the caregiver during hands-on care delivery, and routinely reviews daily shift notes. If a client shows improved stamina after physical therapy, we adjust the care plan to foster greater independence. Conversely, if new mobility limitations or balance concerns emerge, the RN immediately updates safety instructions, recommends adaptive equipment considerations (such as shower chairs or transfer belts), and coordinates with the family to increase care hours if appropriate.",
+        "Archangels operates strictly as a non-skilled, non-medical home care agency. We do not perform clinical procedures such as administering intravenous medications, sterile wound dressings, tube feedings, or skilled physical therapy. Instead, our personal care services operate in close harmony with the medical and clinical providers your family already relies upon. We coordinate smoothly alongside home health nurses, physical and occupational therapists, primary care physicians, and outpatient specialty clinics. Our caregivers ensure that physical therapy exercise encouragement is incorporated into the daily routine and that any non-clinical observations—such as changes in skin color, appetite fluctuations, or balance changes—are reported directly to the supervising RN and communicated to the family.",
+        "Communication with family members is a foundational pillar of our personal care philosophy. Whether you live across town in Hanover County or reside in another state, you will never be left wondering how your loved one is managing day to day. Our caregivers maintain clear, objective daily shift documentation detailing meals consumed, hydration, personal hygiene completed, mobility exercises performed, and medication reminders provided. The supervising RN serves as your accessible clinical contact, providing honest updates, practical guidance on home safety modifications, and peace of mind that your loved one is in attentive, capable hands.",
       ]}
+      note="Regulatory Scope: Archangels Personal Care LLC is a licensed Home Care Organization in the Commonwealth of Virginia providing non-skilled personal care, companion care, and assistance with activities of daily living under RN supervision. We do not provide skilled nursing, medical diagnostics, or clinical therapy treatments."
       faqs={[
         {
-          q: "How much personal care do we actually need?",
-          a: "It depends on the person. Some families start with a few hours a week for bathing and dressing help; others need daily visits. A care coordinator can walk through your specific situation on a free call and recommend a starting point — you're never locked into more than you need.",
+          q: "What specific tasks are included in non-skilled personal care?",
+          a: "Non-skilled personal care encompasses hands-on assistance with Activities of Daily Living (ADLs). This includes showering, sponge bathing, and tub bathing; hair washing, brushing, and personal grooming; dressing and footwear assistance; toileting and incontinence hygiene; bed-to-chair transfers and walking support; nutritious meal preparation; light housekeeping related to client safety; and prompting medication reminders according to pre-filled organizers.",
         },
         {
-          q: "Are your caregivers trained and background-checked?",
-          a: "Yes. Every CNA and PCA on our team is background-checked, credentialed, and works under the ongoing supervision of a registered nurse, in full compliance with Virginia's Home Care Organization regulations.",
+          q: "How does Archangels protect my loved one's privacy and dignity during bathing and toileting?",
+          a: "Our CNAs and PCAs are specifically trained in privacy-first techniques, such as keeping the body covered with towels during sponge baths or shower transfers, warming the bathroom prior to washing, maintaining an unhurried, reassuring demeanor, and explaining each step before performing it. We treat every client with the same gentleness and respect we would expect for our own family members.",
         },
         {
-          q: "Can personal care start quickly?",
-          a: "Often, yes — same-day starts are possible for urgent situations. For most families, care begins within a few days of the first call.",
+          q: "What is the difference between personal care and companion care?",
+          a: "Companion care focuses primarily on social engagement, conversation, emotional wellness, recreational activities, light housekeeping, and meal preparation without physical hands-on contact. Personal care includes all of those supportive elements plus direct, physical assistance with hands-on daily living activities such as bathing, dressing, toileting, mobility transfers, and personal hygiene.",
         },
         {
-          q: "What if my loved one refuses help?",
-          a: "It's common, especially at first. We start slow, match a caregiver whose personality fits well, and let trust build over the first few visits rather than pushing a full routine on day one.",
+          q: "How does the Registered Nurse supervise personal care caregivers?",
+          a: "Our Registered Nurse creates the initial written Plan of Care following an in-home assessment, conducts structured supervisory visits to your home to evaluate caregiver performance and client wellbeing, reviews daily shift documentation, and updates the care plan whenever health or mobility conditions change, in accordance with Virginia Department of Health regulations.",
         },
         {
-          q: "Can we increase or decrease hours as needs change?",
-          a: "Yes — personal care plans are reviewed and adjusted by our RN as often as needed. Many families start with a few hours a week and scale up to daily visits or full-time care over time, with no long-term contract locking you in.",
+          q: "Can personal care caregivers give prescription medications?",
+          a: "Under Virginia non-skilled home care licensing regulations, caregivers provide medication reminders rather than clinical medication administration. This means our caregivers prompt the client to take pre-measured doses from a pill organizer at scheduled times, assist with opening medication containers, bring a glass of water, and log that the medication was taken. They do not calculate dosages, administer injections, or manage IV lines.",
         },
         {
-          q: "Do you provide personal care for people with Parkinson's disease?",
-          a: "Yes — our CNAs and PCAs regularly support clients managing Parkinson's-related mobility and daily-living challenges, including fall prevention, transfers, and dressing assistance, always as non-skilled personal care under RN supervision rather than clinical treatment.",
+          q: "What if my parent is resistant to having someone help them with personal hygiene?",
+          a: "Resistance to personal care is very common, often stemming from embarrassment, fear of losing independence, or cognitive confusion. We recommend introducing a caregiver gradually, starting with companionship, meal preparation, or light home tasks before transitioning to intimate bathing assistance. Our caregivers use gentle, non-confrontational redirection and build authentic rapport first so trust develops naturally.",
         },
         {
-          q: "Can personal care help right after a hospital stay or surgery?",
-          a: "Yes — many families bring us in specifically for the recovery window after a hospital discharge or procedure, when extra hands at home make the difference between a smooth recovery and a setback. We can typically start within a day or two of your call.",
+          q: "How quickly can personal care services start after our initial call?",
+          a: "In many cases, we can complete the in-home RN assessment and match a qualified caregiver within 24 to 48 hours of your initial inquiry. For urgent situations, such as unexpected hospital discharges or sudden loss of a primary family caregiver, same-day assessments and rapid starts can often be arranged across the Richmond metropolitan area.",
+        },
+        {
+          q: "What are your minimum scheduling requirements for personal care?",
+          a: "We offer flexible scheduling starting with visits as short as 3 to 4 hours per shift, up to comprehensive 12-hour shifts or 24/7 continuous coverage. You are never locked into an inflexible, permanent contract; hours and visit frequency can be adjusted as your loved one's needs increase or decrease.",
+        },
+        {
+          q: "How do you select and vet your Certified Nursing Assistants and Personal Care Aides?",
+          a: "Every caregiver on our team undergoes rigorous screening, including Virginia state and national criminal background checks, license and credential verification, driving record inspection, reference evaluations, and hands-on clinical competency testing. We only hire individuals who demonstrate technical competence alongside deep compassion and integrity.",
+        },
+        {
+          q: "How do you handle caregiver absences, illness, or vacations?",
+          a: "Because consistency is essential, we assign a primary caregiver while introducing a designated secondary backup caregiver who is equally oriented to your loved one's written Plan of Care. If your primary caregiver is ever ill or takes time off, our care coordination team ensures seamless coverage without interruption.",
         },
       ]}
       related={[
@@ -111,6 +156,7 @@ export default function PersonalCarePage() {
         { slug: "companionship", label: "Companionship & Social Engagement" },
         { slug: "respite-care", label: "Respite Care & Family Support" },
         { slug: "24-hour-care", label: "24-Hour Care" },
+        { slug: "parkinsons-care", label: "Parkinson's Care Support" },
       ]}
     />
   );

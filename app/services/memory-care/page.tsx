@@ -4,7 +4,7 @@ import ServiceDetailLayout from "@/components/ServiceDetailLayout";
 export const metadata: Metadata = {
   title: "Alzheimer's & Memory Care Richmond VA | Dementia Care Services",
   description:
-    "Specialized, RN-supervised Alzheimer's & dementia care in Richmond, Mechanicsville & Hanover County. Safe environment management, behavioral support, and respite for family caregivers. Call 804-903-8133.",
+    "Specialized, RN-supervised Alzheimer's & dementia care in Richmond, Mechanicsville & Hanover County. Safe environment management, wandering prevention, behavioral support, and family respite. Call 804-903-8133.",
   alternates: {
     canonical: "https://www.archangelspersonalcare.com/services/memory-care",
   },
@@ -22,98 +22,141 @@ export default function MemoryCarePage() {
   return (
     <ServiceDetailLayout
       slug="memory-care"
-      eyebrow="Memory Care"
+      eyebrow="Alzheimer's & Dementia Memory Care"
       title="Alzheimer's & Memory Care in Richmond, VA"
-      intro="Compassionate, specialized non-skilled support for individuals with Alzheimer's disease and other forms of dementia — patient, dignified care tailored to your loved one's needs, under professional RN supervision."
+      intro="Compassionate, specialized non-skilled home care for individuals living with Alzheimer's disease, vascular dementia, Lewy body dementia, and related cognitive conditions — delivering patient, dignified daily living support under experienced Registered Nurse supervision."
       heroImg="https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg"
-      heroAlt="Caregiver providing specialized memory care support"
+      heroAlt="Dementia-trained caregiver engaging in a soothing memory activity with an older adult"
       whoFor={[
-        "Families navigating a recent Alzheimer's or dementia diagnosis and unsure where to start",
-        "Loved ones showing memory loss, confusion, or wandering behavior who need a safer home environment",
-        "Anyone whose behavioral changes require patient, trained redirection rather than confrontation",
-        "Family caregivers who are exhausted and need trained relief without losing continuity of care",
+        "Families navigating an initial diagnosis of Alzheimer's disease, vascular dementia, Lewy body, or other memory conditions seeking safe in-home routines",
+        "Aging adults experiencing progressive short-term memory loss, disorientation to time or place, or difficulty managing familiar daily living tasks",
+        "Individuals exhibiting wandering tendencies, elopement risks, exit-seeking behaviors, or nighttime confusion who require attentive supervision",
+        "Seniors experiencing sundowning, late-afternoon anxiety, mood fluctuations, or agitation who respond best to gentle redirection and calming structure",
+        "Loved ones who resist personal hygiene, bathing, or medication routines when approached by family members but respond positively to trained caregivers",
+        "Exhausted family caregivers facing physical burnout, chronic sleep deprivation, and emotional strain from providing continuous dementia care without relief",
       ]}
       signs={[
-        "Getting lost in familiar places or forgetting the way home",
-        "Repeating questions or stories within the same conversation",
-        "Leaving the stove on, wandering, or other safety near-misses",
-        "Increasing agitation or confusion, especially in the late afternoon or evening",
+        "Getting disoriented in familiar surroundings, getting lost while driving on neighborhood streets, or forgetting the layout of their own home",
+        "Asking the exact same questions, retelling the same stories repeatedly within minutes, or forgetting recent significant family events",
+        "Safety near-misses such as leaving gas burners or appliances on, misplacing household items in bizarre locations, or wandering outside improperly dressed",
+        "Noticeable changes in personality, sudden suspicion of family members, uncharacteristic mood swings, withdrawal from social hobbies, or increased anxiety",
+        "Struggling to sequence multi-step tasks like brewing coffee, buttoning a shirt, preparing a meal, or managing daily hygiene independently",
+        "Late-afternoon or evening pacing, agitation, sleep disturbances, or packing bags with the belief that they need to 'go home' from their current residence",
       ]}
       included={[
-        "Safe environment management & fall prevention",
-        "Assistance with ADLs & personal care",
-        "Medication reminders & management oversight",
-        "Behavioral support & redirection techniques",
-        "Companionship & emotional support",
-        "Respite care for family caregivers",
-        "Sundowning & nighttime confusion support",
-        "Consistent, familiar caregiver assignment",
+        "Attentive supervision, environmental safety management, and proactive wandering and elopement prevention",
+        "Patient, dignity-centered assistance with bathing, showering, dressing, grooming, and personal hygiene",
+        "Non-confrontational behavioral support, validation techniques, and gentle redirection during moments of anxiety or agitation",
+        "Structuring predictable, reassuring daily routines that reduce cognitive confusion and promote emotional security",
+        "Engaging cognitive stimulation through music, photo reminiscence, simple sensory crafts, storytelling, and familiar hobbies",
+        "Consistent scheduling and familiar caregiver assignment to foster trust, emotional calm, and recognizable companionship",
+        "Timely medication reminders, hydration prompts, and structured nutritious meal preparation tailored to changing appetites",
+        "Sundowning support and calming evening routines designed to ease late-day restlessness and promote restful nighttime sleep",
+        "Safe ambulation assistance and home fall-risk management tailored to spatial perception changes associated with dementia",
+        "Essential respite care and emotional guidance for primary family caregivers navigating progressive cognitive decline",
       ]}
-      note="All dementia care is delivered under professional RN supervision, by caregivers specifically trained in dementia care techniques and compassionate communication, in full compliance with Virginia regulations."
+      note="Regulatory Scope & Dementia Training: Archangels Personal Care LLC provides non-skilled personal care, companionship, and memory support under Virginia Department of Health regulations. Our caregivers receive specialized training in dementia communication, validation, and de-escalation techniques. We do not provide clinical psychiatric therapy or medical curative treatments."
       scenario={{
-        title: "An Afternoon Visit for a Client With Memory Loss",
-        text: "A caregiver arrives in the early afternoon, a time the family has learned tends to bring more confusion. Rather than rushing through tasks, she sits down first, uses a familiar photo album to ease into conversation, and gently redirects when her client grows anxious about an errand from years ago. She helps prepare a simple snack, keeps the environment calm and free of clutter that could cause a trip, and takes a slow walk in the backyard when agitation starts to rise. By the time the visit ends, her client is calm, safe, and has enjoyed genuine company.",
+        title: "An Afternoon Visit Grounded in Patience and Connection",
+        text: "A caregiver arrives at 1:30 PM, greeting her client with a warm smile and gentle eye contact. Knowing that late afternoon often triggers anxiety for this client, she establishes a peaceful, comforting atmosphere right away. Rather than asking challenging memory questions, she joins the client in looking through a vintage gardening book, chatting about favorite flowers. When the client becomes agitated and insists she must catch a bus to her childhood home, the caregiver validates her feelings with deep empathy—'You must really love that garden; tell me what you used to grow there'—and smoothly redirects her attention to preparing a herbal tea snack. Together, they take a calm stroll around the enclosed backyard garden. By late afternoon, when sundowning tendencies typically peak, the client feels safe, secure, and relaxed in familiar surroundings.",
       }}
       steps={[
-        { title: "Free consultation & assessment", desc: "We discuss the behaviors you're seeing, then an RN assesses the home." },
-        { title: "Caregiver matched for fit", desc: "A dementia-trained caregiver whose temperament fits your loved one, not just whoever's free." },
-        { title: "Routine built around comfort", desc: "We learn what soothes and what triggers agitation, then build a daily rhythm." },
-        { title: "Care begins", desc: "The same one or two caregivers begin visits, prioritizing familiarity." },
-        { title: "Ongoing RN monitoring", desc: "Your RN adjusts the plan as needed, including a path to 24-hour care." },
+        {
+          title: "Initial Memory Care Consultation",
+          desc: "Call 804-903-8133 to speak with our care team. We discuss your loved one's specific cognitive diagnosis, behavioral patterns, daily triggers, sleep habits, and family support goals.",
+        },
+        {
+          title: "In-Home RN Cognitive & Safety Evaluation",
+          desc: "Our Registered Nurse visits the home to evaluate cognitive baseline, physical capabilities, environmental safety risks (such as stove access or door locks), and author a personalized Plan of Care.",
+        },
+        {
+          title: "Dementia-Trained Caregiver Matching",
+          desc: "We match your family with a CNA or PCA specifically trained in dementia techniques whose personality, patience, and communication style create an immediate sense of comfort.",
+        },
+        {
+          title: "Establishing Predictable Daily Rhythms",
+          desc: "Care begins on a consistent schedule. Your caregiver establishes structured daily routines that provide comfort, reduce decision fatigue, and build lasting emotional rapport.",
+        },
+        {
+          title: "Ongoing RN Reassessment as Conditions Evolve",
+          desc: "Because dementia is progressive, our RN conducts regular supervisory check-ins, observes behavioral changes, and adjusts the care plan—seamlessly expanding support toward 24/7 care when needed.",
+        },
       ]}
       benefits={[
-        { title: "Dementia-specific training", desc: "Caregivers use redirection and de-escalation, not confrontation." },
-        { title: "Consistent, familiar faces", desc: "The same caregivers each visit — familiarity meaningfully reduces agitation." },
-        { title: "A genuinely safer home", desc: "Fall prevention addresses the specific risks of wandering and disorientation." },
-        { title: "Room to scale as needs grow", desc: "Memory care can expand into 24-Hour Care without starting over." },
+        {
+          title: "Specialized Dementia Care Techniques",
+          desc: "Our caregivers are trained in validation, positive redirection, and non-verbal communication, avoiding arguments and de-escalating anxiety with empathy and respect.",
+        },
+        {
+          title: "Prioritizing Caregiver Familiarity",
+          desc: "We assign the same dedicated one or two caregivers to your loved one's schedule, because familiar faces and consistent voices dramatically reduce confusion and emotional distress.",
+        },
+        {
+          title: "A Secure, Fall-Resistant Home Environment",
+          desc: "We combine attentive supervision with environmental hazard assessments to mitigate risks of wandering, elopement, kitchen accidents, and balance falls.",
+        },
+        {
+          title: "Crucial Relief for Exhausted Family Caregivers",
+          desc: "Our memory care services provide primary caregivers with reliable, guilt-free respite to rest, attend to personal obligations, and preserve their own physical and mental wellbeing.",
+        },
       ]}
       approach={[
-        "We understand the unique challenges of memory loss and behavioral change. Our caregivers are trained in dementia-specific techniques — how to de-escalate confusion, use gentle redirection, and maintain a calm, predictable routine.",
-        "Every plan starts with understanding your loved one's history, triggers, and what brings them comfort, so care feels familiar rather than clinical.",
-        "Because dementia care needs can shift, RN oversight means the plan adapts as behaviors and safety needs change — with the family kept informed every step of the way.",
-        "Wherever possible, we assign the same one or two caregivers consistently, since routine and familiar faces make a real difference in reducing agitation and confusion for someone living with dementia.",
-        "Family communication stays central to memory care: caregivers and the RN share observations after visits, so families always know how their loved one's memory, mood, and safety are trending, not just what happened during a single shift.",
+        "Caring for a loved one with Alzheimer's disease or another form of dementia requires far more than basic assistance with physical tasks; it demands profound patience, specialized communication skills, and an intuitive understanding of how cognitive loss affects human emotions. When an individual loses the ability to process complex thoughts, manage time, or express physical discomfort verbally, frustration often manifests as anxiety, repetitive questions, suspicion, or resistance. At Archangels Personal Care LLC, our memory care philosophy is rooted in dignity, validation, and meeting each person where they are in their cognitive journey.",
+        "Our caregivers are specifically trained in evidence-informed dementia care methodologies. We teach our team to never argue, correct, or force reality upon someone experiencing memory loss. Instead, caregivers employ validation techniques that acknowledge the client's emotional reality. If a client believes they need to get ready for work, our caregiver does not bluntly say 'You retired twenty years ago.' Instead, they validate the emotion by saying 'You have always been such a hard worker; let's have some breakfast first before we check your schedule.' This approach preserves dignity, prevents confrontational power struggles, and keeps the home environment peaceful.",
+        "Registered Nurse supervision is central to our memory care approach in Richmond, Mechanicsville, and Hanover County. During our in-home nursing assessment, the RN evaluates not only physical ADL capabilities and fall risks, but also specific cognitive patterns, wandering tendencies, environmental safety hazards, and personal life histories. We discover what songs bring joy, what hobbies provide comfort, what past careers shaped their identity, and what specific sensory triggers induce agitation. This rich understanding is synthesized into a detailed, customized Plan of Care that guides every interaction.",
+        "Structuring predictable daily rhythms is one of the most effective non-pharmacological tools in dementia care. People living with cognitive decline thrive in environments where the sequence of the day is consistent, unhurried, and calm. Our caregivers establish gentle morning routines, consistent mealtimes, purposeful cognitive stimulation activities (such as sorting fabric, listening to familiar hymns, or folding laundry together), and soothing evening transitions to manage sundowning symptoms. By eliminating unexpected surprises and decision fatigue, we significantly reduce anxiety and restlessness.",
+        "Dementia is a progressive condition, and care needs inevitably evolve through early, middle, and advanced stages. In the early stages, a client may only require gentle companionship, reminders for medication and hydration, and assistance with meal preparation. As the condition advances, hands-on personal care for bathing, dressing, and incontinence becomes necessary. In later stages, continuous 24-hour supervision may be required to ensure safety around the clock. Our supervising RN maintains regular oversight, continually reassessing your loved one's needs and adjusting the care plan so your family never has to start over with a new agency as needs increase.",
+        "We recognize that Alzheimer's and dementia impact the entire family unit. Family caregivers often experience profound physical exhaustion, chronic stress, and grief as they witness their loved one's cognitive decline. Our memory care services provide primary family members with vital, guilt-free respite care. Whether you need a few afternoons each week to run errands and rest, or overnight coverage so you can finally sleep through the night, our trustworthy caregivers give you complete confidence that your loved one is safe, engaged, and treated with unconditional kindness.",
       ]}
       faqs={[
         {
-          q: "My parent wanders or gets confused at night — can you help?",
-          a: "Yes. Safe environment management and fall prevention are core parts of our dementia care, and caregivers are trained to respond calmly to wandering, sundowning, and nighttime confusion.",
+          q: "My parent experiences severe sundowning and evening agitation. How do caregivers handle this?",
+          a: "Sundowning is very common in dementia. Our caregivers manage it by establishing a calming late-afternoon routine: closing curtains before dusk to minimize disorienting shadows, turning on warm indoor lighting, playing familiar soothing music, offering a warm decaffeinated beverage or light snack, and engaging the client in simple, comforting activities that divert attention from evening restlessness.",
         },
         {
-          q: "Do your caregivers have specific dementia training?",
-          a: "Yes — caregivers assigned to dementia care cases are trained in dementia care techniques and compassionate communication, not just general personal care.",
+          q: "How do your caregivers respond when a client resists bathing or changing clothes?",
+          a: "Caregivers never force, argue, or rush personal hygiene. When resistance occurs, they step back, ensure safety, and try again later using a different, low-pressure approach. Techniques include warming the bathroom in advance, playing favorite music, breaking the task into simple one-step requests, offering a comforting towel wrap, or substituting a full shower with a gentle sponge bath.",
         },
         {
-          q: "Can this help me avoid caregiver burnout?",
-          a: "Absolutely — respite care for family caregivers is built into our dementia care services, so you can step back and recharge while your loved one stays in familiar, capable hands.",
+          q: "Can your memory care services prevent wandering and elopement?",
+          a: "While no service can eliminate all risk, attentive caregiver presence is one of the most effective deterrents to wandering. Our caregivers maintain continuous visual awareness, engage clients in purposeful indoor activities, escort them on safe walks, and help families implement home safety measures such as discrete door alarms, safety latches, and clear visual cues.",
         },
         {
-          q: "Is a formal diagnosis required before starting dementia care?",
-          a: "No — we can begin care based on the needs and behaviors you're observing. If a physician has given a diagnosis, we're glad to coordinate around it, but it's not a requirement to get started.",
+          q: "Do your caregivers receive specific dementia and Alzheimer's training?",
+          a: "Yes. Our CNAs and PCAs receive specialized training in dementia care covering validation communication, de-escalation of agitation, redirection techniques, understanding non-verbal cues, sensory stimulation, and managing the unique challenges of Alzheimer's, Lewy body, vascular, and frontotemporal dementias.",
         },
         {
-          q: "How do you handle behavioral changes like agitation or resistance to care?",
-          a: "Our caregivers are trained to redirect gently rather than confront — using calm tone, familiar routines, and distraction techniques instead of pushing through resistance. Our RN also reviews behavioral patterns during check-ins and adjusts the approach as needed.",
+          q: "Is a formal physician diagnosis of Alzheimer's or dementia required to start care?",
+          a: "No formal medical diagnosis is required to begin care with Archangels. We assess and support individuals based on the practical behavioral symptoms, memory challenges, and daily living needs they are currently experiencing. If your loved one has a medical diagnosis from a neurologist or geriatrician, our RN will incorporate that clinical background into the care plan.",
         },
         {
-          q: "As dementia progresses, can care scale up to 24-hour coverage?",
-          a: "Yes — memory care can transition into our 24-Hour Care service when round-the-clock supervision is needed, keeping the same familiar caregivers on the team wherever possible.",
+          q: "Will my loved one have the same caregiver for every visit?",
+          a: "We prioritize caregiver consistency above all else in memory care. Familiarity is critical for individuals with cognitive decline because seeing the same one or two trusted faces each visit builds comfort and reduces anxiety. We make every effort to maintain a stable, dedicated caregiver team for your loved one.",
         },
         {
-          q: "Do you support families dealing with early-onset or younger-onset dementia?",
-          a: "Yes — our approach is built around the individual's specific behaviors, safety needs, and personality rather than age, so it applies whether your loved one is 55 or 95.",
+          q: "What types of cognitive stimulation and activities do caregivers provide?",
+          a: "Activities are tailored to the individual's personal history, former hobbies, and current functional level. Examples include looking through family photo albums, listening to music from their youth, doing simple jigsaw puzzles or sensory crafts, watering houseplants, folding towels together, reminiscing about life stories, and gentle outdoor garden walks.",
         },
         {
-          q: "How do you handle a client who resists having a caregiver in the home at all?",
-          a: "We go slowly — often starting with short visits framed as companionship rather than 'care,' and let trust build naturally. Our RN and caregiver both adjust the approach based on what's actually working for your loved one.",
+          q: "Can memory care scale up to 24-hour around-the-clock care as dementia progresses?",
+          a: "Yes. Because dementia is progressive, many families start with 4 to 8 hours of daytime care and later transition to overnight supervision or full 24-Hour rotating shift care. Our RN oversees this progression smoothly, keeping the same familiar caregivers on the case whenever possible.",
+        },
+        {
+          q: "How do caregivers handle repetitive questions or stories?",
+          a: "Caregivers understand that repetition is a biological symptom of memory impairment, not intentional annoyance. They respond each time with equal patience, warmth, and reassurance, answering the question calmly before gently steering the conversation toward an engaging topic or activity.",
+        },
+        {
+          q: "How does Archangels coordinate with our neurologist or memory clinic?",
+          a: "With your permission, our supervising RN can share objective documentation regarding behavioral patterns, sleep quality, appetite changes, and functional trends with your neurologist, geriatrician, or memory clinic team, providing valuable real-world context for clinical medication reviews.",
         },
       ]}
       related={[
         { slug: "personal-care", label: "Personal Care Services" },
         { slug: "rn-supervision", label: "RN Supervision & Oversight" },
-        { slug: "companionship", label: "Companionship & Social Engagement" },
-        { slug: "respite-care", label: "Respite Care & Family Support" },
         { slug: "24-hour-care", label: "24-Hour Care" },
+        { slug: "respite-care", label: "Respite Care & Family Support" },
+        { slug: "companionship", label: "Companionship & Social Engagement" },
+        { slug: "live-in-care", label: "Live-In Care" },
       ]}
     />
   );
