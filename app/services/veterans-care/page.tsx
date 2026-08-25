@@ -43,19 +43,121 @@ export default function VeteransCarePage() {
         "A caregiving spouse becoming physically exhausted and strained from managing a veteran's transfers, hygiene, and daily schedules alone",
         "Delays in getting necessary home support because the family mistakenly believes they must wait for VA pension approvals before starting care",
       ]}
-      included={[
-        "Respectful assistance with personal hygiene, showering, bathing, grooming, and dressing routines",
-        "Mobility support, safe transfer assistance, gait stabilization, and proactive fall prevention protocols",
-        "Timely medication reminders according to pre-filled organizers and physician-recommended daily schedules",
-        "Nutritious, freshly prepared home-cooked meals aligned with dietary preferences and nutritional needs",
-        "Meaningful companionship, active listening, and deep respect for military heritage, service stories, and personal background",
-        "Accompaniment and safe transportation to VA medical centers, Hunter Holmes McGuire VA Medical Center clinic visits, and local errands",
-        "Light household organizing, client laundry, bed linen changes, and keeping living spaces safe and tidy",
-        "Guidance and information sharing regarding VA Aid & Attendance benefit resources and accredited VSO contacts",
-        "Comprehensive Registered Nurse oversight, customized Plan of Care creation, and regular supervisory evaluations",
-        "Dedicated respite care for caregiving spouses and family members providing primary support to aging veterans",
+      careLevels={[
+        {
+          badge: "Level 1: Veteran Companionship",
+          title: "Veteran Companionship & Community Escort",
+          subtitle: "Weekly social visits, VA clinic transportation, and routine support",
+          description:
+            "Designed for independent veterans who live alone or whose spouses work. Focuses on respectful conversation, shared service memories, light meal preparation, and safe door-to-door transportation to VA clinic visits.",
+          items: [
+            "Weekly friendly visits honoring military background, routines, and personal space",
+            "Safe transportation and accompaniment to the Richmond VA Medical Center",
+            "Cooking wholesome, hearty home-cooked meals and kitchen cleanup",
+            "Assistance with grocery shopping, pharmacy pickups, and community errands",
+            "Light household organizing and keeping home walkways clear",
+          ],
+        },
+        {
+          badge: "Level 2: Personal Care & ADLs",
+          title: "Comprehensive Daily Living & Mobility Care",
+          subtitle: "Hands-on personal hygiene, safe transfers, and medication compliance",
+          description:
+            "For aging veterans managing mobility challenges, arthritis, or service-related physical limitations who require patient hands-on help with showering, dressing, commode transfers, and structured daily routines.",
+          items: [
+            "Respectful, modesty-first assistance with showers, tub baths, and shaving",
+            "Help with buttoning shirts, military honors displays, compression socks, and shoes",
+            "Gait belt transfer assistance between beds, recliners, and wheelchairs",
+            "Strictly timed medication reminders according to pre-filled organizers",
+            "Guidance on gathering medical documentation for VA Aid & Attendance claims",
+          ],
+        },
+        {
+          badge: "Level 3: 24/7 & Spousal Respite",
+          title: "Continuous 24-Hour Care & Family Respite",
+          subtitle: "Round-the-clock awake coverage and essential spousal relief",
+          description:
+            "For veterans with advanced memory loss, severe paralysis, or terminal conditions, as well as dedicated respite for caregiving spouses who need physical and emotional relief from 24/7 caregiving duties.",
+          items: [
+            "Continuous 24-hour awake shift coverage providing unbroken home safety",
+            "Specialized dementia and trauma-informed behavioral support",
+            "Complete incontinence management and pressure point repositioning",
+            "Essential overnight and multi-day respite relief for dedicated spouses",
+            "Collaboration alongside hospice teams for veterans in their final journey",
+          ],
+        },
       ]}
-      note="Administrative & Regulatory Scope: Archangels Personal Care LLC is an independent, private-pay licensed Home Care Organization in the Commonwealth of Virginia. We are not an official branch of the U.S. Department of Veterans Affairs and do not provide legal, financial, or formal benefits representation. We gladly share educational resource information regarding VA Aid & Attendance pensions while providing private-pay non-skilled care."
+      careCategories={[
+        {
+          category: "Military-Aware Personal Care & Routines",
+          description:
+            "Caregivers trained to respect military culture, valuing punctuality, personal dignity, structure, and disciplined routines.",
+          tasks: [
+            "Unhurried assistance with bathing, personal hygiene, and clean electric shaving",
+            "Dressing assistance, managing footwear, and maintaining personal grooming standards",
+            "Safe transfer support and mobility guidance with gait belts and walkers",
+            "Following established household morning and evening schedules precisely",
+          ],
+        },
+        {
+          category: "Richmond VA Medical Clinic Transportation",
+          description:
+            "Safe door-to-door transportation and physical accompaniment to veterans' healthcare appointments.",
+          tasks: [
+            "Driving to Hunter Holmes McGuire VA Medical Center in Richmond and outpatient clinics",
+            "Assisting with vehicle transfers, wheelchair navigation, and waiting room check-ins",
+            "Picking up prescriptions from the VA pharmacy and local community pharmacies",
+            "Communicating appointment summaries to designated family members",
+          ],
+        },
+        {
+          category: "VA Aid & Attendance Educational Pointers",
+          description:
+            "Helping families understand VA non-service-connected pension criteria and connecting with accredited VSOs.",
+          tasks: [
+            "Providing educational overviews of Aid & Attendance eligibility rules",
+            "Connecting families with accredited local VSOs (American Legion, VFW, DVS) at no cost",
+            "Providing formal caregiver logs and RN care statements required by the VA",
+            "Structuring immediate private-pay bridge care while VA claims are processed",
+          ],
+        },
+        {
+          category: "Spousal Caregiver Relief & Support",
+          description:
+            "Providing dedicated respite care and home support for caregiving spouses and surviving spouses of veterans.",
+          tasks: [
+            "Taking over heavy physical transfers and personal care to prevent spousal injury",
+            "Providing flexible daytime and overnight respite so spouses can rest",
+            "Comprehensive in-home care for surviving spouses eligible for survivor pensions",
+            "Offering a supportive, dependable presence that eases household stress",
+          ],
+        },
+      ]}
+      included={[
+        "Personal care & assistance with daily living",
+        "Companionship & social engagement",
+        "RN supervision & care plan oversight",
+        "Guidance toward VA Aid & Attendance resources",
+        "Flexible private-pay billing while benefits are processed",
+        "Caregivers respectful of military culture and routine",
+        "Transportation & appointment escorts",
+        "Respite for family caregivers",
+      ]}
+      differences={[
+        {
+          title: "Immediate Private-Pay Care vs. Waiting for VA Backlog",
+          desc: "VA pension applications can take 6 to 12 months to approve. Our private-pay model allows veterans to start receiving vital, RN-supervised care immediately (within 24–48 hours) without risking dangerous falls while waiting on government red tape.",
+        },
+        {
+          title: "In-Home Veterans Care vs. State Veterans Nursing Homes",
+          desc: "In-home care enables veterans to remain in their own homes and communities with one-on-one personalized attention, preserving independence and avoiding communal institutional placement.",
+        },
+        {
+          title: "Non-Skilled Care vs. VA Clinical Home Based Primary Care",
+          desc: "VA clinical teams provide intermittent medical visits. Archangels provides daily hands-on personal hygiene, meal preparation, transferring, and companionship that fills the hours between medical appointments.",
+        },
+      ]}
+      note="Archangels is not a VA benefits office and does not provide legal or benefits advice. We can point families toward VA Aid & Attendance resources, but care and billing operate independently of any benefits decision."
       scenario={{
         title: "A Day of Care Grounded in Respect and Honor",
         text: "A caregiver arrives promptly at 8:00 AM at the home of a retired U.S. Navy veteran in Hanover County. Knowing that structure and punctuality are deeply important to him, she greets him warmly by his preferred title. She assists him with an unhurried, safe shower, taking care to respect his modesty, and helps him fasten his favorite flannel shirt. In the kitchen, she prepares a hearty breakfast of scrambled eggs and wheat toast, placing his pre-filled morning pillbox alongside a fresh cup of coffee. As they sit together, the client shares stories about his time aboard a naval carrier, which the caregiver listens to with genuine fascination and respect. Later in the morning, she accompanies him to an outpatient follow-up at the Richmond VA Medical Center, assisting him into the vehicle with steady support. Upon returning home, she tidies the living area, ensures all walkways are clear, and logs the day's notes for the supervising RN.",

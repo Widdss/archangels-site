@@ -43,6 +43,114 @@ export default function MemoryCarePage() {
         "Struggling to sequence multi-step tasks like brewing coffee, buttoning a shirt, preparing a meal, or managing daily hygiene independently",
         "Late-afternoon or evening pacing, agitation, sleep disturbances, or packing bags with the belief that they need to 'go home' from their current residence",
       ]}
+      careLevels={[
+        {
+          badge: "Stage 1: Early-Stage",
+          title: "Early-Stage Dementia & Cognitive Support",
+          subtitle: "Preserving independence, establishing routines, and gentle orientation",
+          description:
+            "During the early stages of Alzheimer's or cognitive decline, individuals remain largely independent with physical tasks but require subtle structure, memory cues, and companionship to navigate daily life safely and with confidence.",
+          items: [
+            "Structuring predictable daily schedules to eliminate decision fatigue and anxiety",
+            "Discreet reminders for medication, appointments, hydration, and personal tasks",
+            "Cognitive stimulation through life reminiscence, word puzzles, music, and hobbies",
+            "Accompaniment on community outings, walks, grocery shopping, and hair salon visits",
+            "Cooking nutritious meals together to encourage appetite and social engagement",
+            "Environmental safety review to prevent kitchen appliance and door security hazards",
+          ],
+        },
+        {
+          badge: "Stage 2: Mid-Stage",
+          title: "Mid-Stage Alzheimer's & Behavioral Care",
+          subtitle: "Hands-on ADL assistance, validation therapy, and sundowning support",
+          description:
+            "As memory loss advances, multi-step tasks become difficult and behavioral changes often emerge. Our caregivers provide patient, hands-on personal hygiene assistance, non-confrontational validation communication, and active wandering prevention.",
+          items: [
+            "Patient assistance with bathing, showering, dressing, and incontinence hygiene",
+            "Validation therapy and gentle redirection during moments of anxiety or confusion",
+            "Sundowning mitigation routines with warm lighting, soothing music, and calming snacks",
+            "Continuous visual monitoring to prevent exit-seeking, elopement, and fall accidents",
+            "Simplifying choices for meals and wardrobe to preserve dignity and control",
+            "Essential respite care allowing family caregivers to work, rest, and recharge",
+          ],
+        },
+        {
+          badge: "Stage 3: Advanced Stage",
+          title: "Late-Stage & Advanced Memory Support",
+          subtitle: "Total physical care, non-verbal sensory comfort, and 24/7 supervision",
+          description:
+            "In advanced dementia, verbal communication declines and physical mobility is significantly compromised. Care transitions to total physical assistance, sensory comfort, gentle repositioning, and around-the-clock awake supervision.",
+          items: [
+            "Complete physical support with bed sponge baths, oral hygiene, and gentle grooming",
+            "Frequent turning and repositioning in bed or recliners to prevent skin breakdown",
+            "Adaptive dining assistance with soft foods, purees, and gentle hydration cueing",
+            "Sensory comfort through soothing touch, familiar hymns, aromatherapy, and voice presence",
+            "Continuous 24-hour awake shift rotation keeping the client safe at all hours",
+            "Compassionate collaboration alongside visiting hospice or palliative medical teams",
+          ],
+        },
+      ]}
+      careCategories={[
+        {
+          category: "Cognitive Engagement & Validation Therapy",
+          description:
+            "Our caregivers use empathetic validation techniques rather than challenging or correcting memory lapses, preserving dignity and preventing emotional distress.",
+          tasks: [
+            "Validating feelings and redirecting anxiety toward comforting memories or activities",
+            "Looking through family photo albums and discussing cherished life milestones",
+            "Playing music from the client's youth to stimulate positive emotional memories",
+            "Engaging in simple, tactile tasks like folding towels, sorting buttons, or watering plants",
+            "Using calm, positive non-verbal cues, eye contact, and reassuring tone of voice",
+          ],
+        },
+        {
+          category: "Safe Environment & Wandering Mitigation",
+          description:
+            "Proactive safety management protects seniors from disorientation, home hazards, and unsupervised departures.",
+          tasks: [
+            "Continuous attentive monitoring of exterior doors and perimeter gates",
+            "Securing kitchen safety, managing stove knob covers, and inspecting appliance use",
+            "Clearing floor trip hazards, loose rugs, and optimizing pathway lighting",
+            "Establishing structured daytime physical activity to promote restful nighttime sleep",
+            "Implementing gentle nighttime check-ins for clients who experience nocturnal restlessness",
+          ],
+        },
+        {
+          category: "Dignity-Centered Personal Care & ADLs",
+          description:
+            "Assisting with sensitive personal hygiene without rushing, confrontation, or causing embarrassment.",
+          tasks: [
+            "Step-by-step guidance and hands-on help with warm showers, tub baths, and sponge baths",
+            "Assistance with dressing, selecting comfortable clothing, and managing fasteners",
+            "Discreet toileting assistance, scheduled commode visits, and incontinence hygiene",
+            "Oral care, gentle hair brushing, skin lotion application, and personal grooming",
+            "Safe transfer assistance from bed to chair using gait belts and proper body mechanics",
+          ],
+        },
+        {
+          category: "Nutrition, Hydration & Shared Dining",
+          description:
+            "Ensuring consistent nutritional intake and hydration tailored to changing appetites and cognitive eating cues.",
+          tasks: [
+            "Preparing wholesome, familiar home-cooked meals served on contrasting colored plates",
+            "Cutting food into easy-to-manage finger foods or bite-sized portions",
+            "Providing frequent, gentle verbal cues and encouragement to drink water and juices",
+            "Sitting alongside the client to create an unhurried, enjoyable dining experience",
+            "Documenting meal intake and fluid consumption in the daily care log for RN review",
+          ],
+        },
+        {
+          category: "Family Caregiver Respite & Guidance",
+          description:
+            "Providing dedicated relief and emotional support for primary family caregivers navigating dementia.",
+          tasks: [
+            "Flexible hourly, overnight, and weekend respite coverage to prevent caregiver burnout",
+            "Sharing practical caregiving tips and communication techniques with family members",
+            "Providing regular observational updates on behavioral patterns and functional trends",
+            "Connecting families with local Richmond Alzheimer's support groups and resources",
+          ],
+        },
+      ]}
       included={[
         "Attentive supervision, environmental safety management, and proactive wandering and elopement prevention",
         "Patient, dignity-centered assistance with bathing, showering, dressing, grooming, and personal hygiene",
@@ -55,7 +163,20 @@ export default function MemoryCarePage() {
         "Safe ambulation assistance and home fall-risk management tailored to spatial perception changes associated with dementia",
         "Essential respite care and emotional guidance for primary family caregivers navigating progressive cognitive decline",
       ]}
-      note="Regulatory Scope & Dementia Training: Archangels Personal Care LLC provides non-skilled personal care, companionship, and memory support under Virginia Department of Health regulations. Our caregivers receive specialized training in dementia communication, validation, and de-escalation techniques. We do not provide clinical psychiatric therapy or medical curative treatments."
+      differences={[
+        {
+          title: "Specialized Dementia Care vs. Standard Companion Care",
+          desc: "Companion care focuses on social visits and light homemaking. Memory care involves caregivers specially trained in dementia communication, validation therapy, de-escalation of agitation, wandering management, and hands-on ADL assistance.",
+        },
+        {
+          title: "In-Home Memory Care vs. Memory Care Facilities",
+          desc: "In-home memory care allows individuals to remain in their familiar home environment with dedicated one-on-one attention from the same caregiver, eliminating the severe disorientation, anxiety, and behavior spikes often caused by moving into a facility.",
+        },
+        {
+          title: "Non-Skilled Memory Care vs. Clinical Psychiatric Treatment",
+          desc: "Our caregivers provide non-pharmacological behavioral support, routine consistency, safety monitoring, and personal care. We do not administer psychiatric clinical therapies or diagnose medical conditions; we coordinate alongside your neurologist or geriatrician.",
+        },
+      ]}
       scenario={{
         title: "An Afternoon Visit Grounded in Patience and Connection",
         text: "A caregiver arrives at 1:30 PM, greeting her client with a warm smile and gentle eye contact. Knowing that late afternoon often triggers anxiety for this client, she establishes a peaceful, comforting atmosphere right away. Rather than asking challenging memory questions, she joins the client in looking through a vintage gardening book, chatting about favorite flowers. When the client becomes agitated and insists she must catch a bus to her childhood home, the caregiver validates her feelings with deep empathy—'You must really love that garden; tell me what you used to grow there'—and smoothly redirects her attention to preparing a herbal tea snack. Together, they take a calm stroll around the enclosed backyard garden. By late afternoon, when sundowning tendencies typically peak, the client feels safe, secure, and relaxed in familiar surroundings.",
@@ -108,6 +229,7 @@ export default function MemoryCarePage() {
         "Dementia is a progressive condition, and care needs inevitably evolve through early, middle, and advanced stages. In the early stages, a client may only require gentle companionship, reminders for medication and hydration, and assistance with meal preparation. As the condition advances, hands-on personal care for bathing, dressing, and incontinence becomes necessary. In later stages, continuous 24-hour supervision may be required to ensure safety around the clock. Our supervising RN maintains regular oversight, continually reassessing your loved one's needs and adjusting the care plan so your family never has to start over with a new agency as needs increase.",
         "We recognize that Alzheimer's and dementia impact the entire family unit. Family caregivers often experience profound physical exhaustion, chronic stress, and grief as they witness their loved one's cognitive decline. Our memory care services provide primary family members with vital, guilt-free respite care. Whether you need a few afternoons each week to run errands and rest, or overnight coverage so you can finally sleep through the night, our trustworthy caregivers give you complete confidence that your loved one is safe, engaged, and treated with unconditional kindness.",
       ]}
+      note="Regulatory Scope & Dementia Training: Archangels Personal Care LLC provides non-skilled personal care, companionship, and memory support under Virginia Department of Health regulations. Our caregivers receive specialized training in dementia communication, validation, and de-escalation techniques. We do not provide clinical psychiatric therapy or medical curative treatments."
       faqs={[
         {
           q: "My parent experiences severe sundowning and evening agitation. How do caregivers handle this?",

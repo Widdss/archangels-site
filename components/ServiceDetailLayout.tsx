@@ -1,11 +1,27 @@
 import Link from "next/link";
 import Breadcrumbs from "./Breadcrumbs";
 
-type FAQ = { q: string; a: string };
-type Related = { slug: string; label: string };
-type Step = { title: string; desc: string };
-type Benefit = { title: string; desc: string };
-type Scenario = { title: string; text: string };
+export type FAQ = { q: string; a: string };
+export type Related = { slug: string; label: string };
+export type Step = { title: string; desc: string };
+export type Benefit = { title: string; desc: string };
+export type Scenario = { title: string; text: string };
+export type CareLevel = {
+  title: string;
+  subtitle?: string;
+  badge?: string;
+  description: string;
+  items?: string[];
+};
+export type CareCategory = {
+  category: string;
+  description: string;
+  tasks: string[];
+};
+export type CareDifference = {
+  title: string;
+  desc: string;
+};
 
 const SITE_URL = "https://www.archangelspersonalcare.com";
 
@@ -18,7 +34,10 @@ export default function ServiceDetailLayout({
   heroAlt,
   whoFor,
   signs,
+  careLevels,
+  careCategories,
   included,
+  differences,
   scenario,
   steps,
   benefits,
@@ -35,7 +54,10 @@ export default function ServiceDetailLayout({
   heroAlt: string;
   whoFor: string[];
   signs?: string[];
+  careLevels?: CareLevel[];
+  careCategories?: CareCategory[];
   included: string[];
+  differences?: CareDifference[];
   scenario?: Scenario;
   steps?: Step[];
   benefits?: Benefit[];
@@ -148,8 +170,68 @@ export default function ServiceDetailLayout({
         </section>
       )}
 
+      {/* LEVELS OF CARE & PROGRESSION (NEW DETAILED SECTION) */}
+      {careLevels && careLevels.length > 0 && (
+        <section className="section reveal">
+          <div className="wrap">
+            <div className="section-head" style={{ textAlign: "center", margin: "0 auto 40px" }}>
+              <span className="eyebrow" style={{ justifyContent: "center" }}>Levels of Care & Progression</span>
+              <h2>Care tailored to every stage of need.</h2>
+              <p>Explore how our support adapts to different care requirements, ensuring complete clarity without confusion.</p>
+            </div>
+            <div className="care-levels-container reveal-stagger">
+              {careLevels.map((lvl) => (
+                <div className="care-level-card" key={lvl.title}>
+                  <div className="care-level-card-head">
+                    <div>
+                      {lvl.badge && <span className="care-level-badge accent" style={{ marginBottom: 6 }}>{lvl.badge}</span>}
+                      <h3>{lvl.title}</h3>
+                      {lvl.subtitle && <span className="care-level-subtitle">{lvl.subtitle}</span>}
+                    </div>
+                  </div>
+                  <p className="care-level-desc">{lvl.description}</p>
+                  {lvl.items && lvl.items.length > 0 && (
+                    <ul className="care-level-items">
+                      {lvl.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* DETAILED CARE CATEGORIES BREAKDOWN (NEW DEEP SERVICE SUMMARY) */}
+      {careCategories && careCategories.length > 0 && (
+        <section className="section section-alt reveal">
+          <div className="wrap">
+            <div className="section-head" style={{ textAlign: "center", margin: "0 auto 40px" }}>
+              <span className="eyebrow" style={{ justifyContent: "center" }}>Comprehensive Service Pillars</span>
+              <h2>Detailed breakdown of care activities.</h2>
+              <p>Everything you need to know about the daily tasks, assistance, and support covered under this service.</p>
+            </div>
+            <div className="care-categories-grid reveal-stagger">
+              {careCategories.map((cat) => (
+                <div className="care-category-card" key={cat.category}>
+                  <h3>{cat.category}</h3>
+                  <p className="care-category-desc">{cat.description}</p>
+                  <ul className="care-category-tasks">
+                    {cat.tasks.map((task) => (
+                      <li key={task}>{task}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* WHAT'S INCLUDED */}
-      <section className="section section-alt reveal">
+      <section className="section reveal">
         <div className="wrap">
           <div className="section-head" style={{ textAlign: "center", margin: "0 auto 40px" }}>
             <span className="eyebrow" style={{ justifyContent: "center" }}>How Our Caregivers Can Help</span>
@@ -170,6 +252,26 @@ export default function ServiceDetailLayout({
           )}
         </div>
       </section>
+
+      {/* HOW THIS CARE DIFFERS / COMPARISON */}
+      {differences && differences.length > 0 && (
+        <section className="section-tight section-alt reveal">
+          <div className="wrap">
+            <div className="section-head" style={{ textAlign: "center", margin: "0 auto 34px" }}>
+              <span className="eyebrow" style={{ justifyContent: "center" }}>Understanding Your Options</span>
+              <h2>How this service compares to other care levels.</h2>
+            </div>
+            <div className="comparison-grid reveal-stagger">
+              {differences.map((diff) => (
+                <div className="comparison-card" key={diff.title}>
+                  <h4>{diff.title}</h4>
+                  <p>{diff.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* WHAT CARE MAY LOOK LIKE */}
       {scenario && (

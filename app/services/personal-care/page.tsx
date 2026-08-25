@@ -43,6 +43,127 @@ export default function PersonalCarePage() {
         "Bottles of prescribed medications remaining full, disorganized pill organizers, or uncertainty about whether morning and evening doses were taken",
         "Family members feeling physically overwhelmed, missing work commitments, or worrying constantly about safety when their loved one is home alone",
       ]}
+      careLevels={[
+        {
+          badge: "Level 1: Standby Support",
+          title: "Standby Assistance & Morning Routine Launch",
+          subtitle: "Supervised support to prevent bathroom falls and promote confidence",
+          description:
+            "Ideal for seniors who can perform many daily tasks independently but require steadying support, bathroom safety monitoring, and light physical help with challenging movements like getting in and out of the tub or putting on compression socks.",
+          items: [
+            "Standby shower supervision, water temperature regulation, and non-slip safety monitoring",
+            "Assistance with buttons, zippers, shoe tying, and compression garment application",
+            "Morning hair brushing, dental hygiene assistance, and skin lotion application",
+            "Nutritious breakfast preparation, tea/coffee service, and kitchen cleanup",
+            "Prompting scheduled morning medications and tracking fluid intake",
+            "Encouraging gentle morning stretches and clearing hallway pathways",
+          ],
+        },
+        {
+          badge: "Level 2: Comprehensive ADL Care",
+          title: "Comprehensive Hands-On Daily Living Care",
+          subtitle: "Complete physical personal hygiene, transfer support, and meal care",
+          description:
+            "For seniors managing moderate physical frailty, stroke recovery, or progressive arthritis who need full, direct physical assistance with bathing, dressing, commode use, transfer mechanics, and meal preparation throughout the day.",
+          items: [
+            "Full hands-on shower, tub bathing, or seated chair sponge bathing assistance",
+            "Complete dressing assistance, wardrobe selection, and personal grooming",
+            "Discreet, dignified toileting support, commode assistance, and incontinence care",
+            "Safe transfers between beds, recliners, and wheelchairs using gait belts",
+            "Cooking fresh, wholesome lunch and dinner aligned with dietary guidelines",
+            "Accompaniment to local doctor visits, pharmacy pickups, and community errands",
+          ],
+        },
+        {
+          badge: "Level 3: Extensive Physical Care",
+          title: "Extensive Physical Assistance & Total Hygiene",
+          subtitle: "High-level personal care, repositioning, and extended daily coverage",
+          description:
+            "Designed for non-ambulatory, bed-bound, or severely frail individuals who require total personal care, scheduled pressure point relief, pureed diet assistance, and extended or 24/7 care under close Registered Nurse supervision.",
+          items: [
+            "Gentle bed sponge bathing, complete hair washing, and skin barrier application",
+            "Scheduled turning and body repositioning every 2 hours to prevent skin breakdown",
+            "Total incontinence management, bed linen changes, and laundry sanitization",
+            "Patient, dignified meal and feeding assistance with specialized soft foods",
+            "Close coordination with visiting physical therapists and home health clinical teams",
+            "Continuous shift coverage or 24/7 care options for total home safety",
+          ],
+        },
+      ]}
+      careCategories={[
+        {
+          category: "Bathing, Showering & Dignified Hygiene",
+          description:
+            "Maintaining clean, refreshed skin while prioritizing modesty, dignity, and fall-prevention in the bathroom.",
+          tasks: [
+            "Warm shower assistance utilizing shower benches, handheld sprayers, and grab bars",
+            "Gentle seated sponge baths with warm towels for clients unable to enter the shower",
+            "Hair washing, conditioning, gentle scalp massage, and thorough drying",
+            "Oral care, brushing teeth, flossing assistance, and cleaning dentures",
+            "Skin hydration and applying moisturizers to prevent dryness and skin tears",
+          ],
+        },
+        {
+          category: "Dressing, Footwear & Daily Grooming",
+          description:
+            "Helping clients feel put-together, comfortable, and confident in clean, seasonally appropriate clothing.",
+          tasks: [
+            "Assisting with upper and lower body dressing while respecting personal style preferences",
+            "Managing challenging fasteners, buttons, zippers, velcro, and snap closures",
+            "Putting on and removing prescription compression stockings and non-slip socks",
+            "Gentle hair brushing, styling, and safe non-blade electric facial shaving",
+            "Basic fingernail filing and skin inspections to identify early redness or swelling",
+          ],
+        },
+        {
+          category: "Toileting, Commode & Incontinence Support",
+          description:
+            "Providing discreet, hygienic assistance that protects skin integrity and avoids embarrassment.",
+          tasks: [
+            "Timely transfer assistance to the bathroom, standard toilet, or bedside commode",
+            "Assisting with clothing adjustment before and after toilet use",
+            "Discreet, thorough perineal cleaning and applying protective barrier creams",
+            "Managing incontinence garments, pads, and disposal in a sanitary manner",
+            "Documenting bowel and bladder patterns for Registered Nurse supervisory review",
+          ],
+        },
+        {
+          category: "Mobility, Transfers & Fall Prevention",
+          description:
+            "Ensuring safe movement throughout the home using proper body mechanics and transfer equipment.",
+          tasks: [
+            "Safe bed-to-chair, chair-to-standing, and wheelchair transfers using gait belts",
+            "Guiding and steadying walking ambulation with canes, standard walkers, or rollators",
+            "Assisting with vehicle entry and exit for medical appointments and outings",
+            "Continuous pathway inspections to remove loose cords, clutter, and throw rugs",
+            "Encouraging gentle range-of-motion stretching recommended by physical therapists",
+          ],
+        },
+        {
+          category: "Meal Preparation, Dining & Hydration",
+          description:
+            "Cooking wholesome, delicious meals that support healing, energy, and digestive health.",
+          tasks: [
+            "Planning and preparing fresh, home-cooked breakfasts, lunches, and dinners",
+            "Accommodating dietary guidelines (diabetic, low-sodium, heart-healthy, renal)",
+            "Cutting food into safe bite-sized pieces and assisting with adaptive utensils",
+            "Providing regular hydration reminders and serving refreshing beverages",
+            "Kitchen sanitization, dishwashing, food storage, and tracking food expiration dates",
+          ],
+        },
+        {
+          category: "Medication Reminders & Wellness Logging",
+          description:
+            "Promoting compliance with physician prescriptions through timely, structured non-skilled reminders.",
+          tasks: [
+            "Prompting medication intake according to pre-filled organizers at designated times",
+            "Providing a fresh glass of water and assisting with opening pill containers",
+            "Documenting medication compliance in the daily care log",
+            "Alerting the family and supervising RN when pill organizers require refilling",
+            "Monitoring general baseline wellness: energy, appetite, mood, and sleep patterns",
+          ],
+        },
+      ]}
       included={[
         "Assistance with bathing, showering, sponge baths, and hair washing with safety benches and non-slip protocols",
         "Dressing and wardrobe selection assistance, including compression socks, buttons, zippers, and adaptive footwear",
@@ -54,6 +175,20 @@ export default function PersonalCarePage() {
         "Timely medication reminders, pillbox schedule prompting, and hydration tracking within non-skilled guidelines",
         "Light household upkeep including bed linen changes, client laundry, dishwashing, and keeping walkways clear of clutter",
         "Accompaniment and transportation coordination for medical appointments, pharmacy visits, grocery shopping, and local errands",
+      ]}
+      differences={[
+        {
+          title: "Personal Care vs. Companion Care",
+          desc: "Companion care focuses on social engagement, meal prep, and light homemaking without physical contact. Personal care includes all companion services PLUS hands-on physical assistance with bathing, dressing, toileting, and mobility transfers.",
+        },
+        {
+          title: "Non-Skilled Personal Care vs. Skilled Home Health Nursing",
+          desc: "Skilled home health involves brief clinical medical visits for IV therapy, sterile wound care, or injections ordered by a doctor. Archangels provides continuous non-skilled daily living care that keeps the home safe between medical appointments.",
+        },
+        {
+          title: "In-Home Personal Care vs. Assisted Living Facilities",
+          desc: "In-home personal care delivers dedicated one-on-one attention in the comfort of your own home, maintaining familiar routines and personal independence without the high overhead costs and relocation stress of a facility.",
+        },
       ]}
       scenario={{
         title: "A Morning Routine Centered on Dignity and Comfort",

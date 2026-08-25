@@ -43,62 +43,137 @@ export default function EndOfLifeCarePage() {
         "A sudden decline in a loved one's condition, creating an immediate need for continuous daytime, overnight, or 24-hour bedside care",
         "Family caregivers feeling anxious or fearful about being alone in the room during periods of irregular breathing or physical transitions",
       ]}
-      included={[
-        "Gentle, dignity-centered personal hygiene, bed sponge baths, oral mouth moisture care, and skin hydration",
-        "Calm, soothing bedside presence, active listening, reading aloud, and playing comforting music or spiritual readings",
-        "Frequent, gentle repositioning in bed using soft pillows and draw sheets to relieve pressure points and maximize physical comfort",
-        "Collaborative communication and non-skilled coordination alongside your licensed hospice nurses and social workers",
-        "Essential respite care for exhausted family members, allowing loved ones to sleep, rest, and process emotional grief",
-        "Light household upkeep, washing linens, sanitizing bedside areas, tidying the kitchen, and preparing nourishing snacks for family visitors",
-        "Monitoring and maintaining a serene, peaceful room environment with soft lighting, optimal room temperature, and quiet surroundings",
-        "Timely non-skilled medication reminders aligned with the hospice nurse's pre-measured schedules and symptom plans",
-        "Flexible scheduling, offering daytime blocks, awake overnight bedside vigilance, or continuous 24-hour shift coverage",
-        "Comprehensive Registered Nurse oversight, providing clinical coordination and compassionate family support throughout",
+      careLevels={[
+        {
+          badge: "Level 1: Daytime Comfort",
+          title: "Daytime Bedside Comfort & Family Respite",
+          subtitle: "Gentle hands-on hygiene, turning support, and family breathing room",
+          description:
+            "A dedicated caregiver visits for 4 to 8 hours during the day to take over physically demanding bedside tasks—sponge bathing, mouth hydration, pillow adjustments, and laundry—allowing family members to rest, eat, and spend peaceful time together.",
+          items: [
+            "Gentle seated or in-bed sponge bathing and refreshing personal hygiene",
+            "Frequent oral mouth care with moist swabs and lip balm application",
+            "Assisting with gentle turning and pillow positioning every 2 hours",
+            "Tidying the bedside space, washing bed linens, and managing laundry",
+            "Providing a calm, loving bedside presence while family steps away to rest",
+          ],
+        },
+        {
+          badge: "Level 2: Overnight Vigilance",
+          title: "Overnight Bedside Presence & Restorative Sleep",
+          subtitle: "Awake night caregiver ensuring unbroken comfort and reassurance",
+          description:
+            "An awake, compassionate caregiver remains at the bedside throughout the overnight hours (10:00 PM to 6:00 AM), monitoring comfort, soothing restlessness, adjusting covers, and handling all nocturnal hygiene so family members can sleep soundly.",
+          items: [
+            "Continuous awake bedside observation throughout the nocturnal hours",
+            "Immediate response to restless movements, groans, or requests for water",
+            "Gentle repositioning to relieve pressure points and optimize breathing",
+            "Incontinence care and keeping bed linens immaculately clean and dry",
+            "Quiet reassurance, soft lighting, and playing soothing devotional/calming music",
+          ],
+        },
+        {
+          badge: "Level 3: 24/7 Bedside Care",
+          title: "Continuous 24-Hour Bedside Comfort Rotation",
+          subtitle: "Around-the-clock awake shift coverage during final days",
+          description:
+            "When a loved one enters their final days, continuous 24-hour care ensures that an alert, compassionate caregiver is sitting bedside every minute. Caregivers rotate in fresh shifts, providing unwavering comfort and giving family unconditional support.",
+          items: [
+            "Seamless rotating shifts of rested caregivers present 24 hours a day",
+            "Continuous non-verbal comfort: moist oral swabs, cool washcloths, hand holding",
+            "Coordinating visit times with hospice nurses and chaplains",
+            "Preparing light meals and coffee for visiting relatives and grandchildren",
+            "Allowing family members to focus entirely on love, presence, and remembrance",
+          ],
+        },
       ]}
-      note="Regulatory Scope & Hospice Collaboration: Archangels Personal Care LLC is a licensed Home Care Organization providing non-medical personal care, comfort assistance, and companionship. We do not provide skilled hospice nursing, physician medical services, intravenous pain management, or curative treatments. Our services work in close harmony alongside your chosen licensed hospice provider."
+      careCategories={[
+        {
+          category: "Gentle Hygiene, Mouth Care & Skin Hydration",
+          description:
+            "Preserving physical comfort, preventing dry mouth, and maintaining refreshed skin without causing exertion.",
+          tasks: [
+            "Moistening lips and mouth frequently using moist oral swabs and balms",
+            "Gentle bed sponge bathing with warm scented washcloths",
+            "Applying soothing skin lotions and protective barrier creams",
+            "Brushing hair gently and smoothing clothing for total dignity",
+          ],
+        },
+        {
+          category: "Supportive Positioning & Pressure Relief",
+          description:
+            "Ensuring physical ease and respiratory comfort through gentle body adjustments.",
+          tasks: [
+            "Gently turning and repositioning the client every two hours using draw sheets",
+            "Propping upper body with soft pillows to ease labored breathing",
+            "Supporting knees, heels, and arms with specialized foam cushions",
+            "Smoothing sheets and eliminating wrinkles that cause skin irritation",
+          ],
+        },
+        {
+          category: "Serene Sensory Environment & Bedside Presence",
+          description:
+            "Creating a tranquil, peaceful room atmosphere that calms anxiety and fosters dignity.",
+          tasks: [
+            "Regulating room temperature, blankets, and gentle airflow",
+            "Dimming bright overhead lights and using warm, ambient lamps",
+            "Playing beloved hymns, classical music, or nature sounds",
+            "Sitting quietly bedside, holding hands, or reading comforting passages aloud",
+          ],
+        },
+        {
+          category: "Hospice Coordination & Family Respite",
+          description:
+            "Working seamlessly alongside hospice professionals while supporting grieving family members.",
+          tasks: [
+            "Greeting hospice nurses and relaying non-clinical comfort observations",
+            "Taking over all household chores, washing linens, and sanitizing bedside areas",
+            "Preparing nourishing meals and beverages for visiting family members",
+            "Allowing loved ones to step away to rest, shower, and process emotions",
+          ],
+        },
+      ]}
+      included={[
+        "Comfort-focused personal care",
+        "Companionship & calm, steady presence",
+        "Respite for family caregivers",
+        "Light housekeeping",
+        "Coordination alongside your hospice team",
+        "Emotional support for client and family",
+        "Assistance with meals & hydration comfort (non-clinical)",
+        "Flexible scheduling around hospice visit times",
+      ]}
+      differences={[
+        {
+          title: "Non-Medical Comfort Care vs. Hospice Medical Services",
+          desc: "Hospice provides intermittent medical visits (1–2 hours a few times a week) for clinical symptom management, prescriptions, and physician oversight. Archangels provides continuous daily hands-on personal care, bed turning, hygiene, and bedside presence between hospice visits.",
+        },
+        {
+          title: "In-Home Comfort Care vs. Inpatient Hospice Facilities",
+          desc: "Inpatient hospice facilities require relocating your loved one to an institutional setting. In-home comfort care allows your loved one to spend their final days in the peace, dignity, and familiar surroundings of their own home.",
+        },
+        {
+          title: "Professional Caregivers vs. Exhausted Family Nursing",
+          desc: "Family members often become exhausted acting as full-time physical nurses. Our caregivers handle the heavy turning, bathing, and laundry so family members can simply be loving children, spouses, and grandchildren holding hands.",
+        },
+      ]}
+      note="Archangels does not provide hospice, palliative, or skilled nursing services. This is non-medical comfort and companion care that works alongside a hospice or medical team already in place."
       scenario={{
-        title: "A Peaceful Evening of Dedicated Bedside Comfort",
-        text: "At 6:00 PM, an Archangels caregiver arrives at a home in Richmond where a client is resting comfortably in a hospital bed in the sunroom. The client's hospice nurse visited earlier in the afternoon, leaving instructions for rest. The caregiver gently greets the exhausted daughter, encouraging her to go upstairs for a full night of uninterrupted sleep while she takes over bedside care. Over the evening, the caregiver maintains a serene atmosphere: dimming the overhead lights, playing soft instrumental music, and using gentle oral swabs with cool water to keep the client's lips and mouth moisturized. Every two hours, she gently repositions the client's pillows to ease pressure and smooths the bedsheets. When the client awakens briefly, the caregiver holds her hand and speaks with a calm, reassuring voice. By morning, the daughter returns downstairs rested and at peace, finding her mother serene, clean, and comfortable.",
+        title: "A Quiet, Comforting Presence",
+        text: "A caregiver arrives between two scheduled hospice visits, giving the family a chance to step outside for fresh air. She sits with her client, offers small comforts like adjusting a pillow or reading aloud from a favorite book, and keeps things calm and unhurried. When the hospice nurse calls to check in, the caregiver relays what she's observed that morning. By the time the family returns, their loved one is comfortable, and they've had a moment to breathe.",
       }}
       steps={[
-        {
-          title: "Compassionate Intake Conversation",
-          desc: "Call 804-903-8133 to speak directly with our care leadership. We listen with deep empathy to your family's situation, hospice timeline, and immediate comfort needs.",
-        },
-        {
-          title: "In-Home RN Coordination & Assessment",
-          desc: "Our Registered Nurse meets with the family and reviews the existing hospice care plan, designing a non-skilled comfort plan that complements your hospice nurse's schedule.",
-        },
-        {
-          title: "Matching an Empathetic, Gentle Caregiver",
-          desc: "We hand-select a caregiver with specialized experience in end-of-life comfort, emotional maturity, and a calm, soothing presence.",
-        },
-        {
-          title: "Care Begins Rapidly Around Hospice Shifts",
-          desc: "Care begins on your desired schedule—daytime, overnight, or 24/7—filling the long gaps between hospice visits with attentive, dignified care.",
-        },
-        {
-          title: "Continuous Adaptation & Family Support",
-          desc: "As your loved one's condition shifts, our RN stays in close contact, adjusting coverage hours and bedside protocols to maintain maximum comfort and peace.",
-        },
+        { title: "A conversation about your situation", desc: "We listen and talk through how hospice care is currently structured and where extra support is needed." },
+        { title: "RN coordination with your hospice plan", desc: "Our RN reviews how our non-medical support fits alongside your existing hospice team." },
+        { title: "A calm, compassionate caregiver is matched", desc: "We prioritize temperament and steadiness for this kind of care." },
+        { title: "Care begins, flexible around hospice visits", desc: "Scheduling works around your hospice team's visits rather than competing with them." },
+        { title: "Support continues, adjusting as needed", desc: "We stay flexible as your family's needs shift day to day." },
       ]}
       benefits={[
-        {
-          title: "Fills the Critical Gaps in Hospice Coverage",
-          desc: "Hospice visits are intermittent; our caregivers provide the continuous bedside presence and hands-on help needed between hospice visits.",
-        },
-        {
-          title: "Allowing Families to Be Family Again",
-          desc: "By taking on the physical burden of personal hygiene, repositioning, and laundry, we allow you to focus entirely on loving and being present with your family member.",
-        },
-        {
-          title: "Caregivers Chosen for Quiet Serenity",
-          desc: "Our end-of-life caregivers are selected for their gentle temperaments, emotional maturity, and ability to create a peaceful, dignified atmosphere.",
-        },
-        {
-          title: "Rapid Deployment for Urgent Situations",
-          desc: "We recognize that end-of-life timelines can accelerate quickly; we can often arrange comfort care within 24 hours of your initial inquiry.",
-        },
+        { title: "Family gets to be present, not just exhausted", desc: "Respite lets loved ones focus on being present rather than managing every task." },
+        { title: "A consistent, familiar face", desc: "The same caregiver provides steady, dependable comfort during a hard time." },
+        { title: "Coordination, not duplication", desc: "We work alongside your hospice team rather than overlapping with their role." },
+        { title: "Dignity-centered care", desc: "Every visit is built around comfort and respect, not a checklist." },
       ]}
       approach={[
         "The final chapter of a person's life is a sacred, deeply emotional time. When a loved one reaches the stage of advanced illness where curative treatments have ceased and comfort is the sole priority, the home should be a sanctuary of peace, dignity, and love. However, the physical reality of managing continuous bedside care—frequent turning, bed sponge bathing, mouth care, and sleepless nights—often leaves family members physically exhausted and emotionally overwhelmed. At Archangels Personal Care LLC, our End-of-Life Comfort Care service is designed to lift the physical burden of caregiving so families can focus on what matters most: spending precious, meaningful moments together.",

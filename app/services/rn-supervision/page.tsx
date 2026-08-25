@@ -43,6 +43,96 @@ export default function RnSupervisionPage() {
         "Family caregivers feeling anxious about whether their loved one's non-medical caregiver is following appropriate safety and transfer protocols",
         "Difficulty coordinating information between multiple treating physicians, visiting physical therapists, and local community health resources",
       ]}
+      careLevels={[
+        {
+          badge: "Oversight Phase 1",
+          title: "Intake Assessment & Custom Care Plan Design",
+          subtitle: "Comprehensive clinical evaluation before the first caregiver visit",
+          description:
+            "A Virginia-licensed Registered Nurse visits your home to conduct a thorough 90-minute evaluation covering functional mobility, transfer mechanics, skin integrity, cognitive orientation, home safety hazards, and medication regimens to author a legally binding Plan of Care.",
+          items: [
+            "In-depth functional ADL assessment and transfer risk analysis",
+            "Full environmental safety audit inspecting bathroom grab bars, lighting, and trip hazards",
+            "Reviewing current prescription regimens against physician discharge instructions",
+            "Authoring customized, VDH-compliant written Plan of Care for CNA/PCA execution",
+            "In-person briefing and orientation with assigned primary caregivers",
+          ],
+        },
+        {
+          badge: "Oversight Phase 2",
+          title: "Ongoing Field Supervision & Quality Audits",
+          subtitle: "Regular in-home supervisory visits ensuring care excellence",
+          description:
+            "Our RN conducts regular in-person supervisory visits to your home, directly observing caregiver performance, evaluating client satisfaction, reviewing shift logs, and validating that transfer and hygiene protocols meet clinical standards.",
+          items: [
+            "Scheduled supervisory visits conducted in accordance with VDH regulations",
+            "Unannounced quality assurance spot checks to verify caregiver punctuality and protocol compliance",
+            "Daily shift log reviews tracking appetite, hydration, and mobility stability",
+            "Private check-ins with client and family to address feedback immediately",
+            "Periodic reassessments as physical stamina or recovery milestones evolve",
+          ],
+        },
+        {
+          badge: "Oversight Phase 3",
+          title: "Clinical Reassessment & Physician Coordination",
+          subtitle: "Proactive management of condition changes and medical transitions",
+          description:
+            "When a client experiences a hospital discharge, a new medical diagnosis, or a decline in mobility, our RN immediately conducts a formal reassessment, updates the Plan of Care, and acts as the clinical liaison to family and physicians.",
+          items: [
+            "Rapid in-home reassessments following any emergency room visit or hospital stay",
+            "Synthesizing hospital discharge orders into clear non-skilled daily routines",
+            "Sharing objective observational documentation with treating physicians",
+            "Recommending home modifications and adaptive mobility equipment",
+            "Smoothly scaling care levels from hourly up to 24/7 or hospice comfort care",
+          ],
+        },
+      ]}
+      careCategories={[
+        {
+          category: "Clinical Assessment & Safety Risk Audits",
+          description:
+            "Evaluating physical capabilities, balance stability, and living environments to build an evidence-based roadmap for safe aging at home.",
+          tasks: [
+            "Evaluating musculoskeletal strength, gait mechanics, and transfer stability",
+            "Inspecting bathroom shower layouts, thresholds, grab bars, and non-slip surfaces",
+            "Assessing cognitive orientation, short-term memory, and behavioral triggers",
+            "Establishing baseline wellness metrics and emergency contact protocols",
+          ],
+        },
+        {
+          category: "Caregiver Delegation & Field Training",
+          description:
+            "Ensuring that every Certified Nursing Assistant and Personal Care Aide is thoroughly briefed and held to strict healthcare standards.",
+          tasks: [
+            "Orienting caregivers on specific client transfer techniques and body mechanics",
+            "Reviewing dietary restrictions, meal textures, and hydration targets",
+            "Instructing caregivers on client-specific red-flag symptoms to document and report",
+            "Conducting in-field clinical competency evaluations during active shifts",
+          ],
+        },
+        {
+          category: "Medication Compliance & Routine Monitoring",
+          description:
+            "Establishing structured, non-skilled reminder systems that eliminate missed doses, confusion, and scheduling errors.",
+          tasks: [
+            "Reviewing pre-filled pill organizers against current doctor discharge lists",
+            "Setting up clear reminder schedules synchronized with mealtimes and bedtimes",
+            "Verifying caregiver medication reminder documentation on daily shift logs",
+            "Alerting family members when prescription refills or organizer reviews are needed",
+          ],
+        },
+        {
+          category: "Physician Communication & Care Coordination",
+          description:
+            "Bridging the communication gap between the home environment and your loved one's broader medical network.",
+          tasks: [
+            "Compiling objective observational reports on appetite, mobility, and vital trends",
+            "Communicating with primary care doctors, cardiologists, and neurologists",
+            "Aligning daily home care routines with home health therapy exercise plans",
+            "Providing long-distance family members with clear, transparent clinical summaries",
+          ],
+        },
+      ]}
       included={[
         "Comprehensive in-home nursing assessment of physical mobility, cognition, home environment, and daily living capabilities",
         "Development and maintenance of a customized, written Plan of Care tailored to personal preferences and safety needs",
@@ -55,7 +145,20 @@ export default function RnSupervisionPage() {
         "Care plan adjustments and reassessments as client capabilities, recovery milestones, or health conditions evolve",
         "Coordination and collaboration with outside clinical providers, including home health agencies, physical therapists, and hospice teams",
       ]}
-      note="Regulatory Scope & Clinical Boundaries: RN services provided by Archangels Personal Care LLC encompass clinical assessment, care plan development, caregiver supervision, wellness monitoring, and medication compliance oversight within Virginia non-skilled home care licensing standards. Skilled nursing services—such as clinical medication administration, intravenous therapy, sterile complex wound care, tube feedings, or diagnostic medical treatments—are not provided."
+      differences={[
+        {
+          title: "RN Supervision for Non-Skilled Care vs. Skilled Home Health Nursing",
+          desc: "RN supervision involves a Registered Nurse assessing the client, writing the care plan, supervising CNA/PCA caregivers, and evaluating compliance. Skilled home health nursing involves direct medical treatments like IV therapy, wound debridement, or tube feedings ordered by a physician.",
+        },
+        {
+          title: "RN-Supervised Agency Care vs. Direct-Hire Private Caregivers",
+          desc: "Private independent caregivers have no clinical oversight, background insurance, or regulatory accountability. Archangels provides licensed Registered Nurse supervision, VDH compliance, mandatory liability coverage, and guaranteed backup staffing.",
+        },
+        {
+          title: "In-Home RN Oversight vs. Facility Nursing Staff",
+          desc: "In facilities, nursing staff manage dozens of residents simultaneously. Our RN oversight focuses exclusively on your loved one's one-on-one home care plan, ensuring personalized attention and direct access for your family.",
+        },
+      ]}
       scenario={{
         title: "Clinical Leadership Behind Every Day of Home Care",
         text: "Before any caregiver begins an assignment, a Virginia-licensed Registered Nurse visits the client's Mechanicsville home. Over ninety minutes, she reviews the client's medical history, evaluates balance during a hallway walk, checks the bathroom for fall hazards, and inspects the client's weekly medication organizer. She writes a detailed Plan of Care specifying that morning transfers require a two-point gait belt technique due to orthostatic hypotension. Two weeks later, during a scheduled supervisory visit, the RN observes the assigned CNA assisting with a transfer, confirms that the client has gained stability, and reviews the caregiver's daily hydration notes. Noticing mild ankle swelling documented over the past forty-eight hours, the RN contacts the client's daughter and primary care physician that afternoon, allowing the physician to adjust a diuretic dosage before an emergency room visit becomes necessary.",
@@ -109,6 +212,7 @@ export default function RnSupervisionPage() {
         "Our Registered Nurses serve as the vital communication bridge between the home and your loved one's broader healthcare network. When doctors write new discharge instructions or physical therapists establish home exercise routines, our RN translates those clinical goals into actionable daily caregiving tasks. With family consent, our RN can share structured observational reports with treating physicians, cardiologists, or neurologists, ensuring that medical providers have accurate insights into how the patient is actually functioning at home between clinic visits.",
         "Because health conditions fluctuate, our RN oversight model is designed to be highly dynamic. When a client regains strength after post-operative rehabilitation, the RN re-evaluates and scales down assistance levels to encourage continued self-reliance. Conversely, if a chronic illness progresses or memory loss intensifies, the RN swiftly convenes a family care conference, updates the Plan of Care, introduces specialized caregiving protocols, and coordinates any necessary adjustments in shift frequency or duration.",
       ]}
+      note="Regulatory Scope & Clinical Boundaries: RN services provided by Archangels Personal Care LLC encompass clinical assessment, care plan development, caregiver supervision, wellness monitoring, and medication compliance oversight within Virginia non-skilled home care licensing standards. Skilled nursing services—such as clinical medication administration, intravenous therapy, sterile complex wound care, tube feedings, or diagnostic medical treatments—are not provided."
       faqs={[
         {
           q: "What is the difference between RN supervision and skilled home health nursing?",

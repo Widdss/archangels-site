@@ -26,7 +26,7 @@ export default function TwentyFourHourCarePage() {
       title="24-Hour Home Care in Richmond, VA"
       intro="Continuous, around-the-clock non-skilled personal care, attentive monitoring, and companionship delivered by a dedicated team of alert caregivers across coordinated shifts — under ongoing Registered Nurse oversight."
       heroImg="https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg"
-      heroAlt="Compassionate caregiver providing attentive 24-hour care to a senior at home"
+      heroAlt="Caregiver providing attentive round-the-clock 24-hour home care"
       whoFor={[
         "Individuals living with advanced Alzheimer's disease, dementia, or cognitive impairment requiring constant awake supervision to prevent wandering, elopement, and confusion",
         "Seniors recovering from major orthopedic surgery, stroke, cardiac events, or severe illness who need hands-on assistance day and night during acute rehabilitation",
@@ -43,6 +43,106 @@ export default function TwentyFourHourCarePage() {
         "Progressive cognitive decline where the client no longer recognizes environmental hazards or forgets how to summon help in an emergency",
         "Complex daily schedules involving round-the-clock personal hygiene, hydration, meals, skin care, and frequent medication reminders",
       ]}
+      careLevels={[
+        {
+          badge: "Level 1 Coverage",
+          title: "Daytime Assistance + Awake Overnight Vigilance",
+          subtitle: "Targeted support for daytime tasks with dedicated nighttime safety monitoring",
+          description:
+            "Designed for seniors who are relatively stable during the day but face severe nocturnal fall risks, nighttime disorientation, sundowning restlessness, or need hands-on assistance getting to the bathroom at night. A daytime caregiver assists with morning hygiene, meals, and mobility, while an awake overnight caregiver monitors the home from 10:00 PM to 6:00 AM.",
+          items: [
+            "Assistance with morning bathing, dressing, and breakfast preparation",
+            "Midday companionship, hydration tracking, and scheduled medication reminders",
+            "Evening bedtime routine, transfer into bed, and locking all exterior doors",
+            "Awake overnight supervision with 30-minute safety checks",
+            "Immediate physical support for midnight bathroom visits or commode use",
+            "Soothing reassurance during moments of nighttime confusion or restlessness",
+          ],
+        },
+        {
+          badge: "Level 2 Coverage",
+          title: "Two 12-Hour Continuous Coordinated Shifts",
+          subtitle: "Comprehensive 24/7 coverage with two dedicated caregivers daily",
+          description:
+            "Ideal for post-surgical rehabilitation, acute illness recovery, or moderate-to-advanced mobility limitations. Two alert caregivers split the 24-hour cycle (e.g., 7:00 AM to 7:00 PM and 7:00 PM to 7:00 AM), ensuring someone is alert and attentive at all hours. Caregivers conduct a standardized shift transition to maintain unbroken routine consistency.",
+          items: [
+            "Complete physical assistance with bathing, dressing, grooming, and skin hydration",
+            "Transfer assistance using gait belts between bed, lift chairs, wheelchairs, and commodes",
+            "Preparation of three fresh, nutritious meals plus snacks and hydration cueing",
+            "Timed medication reminders synchronized with discharge physician orders",
+            "Scheduled turning and repositioning every 2 hours for bed-bound clients",
+            "Continuous shift handoff documentation reviewed daily by our supervising RN",
+          ],
+        },
+        {
+          badge: "Level 3 Coverage",
+          title: "Three 8-Hour Specialized Shift Rotation",
+          subtitle: "High-acuity, intensive 24/7 care with peak alert staffing",
+          description:
+            "Recommended for high-acuity situations such as advanced dementia with wandering and severe elopement risks, complex multiple chronic conditions, or end-of-life comfort care. Three coordinated 8-hour shifts (6:00 AM–2:00 PM, 2:00 PM–10:00 PM, 10:00 PM–6:00 AM) ensure caregivers remain at peak mental and physical alertness throughout every hour of the day and night.",
+          items: [
+            "Continuous visual monitoring to prevent exit-seeking, elopement, or falls",
+            "Gentle de-escalation, validation communication, and sensory redirection",
+            "Incontinence care and meticulous skin barrier protection across all shifts",
+            "Coordination with visiting home health nurses, physical therapists, or hospice teams",
+            "Daily shift audits and weekly clinical reviews conducted by our Registered Nurse",
+            "Total peace of mind for family members who cannot be physically present",
+          ],
+        },
+      ]}
+      careCategories={[
+        {
+          category: "Daytime Care & Morning Routines (6:00 AM – 2:00 PM)",
+          description:
+            "Focuses on launching the day with dignity, warmth, and safe physical assistance. Caregivers help seniors transition smoothly out of bed, complete personal hygiene, enjoy wholesome nutrition, and engage in meaningful activities.",
+          tasks: [
+            "Safe bed-to-standing transfers and gentle morning mobility stretching",
+            "Hands-on assistance with showering, tub bathing, hair care, and shaving",
+            "Assisting with wardrobe selection, buttoning, compression stockings, and footwear",
+            "Cooking fresh breakfast and lunch aligned with dietary guidelines and chewing needs",
+            "Morning medication reminders and fluid intake tracking",
+            "Accompaniment on gentle walks in the garden or living room mobility exercises",
+          ],
+        },
+        {
+          category: "Afternoon & Evening Care (2:00 PM – 10:00 PM)",
+          description:
+            "Focuses on maintaining momentum, managing late-afternoon energy dips and sundowning agitation, preparing dinner, and establishing a relaxing, secure bedtime routine.",
+          tasks: [
+            "Nutritious dinner preparation, table companionship, and kitchen sanitization",
+            "Engaging cognitive activities, listening to music, reminiscing, or folding laundry",
+            "Managing sundowning anxiety with soft lighting, calm music, and warm herbal tea",
+            "Evening personal hygiene, dental/denture cleaning, and changing into sleepwear",
+            "Evening medication reminders and logging daily nutritional totals",
+            "Assisting into bed with proper pillow positioning and ensuring call bell access",
+          ],
+        },
+        {
+          category: "Awake Overnight Vigilance (10:00 PM – 6:00 AM)",
+          description:
+            "A dedicated awake night caregiver remains alert throughout the nocturnal hours to provide immediate assistance, prevent falls, and give family members restorative sleep.",
+          tasks: [
+            "Quiet, non-intrusive safety checks conducted every 30 to 60 minutes",
+            "Immediate physical hands-on support for midnight bathroom visits or commode use",
+            "Managing incontinence hygiene promptly to protect skin integrity and comfort",
+            "Gentle repositioning in bed to relieve pressure points and optimize breathing",
+            "Securing exterior doors, windows, and checking home security perimeters",
+            "Preparing morning coffee and providing a verbal shift handoff to the incoming caregiver",
+          ],
+        },
+        {
+          category: "RN Clinical Oversight & Shift Coordination",
+          description:
+            "Our Registered Nurse leads the 24-hour care team, ensuring that every shift adheres to Virginia Department of Health regulations and clinical best practices.",
+          tasks: [
+            "Initial comprehensive in-home nursing assessment and customized Plan of Care creation",
+            "Standardized shift handoff logs audited daily to detect subtle health changes",
+            "Regular supervisory home visits conducted during daytime, evening, and night hours",
+            "Direct communication with family members, primary physicians, and hospice teams",
+            "Immediate care plan updates whenever mobility or cognitive needs change",
+          ],
+        },
+      ]}
       included={[
         "Continuous 24-hour awake coverage structured across coordinated daytime, evening, and overnight shifts",
         "Dedicated small team of familiar Certified Nursing Assistants (CNAs) and Personal Care Aides (PCAs) assigned for continuity",
@@ -55,9 +155,22 @@ export default function TwentyFourHourCarePage() {
         "Structured shift handoffs with detailed daily documentation logs reviewed continuously by our supervising RN",
         "Comprehensive Registered Nurse oversight, ongoing care plan audits, and 24/7 on-call clinical escalation support",
       ]}
-      note="Shift-Based Awake Care vs. Live-In: Our 24-Hour Care service utilizes rotating shifts of rested, awake caregivers (typically 8-hour or 12-hour shifts) to ensure someone is alert and attentive at all hours. This is distinct from live-in care, which requires dedicated caregiver sleep periods. Archangels does not provide skilled nursing services such as injections, IV therapy, or clinical wound care."
+      differences={[
+        {
+          title: "24-Hour Shift Care vs. Live-In Care",
+          desc: "In 24-Hour Shift Care, alert caregivers rotate in 8-hour or 12-hour shifts so someone is awake and actively watching all night. In Live-In Care, a single caregiver resides in the home and sleeps 8 hours overnight. 24-Hour Care is essential for frequent nighttime waking, wandering, or high medical acuity.",
+        },
+        {
+          title: "24-Hour In-Home Care vs. Facility Placement",
+          desc: "24-Hour home care provides dedicated one-on-one attention in familiar home surroundings, whereas assisted living and memory facilities often have staffing ratios of 1 caregiver to 8–15 residents at night. Home care preserves personal routines and eliminates the trauma of relocation.",
+        },
+        {
+          title: "Non-Skilled 24-Hour Care vs. Skilled Home Health",
+          desc: "Skilled home health provides intermittent, brief visits (30–60 minutes) by visiting nurses or physical therapists ordered by a doctor. Archangels provides continuous, hands-on personal care, transferring, meals, and supervision for 24 hours a day between those medical visits.",
+        },
+      ]}
       scenario={{
-        title: "A 24-Hour Cycle of Coordinated, Attentive Support",
+        title: "A Full 24-Hour Cycle of Coordinated, Attentive Support",
         text: "At 7:00 AM, the daytime CNA arrives, receiving a verbal handoff from the overnight caregiver regarding sleep quality and 3:00 AM bathroom assistance. The daytime caregiver assists the client with a warm shower, prepares oatmeal and fruit, offers morning medication reminders, and engages him in a crossword puzzle before taking a guided garden walk. At 3:00 PM, the evening caregiver arrives, taking over dinner preparation, assisting with evening hygiene, and establishing a calm bedtime routine with soothing music. At 11:00 PM, the awake overnight caregiver begins her shift, conducting quiet safety checks every thirty minutes, assisting immediately when the client wakes to use the commode at 2:30 AM, and ensuring he returns to bed safely without a fall. The supervising RN audits the full 24-hour log each morning to ensure flawless continuity.",
       }}
       steps={[

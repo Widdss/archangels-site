@@ -43,6 +43,109 @@ export default function RespiteCarePage() {
         "Struggling to complete basic personal errands, grocery shopping, household maintenance, or professional work obligations",
         "Noticing that your own physical stamina is declining, increasing the risk of accidents or strain during transfers and personal care",
       ]}
+      careLevels={[
+        {
+          badge: "Hourly Coverage",
+          title: "Hourly Daytime Respite Blocks",
+          subtitle: "Flexible 3 to 6-hour windows for personal errands, work, and wellness",
+          description:
+            "Perfect for family caregivers who need predictable, recurring time away during the week. A trained CNA or PCA assumes all caregiving duties—personal hygiene, meals, and medication reminders—allowing you to attend appointments, run errands, exercise, or simply rest.",
+          items: [
+            "Scheduled weekly blocks starting at 3 to 4 hours per visit",
+            "Seamless continuation of midday lunch, hydration, and medication routines",
+            "Companionship, conversation, board games, and safe indoor/outdoor mobility",
+            "Handling client laundry, light housekeeping, and kitchen tidying during visits",
+            "Freedom to leave the home with total confidence and zero guilt",
+          ],
+        },
+        {
+          badge: "Overnight Coverage",
+          title: "Overnight Respite & Sleep Restoration",
+          subtitle: "Dedicated night coverage giving family caregivers uninterrupted sleep",
+          description:
+            "Designed for family caregivers who are chronically sleep-deprived due to a loved one's nighttime waking, wandering, or frequent bathroom trips. A caregiver stays through the night (10:00 PM to 6:00 AM or 8:00 PM to 8:00 AM) to handle all nocturnal needs.",
+          items: [
+            "Assisting with evening hygiene, pajamas, and comfortable bed positioning",
+            "Quiet, attentive night monitoring and immediate response to calls for help",
+            "Safe physical support for midnight commode or bathroom transfers",
+            "Managing nighttime confusion, anxiety, and sundowning reassurance",
+            "Preparing breakfast in the morning before the family caregiver awakens",
+          ],
+        },
+        {
+          badge: "Extended Coverage",
+          title: "Weekend, Travel & Multi-Day Respite",
+          subtitle: "Continuous 24-hour coverage while family travels out of town",
+          description:
+            "When you need to attend an out-of-town wedding, take a vacation, or travel for business, Archangels provides comprehensive multi-day in-home coverage. Your loved one remains safe and comfortable in their familiar home without being forced into an unfamiliar facility.",
+          items: [
+            "Continuous 24-hour coverage structured with coordinated, rested caregivers",
+            "Complete management of morning, afternoon, evening, and overnight routines",
+            "Cooking all daily meals, managing dietary needs, and handling medication prompts",
+            "Daily text and photo check-ins sent to the family while traveling",
+            "Registered Nurse on call 24/7 for complete clinical safety assurance",
+          ],
+        },
+        {
+          badge: "Urgent Coverage",
+          title: "Short-Notice & Emergency Respite Relief",
+          subtitle: "Rapid backup care when unexpected family crises arise",
+          description:
+            "When the primary family caregiver falls ill, requires unexpected surgery, or faces a sudden family emergency, our team mobilizes rapidly to evaluate the home and initiate respite coverage within 24 to 48 hours—or same-day when possible.",
+          items: [
+            "Expedited in-home RN assessment and rapid care plan authoring",
+            "Placing an experienced CNA or PCA matched to your loved one's specific needs",
+            "Temporary bridge care while the primary caregiver recovers or handles the emergency",
+            "Full continuity of medical reminders, personal hygiene, and nutrition",
+          ],
+        },
+      ]}
+      careCategories={[
+        {
+          category: "Routine Continuation & Schedule Matching",
+          description:
+            "Preserving your loved one's established daily schedule to minimize confusion and anxiety while you are away.",
+          tasks: [
+            "Following exact morning, afternoon, and bedtime wake/sleep schedules",
+            "Preparing meals according to family recipes and dietary preferences",
+            "Maintaining established television, radio, and reading habits",
+            "Using familiar, comforting phrases and communication styles",
+          ],
+        },
+        {
+          category: "Hands-On Personal Care & Dignified Hygiene",
+          description:
+            "Certified Nursing Assistants providing full physical assistance with sensitive daily self-care.",
+          tasks: [
+            "Warm shower, tub bathing, or seated sponge bath assistance",
+            "Dressing, grooming, hair brushing, and skin hydration",
+            "Discreet toileting, commode assistance, and incontinence management",
+            "Safe transfers using proper body mechanics and gait belts",
+          ],
+        },
+        {
+          category: "Nutrition, Hydration & Medication Reminders",
+          description:
+            "Ensuring your loved one stays well-nourished, hydrated, and compliant with all physician prescriptions.",
+          tasks: [
+            "Cooking fresh, wholesome meals from ingredients in your home",
+            "Serving frequent beverages to maintain optimal hydration",
+            "Prompting scheduled medication doses from pre-filled organizers",
+            "Documenting all food and medication compliance in the daily care log",
+          ],
+        },
+        {
+          category: "Family Communication & Peace of Mind",
+          description:
+            "Keeping you informed and relaxed so you can truly enjoy your break without constant worry.",
+          tasks: [
+            "Sending brief text summaries and photos of your loved one enjoying activities",
+            "Direct phone access to our care coordination team and supervising RN",
+            "Standardized shift logs documenting all care activities for your review",
+            "Clear emergency response protocols established before your departure",
+          ],
+        },
+      ]}
       included={[
         "Flexible hourly, day-shift, overnight, and extended multi-day respite coverage",
         "Seamless continuation of established daily living routines, meal preferences, and sleeping schedules",
@@ -54,6 +157,20 @@ export default function RespiteCarePage() {
         "Light household upkeep, kitchen cleanup, client laundry, and bed linen changes",
         "Overnight awake supervision or sleep-over support for seniors who experience nighttime restlessness",
         "Comprehensive Registered Nurse oversight, pre-respite safety evaluation, and structured family communication",
+      ]}
+      differences={[
+        {
+          title: "In-Home Respite vs. Short-Stay Nursing Home Respite",
+          desc: "Facility respite requires moving your loved one into an institutional setting with unfamiliar staff and high disorientation risks. In-home respite keeps your loved one in their own bed, surrounded by familiar comforts, with dedicated one-on-one attention.",
+        },
+        {
+          title: "In-Home Respite vs. Adult Day Care Centers",
+          desc: "Adult day centers operate strictly on fixed daytime hours and require transportation to and from a group facility. In-home respite provides flexible hourly, overnight, or multi-day coverage directly in your home on your exact schedule.",
+        },
+        {
+          title: "Professional Respite Care vs. Informal Friends/Neighbors",
+          desc: "Our respite caregivers are credentialed CNAs and PCAs trained in safe transfers, dementia de-escalation, and emergency protocols, backed by RN supervision and professional liability insurance.",
+        },
       ]}
       note="Family-Centered Philosophy: Respite care is designed to support the entire family. We view the primary caregiver's health and wellness as an essential component of the care equation, providing professional non-skilled support that allows you to rest without compromise."
       scenario={{

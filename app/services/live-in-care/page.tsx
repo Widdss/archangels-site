@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import ServiceDetailLayout from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Live-In Care Richmond VA | Archangels Personal Care",
+  title: "Live-In Home Care Richmond VA | Archangels Personal Care",
   description:
-    "Continuous live-in caregiver support in Richmond, Mechanicsville & Hanover County. One consistent, dedicated caregiver residing in the home under Registered Nurse supervision — an affordable alternative to rotating-shift 24-hour care. Call 804-903-8133.",
+    "Dedicated, RN-supervised live-in home care in Richmond, Mechanicsville & Hanover County — a trusted caregiver residing in the home providing daytime personal care, homemaking, meals, and nighttime peace of mind. Call 804-903-8133.",
   alternates: {
     canonical: "https://www.archangelspersonalcare.com/services/live-in-care",
   },
   openGraph: {
-    title: "Live-In Care Richmond VA | Archangels Personal Care",
+    title: "Live-In Home Care Richmond VA | Archangels Personal Care",
     description:
-      "Continuous live-in caregiver support in Richmond, Mechanicsville & Hanover County — one consistent caregiver in the home, RN-supervised.",
+      "RN-supervised live-in home care across Richmond, Mechanicsville & Hanover County — a dedicated caregiver in the home offering continuous support, meals, and companionship.",
     url: "https://www.archangelspersonalcare.com/services/live-in-care",
     siteName: "Archangels Personal Care",
     type: "website",
@@ -22,141 +22,231 @@ export default function LiveInCarePage() {
   return (
     <ServiceDetailLayout
       slug="live-in-care"
-      eyebrow="Dedicated Live-In Care"
-      title="Live-In Care in Richmond, VA"
-      intro="A dedicated, consistent caregiver residing in the home to provide daytime personal assistance, meal preparation, companionship, and overnight peace of mind — an ideal solution for seniors who value maximum continuity and sleep soundly through the night."
+      eyebrow="Live-In Home Care"
+      title="Live-In Home Care in Richmond, VA"
+      intro="Continuous, dedicated in-home support provided by a professional caregiver residing in the client's home — delivering daytime personal care, delicious home-cooked meals, light housekeeping, and nighttime security under Registered Nurse oversight."
       heroImg="https://www.archangelspersonalcare.com/images/caregiver-black-with-elderly.jpg"
-      heroAlt="Dedicated live-in caregiver enjoying a pleasant daily routine with a senior client at home"
+      heroAlt="Dedicated live-in caregiver preparing a meal and sharing conversation with an older adult"
       whoFor={[
-        "Seniors and families who place the highest value on relationship continuity, preferring one dedicated caregiver rather than multiple rotating shift workers",
-        "Aging adults who are generally stable and sleep through the night with only occasional, minor assistance needed during nocturnal hours",
-        "Households with a private, comfortable bedroom and appropriate accommodations available for a residing caregiver",
-        "Individuals living with mild-to-moderate cognitive decline who become anxious or confused when unfamiliar caregivers cycle through the home",
-        "Families seeking comprehensive daily living support, meal preparation, and companionship at a more predictable cost than full 3-shift 24-hour coverage",
-        "Older adults living alone across Richmond, Mechanicsville, and Hanover County whose families want constant daytime support and nighttime security in the house",
+        "Seniors who wish to remain in their own homes full-time but require steady daily living assistance, personal care, and the reassuring presence of a caregiver residing in the house",
+        "Aging adults living with mild-to-moderate physical frailty, arthritis, or early memory decline who sleep soundly through the night but need assistance during daytime hours",
+        "Individuals who thrive on deep personal consistency and prefer having one or two familiar, trusted caregivers rather than multiple rotating hourly workers",
+        "Families seeking comprehensive daily care, homemaking, and meal preparation at a more cost-effective daily rate than continuous 24-hour hourly shift staffing",
+        "Seniors living alone in Greater Richmond whose adult children live out of state and need total confidence that someone dependable is always there",
+        "Clients recovering from a major illness or joint replacement who need comprehensive daily support while regaining strength and independence",
       ]}
       signs={[
-        "A strong desire from the senior to form a deep, single bond with one trusted companion rather than managing various caregivers",
-        "A senior who sleeps reliably 7 to 8 hours each night but needs hands-on personal care and companionship throughout the daytime",
-        "Family members feeling overwhelmed trying to coordinate multiple short caregiver shifts, appointments, and grocery schedules",
-        "A client feeling disoriented or distressed by shift changes and new faces entering the home at different hours",
-        "The senior requiring regular help with daily meals, housekeeping, medication reminders, and transfers, plus someone present overnight for safety",
-        "A spacious home environment where a dedicated guest bedroom can easily accommodate a full-time resident caregiver",
+        "A senior expressing deep fear or anxiety about being completely alone in the house during evening hours, even if they sleep well",
+        "Difficulty managing daily living responsibilities independently, such as grocery shopping, cooking nutritious meals, managing laundry, and personal grooming",
+        "Family members worrying constantly about whether their loved one ate dinner, locked the doors, or took their evening medications",
+        "Multiple hourly caregiver visits throughout the week feeling disruptive, disjointed, or chaotic for a senior who craves routine consistency",
+        "Facing the prospect of moving to an assisted living facility when the client's strong, heartfelt wish is to remain in their family home",
+        "A living environment that can comfortably accommodate a private bedroom and regular sleep schedule for a dedicated resident caregiver",
+      ]}
+      careLevels={[
+        {
+          badge: "Arrangement 1: Primary Live-In",
+          title: "Primary Live-In Caregiver Schedule",
+          subtitle: "3 to 5 consecutive days of continuous resident support",
+          description:
+            "A dedicated primary caregiver lives in the home for 3 to 5 consecutive days per week. The caregiver assists with morning, afternoon, and evening routines, prepares three fresh meals, manages home upkeep, and sleeps in a private bedroom during an 8-hour nighttime rest period.",
+          items: [
+            "Complete daytime assistance with bathing, dressing, grooming, and transfers",
+            "Planning, shopping for, and cooking three wholesome home-cooked meals daily",
+            "Client laundry, bed linen changes, vacuuming, and kitchen sanitization",
+            "Accompaniment to local social gatherings, doctor visits, and daily walks",
+            "Dedicated private bedroom with 8 hours of uninterrupted sleep each night",
+          ],
+        },
+        {
+          badge: "Arrangement 2: Co-Live-In Team",
+          title: "Alternating Two-Caregiver Live-In Team",
+          subtitle: "7-day continuous weekly coverage shared by two trusted caregivers",
+          description:
+            "To cover all seven days of the week while keeping caregivers fully rested and energized, we pair two consistent live-in caregivers (e.g., Caregiver A works 4 days, Caregiver B works 3 days). This maintains deep familiarity while preventing caregiver fatigue.",
+          items: [
+            "Seamless 7-day coverage with only two familiar faces entering the home",
+            "Structured shift transitions ensuring unbroken dietary and medication routines",
+            "Comprehensive Registered Nurse oversight and regular in-home supervisory visits",
+            "High continuity of care that fosters deep emotional trust and friendship",
+            "Predictable, cost-effective daily rate compared to 24-hour hourly shift staffing",
+          ],
+        },
+      ]}
+      careCategories={[
+        {
+          category: "Daytime Personal Care & ADLs",
+          description:
+            "Hands-on assistance helping seniors start and finish each day feeling clean, dignified, and comfortable.",
+          tasks: [
+            "Assisting with warm showers, tub bathing, sponge baths, and hair grooming",
+            "Helping with wardrobe selection, buttoning, compression socks, and footwear",
+            "Discreet toileting support, commode assistance, and incontinence hygiene",
+            "Safe transfer support and mobility guidance with gait belts throughout the home",
+          ],
+        },
+        {
+          category: "Culinary Management & Shared Dining",
+          description:
+            "Transforming daily nutrition into wholesome, delicious, and enjoyable shared experiences.",
+          tasks: [
+            "Creating customized weekly meal plans based on favorite family recipes",
+            "Cooking fresh breakfasts, lunches, and dinners from scratch",
+            "Accommodating dietary guidelines (diabetic, low-sodium, heart-healthy, soft diets)",
+            "Sitting together at the table to share conversation during dining",
+          ],
+        },
+        {
+          category: "Homemaking, Laundry & Errand Support",
+          description:
+            "Keeping the home sparkling, fresh, safe, and organized without stress.",
+          tasks: [
+            "Washing, drying, folding, and putting away client laundry and bed linens",
+            "Wiping kitchen counters, washing dishes, and sanitizing bathroom surfaces",
+            "Driving and escorting to grocery stores, pharmacies, and dry cleaners",
+            "Keeping all hallways and living areas clear of clutter and trip hazards",
+          ],
+        },
+        {
+          category: "Nighttime Security & Sleeping Protocols",
+          description:
+            "Providing a comforting, dependable presence in the house throughout the evening and overnight hours.",
+          tasks: [
+            "Securing all exterior doors, windows, and perimeter safety before bedtime",
+            "Assisting with relaxing evening bedtime routines, tea, and tucking in",
+            "Resting in a dedicated private bedroom during the 8-hour sleep period",
+            "Providing immediate emergency presence if an unexpected incident occurs",
+          ],
+        },
       ]}
       included={[
-        "A dedicated Certified Nursing Assistant (CNA) or Personal Care Aide (PCA) residing in the home",
-        "Comprehensive daytime assistance with bathing, showering, dressing, grooming, and personal hygiene",
-        "Mobility support, steady transfer assistance, ambulation guidance, and proactive home fall prevention",
-        "Planning, grocery coordination, and freshly cooked breakfast, lunch, and dinner tailored to client preferences",
-        "Timely medication reminders according to pre-filled organizers and physician-recommended schedules",
-        "Meaningful daily companionship, conversation, shared hobbies, card games, and outdoor walking accompaniment",
-        "Light household cleaning, client laundry, bed linen upkeep, kitchen maintenance, and home organization",
-        "Overnight presence in the home, providing security and availability for occasional nocturnal assistance",
-        "Scheduled time off and rest breaks compliant with Virginia labor regulations, with coordinated backup caregiver coverage",
-        "Comprehensive Registered Nurse oversight, home suitability assessment, and ongoing care plan updates",
+        "Dedicated caregiver residing in the home on a structured multi-day live-in schedule",
+        "Full assistance with morning, afternoon, and evening personal care, bathing, and dressing",
+        "Planning, grocery shopping, and cooking three fresh, nutritious home-cooked meals daily",
+        "Light housekeeping, client laundry, bed linen changes, dishwashing, and kitchen upkeep",
+        "Safe transferring support, mobility ambulation assistance, and fall prevention monitoring",
+        "Timely medication reminders according to pre-filled organizers and hydration prompting",
+        "Meaningful companionship, engaging conversation, shared hobbies, and emotional support",
+        "Accompaniment and transportation for medical appointments, shopping, and community outings",
+        "Nighttime security and presence, ensuring the client is never alone in the home",
+        "Comprehensive Registered Nurse oversight, care plan creation, and ongoing supervisory visits",
       ]}
-      note="Virginia Labor Standards & Household Accommodations: Live-in care arrangements require compliance with Virginia labor laws and fair labor standards. Clients must provide the live-in caregiver with a private furnished bedroom, access to bathroom facilities, meals, and an uninterrupted 8-hour sleep period (with at least 5 hours of continuous rest). If a client requires frequent, awake overnight assistance throughout the night, our rotating-shift 24-Hour Care service is recommended."
+      differences={[
+        {
+          title: "Live-In Care vs. 24-Hour Rotating Shift Care",
+          desc: "In Live-In Care, a single caregiver resides in the home and sleeps 8 hours overnight in a private bedroom (best for seniors who sleep soundly). In 24-Hour Shift Care, caregivers rotate in awake shifts with someone actively awake all night (best for frequent nighttime waking or wandering).",
+        },
+        {
+          title: "Live-In Home Care vs. Assisted Living Facility Placement",
+          desc: "Live-In Care provides dedicated 1-on-1 attention in the client's cherished home, preserving lifelong routines and independence. Assisted living facilities divide staff across many residents, often resulting in long waits for assistance.",
+        },
+        {
+          title: "Live-In Agency Care vs. Direct-Hire Live-In Domestic Staff",
+          desc: "Direct hiring leaves families responsible for payroll taxes, workers' compensation insurance, background checks, and finding backup when staff is sick. Archangels handles all staffing, taxes, insurance, RN supervision, and guaranteed backup.",
+        },
+      ]}
+      note="Household Requirements for Live-In Care: Under Virginia labor and licensing standards, live-in care requires that the client provide the caregiver with a private, furnished bedroom, access to bathroom facilities, and an uninterrupted 8-hour sleep period each night (with at least 5 continuous hours of sleep)."
       scenario={{
-        title: "A Harmonious Daily Rhythm with a Dedicated Companion",
-        text: "The live-in caregiver begins her morning at 7:30 AM in a quiet Mechanicsville home. Having resided with her client for six months, she knows his morning routine by heart: hot black coffee, two scrambled eggs with toast, and his morning medication reminder placed on the table. After breakfast, she assists him with an unhurried shower and helps him put on his cardigan. In the afternoon, they work together tending tomatoes in the raised garden bed before she prepares a fresh chicken stew for dinner. In the evening, she cleans the kitchen, assists him into bed at 9:30 PM, and confirms all doors are locked. She retires to her private bedroom for an uninterrupted eight hours of sleep, resting easily knowing she is just down the hall should an occasional night need arise. Because she is there every day, she notices immediately when he has a slight cough, alerting the supervising RN that same morning.",
+        title: "A Seamless Rhythm of Daily Living at Home",
+        text: "A live-in caregiver wakes at 7:00 AM after a restful night in her private bedroom. She begins by preparing fresh coffee and blueberry oatmeal in the kitchen. At 7:45 AM, she greets her client, helps her comfortably out of bed, and assists with a warm shower, hair styling, and dressing in her favorite sweater. After a leisurely breakfast together, they review the day's plans. By mid-morning, the caregiver drives the client to her weekly hair salon appointment and stops by the grocery store to pick up fresh produce. In the afternoon, while the client rests and reads in the sunroom, the caregiver folds laundry, vacuums the living room, and prepares a homemade pot roast for dinner. They enjoy dinner together at 5:30 PM, watch an episode of Jeopardy, and complete evening personal hygiene. By 9:30 PM, the client is safely tucked into bed with her bedside lamp on, and the caregiver locks up the home and retires to her room for the night.",
       }}
       steps={[
         {
-          title: "Live-In Care Consultation",
-          desc: "Call 804-903-8133 to discuss your loved one's nighttime sleeping habits, daytime care needs, household layout, and personal lifestyle preferences.",
+          title: "Live-In Suitability Discovery",
+          desc: "Call 804-903-8133 to discuss your loved one's daily routine, sleeping patterns, household accommodations (private bedroom), and care priorities.",
         },
         {
-          title: "In-Home RN Suitability & Safety Assessment",
-          desc: "Our Registered Nurse inspects the living space (confirming private bedroom accommodations), evaluates physical and cognitive needs, and drafts a comprehensive Plan of Care.",
+          title: "In-Home RN Assessment & Home Inspection",
+          desc: "Our Registered Nurse visits the home to evaluate mobility, personal care needs, bathroom safety, caregiver sleeping quarters, and author a comprehensive Plan of Care.",
         },
         {
-          title: "Intentional Caregiver Matching",
-          desc: "Because live-in care is deeply personal, we carefully match a caregiver based on culinary skills, communication style, temperament, and shared interests.",
+          title: "Intentional Live-In Caregiver Matching",
+          desc: "Because live-in care involves sharing living space, we carefully match a CNA or PCA based on personality, lifestyle habits, culinary skills, and mutual compatibility.",
         },
         {
-          title: "Structured 2-Week Trial Period",
-          desc: "Care begins with an introductory trial period, allowing your family, your loved one, and the caregiver to establish mutual comfort, trust, and rhythm.",
+          title: "Live-In Service Commences",
+          desc: "Your matched caregiver arrives and seamlessly settles into the household rhythm, managing personal care, meals, housekeeping, and companionship with warmth and professionalism.",
         },
         {
-          title: "Ongoing RN Supervision & Respite Relief",
-          desc: "Our RN conducts regular supervisory visits and coordinates secondary backup caregivers during the live-in caregiver's scheduled days off to ensure unbroken care.",
+          title: "Ongoing RN Supervision & Schedule Coordination",
+          desc: "Our RN conducts regular in-home supervisory visits, reviews daily care logs, and manages secondary caregiver rotations to maintain unbroken weekly coverage.",
         },
       ]}
       benefits={[
         {
-          title: "Unmatched Relationship Continuity",
-          desc: "Your loved one builds a profound bond of trust with one primary caregiver, eliminating the confusion and stress of cycling through multiple shift workers.",
+          title: "Deepest Caregiver Consistency",
+          desc: "Having one or two dedicated resident caregivers creates profound trust, deep companionship, and an intuitive understanding of your loved one's daily habits.",
         },
         {
-          title: "Cost-Effective 24-Hour Presence",
-          desc: "For clients who sleep soundly through the night, live-in care provides continuous presence and daily support at a lower cost than 3-shift 24/7 care.",
+          title: "Cost-Effective Full-Time Coverage",
+          desc: "Live-in care is billed on a flat daily rate, making comprehensive around-the-clock home presence significantly more affordable than 24 individual hourly rates.",
         },
         {
-          title: "Deep Routine Familiarity",
-          desc: "A live-in caregiver understands your loved one's subtle non-verbal cues, favorite recipes, and personal habits with an intimacy that shift workers cannot match.",
+          title: "Complete Household Management",
+          desc: "In addition to personal hygiene, your live-in caregiver handles daily meal preparation, grocery shopping, laundry, and light housekeeping, keeping the home spotless.",
         },
         {
-          title: "Seamless Backup Coverage Included",
-          desc: "When your primary live-in caregiver takes scheduled time off, our agency provides a fully briefed, RN-oriented secondary caregiver so routines continue seamlessly.",
+          title: "A Viable Alternative to Facility Moving",
+          desc: "Live-in care allows seniors who might otherwise be forced into assisted living to remain comfortably, safely, and happily in their own family homes for life.",
         },
       ]}
       approach={[
-        "For many older adults, the ideal home care solution is not a rotating team of shift workers entering and leaving the house at all hours, but rather a single, dedicated, trusted professional who becomes a natural part of the household rhythm. At Archangels Personal Care LLC, our Live-In Care service is crafted specifically for families who prioritize maximum continuity, deep emotional connection, and predictable daily companionship. Having one consistent caregiver in the home creates an environment of calm security, fostering a level of trust and mutual understanding that transforms the aging-in-place experience.",
-        "Live-in care differs fundamentally from our rotating-shift 24-Hour Care model in its structure, staffing, and sleep arrangements. In a live-in arrangement, one primary Certified Nursing Assistant (CNA) or Personal Care Aide (PCA) resides in the home for consecutive days (often 3 to 5 days per week, alternating with a dedicated backup live-in caregiver). The live-in caregiver assists with morning hygiene, meal preparation, medication reminders, transfers, afternoon activities, and evening routines. At night, the caregiver sleeps in their own private bedroom, available to assist if an occasional night need arises.",
-        "Because of the residential nature of live-in care, strict compliance with Virginia Department of Health regulations and federal Department of Labor fair wage guidelines is essential. The client's home must provide the caregiver with a private, fully furnished bedroom (including a proper bed, closet/dresser, and adequate lighting), access to bathroom and kitchen facilities, and daily meals. Furthermore, the schedule must allow the caregiver an uninterrupted 8-hour sleep period (with at least 5 hours of continuous, unbroken rest) plus scheduled personal breaks during the daytime.",
-        "Caregiver matching is the most critical ingredient in a successful live-in arrangement. Because the caregiver lives inside the home, technical caregiving competence is only half the equation; lifestyle compatibility is equally vital. Our care coordination team takes immense care in matching personalities: examining cooking styles and dietary preferences, communication habits, cleanliness standards, personal temperament, and shared interests. We also initiate live-in arrangements with a structured two-week trial period to ensure that the chemistry and daily flow feel completely natural and comfortable for everyone.",
-        "Our Virginia-licensed Registered Nurse provides continuous oversight throughout the live-in relationship. The RN conducts the initial in-home assessment, authors the written Plan of Care, performs regular supervisory check-ins, and reviews daily care documentation. Importantly, the RN tracks overnight waking patterns. If a client's health changes and they begin waking three or four times every night, the RN will transparently discuss transitioning to our awake, rotating-shift 24-Hour Care model to ensure that both the client and caregiver remain safe.",
-        "To ensure our live-in caregivers remain refreshed, energetic, and fully engaged, Archangels manages a robust relief and backup system. When your primary live-in caregiver takes their scheduled days off or vacation, our agency places a dedicated secondary caregiver who has been thoroughly oriented to your loved one's specific Plan of Care. This ensures that your loved one never experiences an interruption in care or a drop in quality.",
+        "For many aging adults, the thought of leaving their longtime family home to move into an assisted living or nursing facility is a source of immense distress. Home is where memories were made, where neighbors are familiar, and where personal independence feels real. When a senior reaches a point where living alone is no longer safe due to physical frailty or mild memory changes, Live-In Home Care provides the ideal solution: continuous, one-on-one professional support delivered by a dedicated caregiver who resides in the home. At Archangels Personal Care LLC, our live-in care program allows seniors across Richmond, Mechanicsville, and Hanover County to age in place with comfort, dignity, and complete security.",
+        "Live-in care is fundamentally different from traditional hourly home care. Instead of multiple different caregivers arriving for 4 or 8-hour shifts throughout the week, live-in care is delivered by a primary caregiver who stays in the home for consecutive days (typically 3 to 5 days at a time). This arrangement fosters deep personal rapport, mutual respect, and unmatched continuity of care. The caregiver becomes an integrated, reassuring presence who intuitively understands how the client takes their tea, their favorite television programs, their morning hygiene preferences, and their subtle non-verbal cues.",
+        "A successful live-in arrangement requires careful attention to household structure and labor guidelines. Under Virginia licensing and labor regulations, a live-in caregiver must be provided with a private, furnished bedroom, adequate access to bathroom facilities, and an uninterrupted 8-hour sleep period each night (with at least 5 continuous hours of sleep). Because the caregiver sleeps through the night, live-in care is ideal for seniors who are relatively stable overnight. If a client requires frequent, active awake assistance multiple times throughout the night, our 24-Hour Rotating Shift Care service is recommended instead.",
+        "Culinary care and homemaking are prominent strengths of our live-in service. Many seniors living alone experience nutritional decline because cooking for one feels like a burden. Our live-in caregivers plan balanced weekly menus based on favorite family recipes, shop for fresh ingredients, and cook three wholesome, appetizing meals every day. Caregivers also manage all light household upkeep: washing and changing bed linens, managing client laundry, wiping down kitchen and bathroom surfaces, and keeping living spaces clean, uplifting, and free of fall hazards.",
+        "Every live-in care assignment operates under the direct clinical leadership of our Virginia-licensed Registered Nurse. Before care begins, our RN conducts an in-home assessment to evaluate physical mobility, bathroom safety, dietary guidelines, and emergency protocols. The RN authors an individualized Plan of Care, performs regular in-person supervisory visits, audits daily care logs, and coordinates closely with family members and primary physicians to ensure the highest standards of safety.",
+        "To ensure continuous seven-day-a-week coverage without caregiver burnout, we typically pair two dedicated live-in caregivers who share the weekly schedule (for example, Caregiver A works 4 days and Caregiver B works 3 days). This structured rotation ensures that your loved one is always cared for by familiar, well-rested caregivers who bring energy, enthusiasm, and warmth to every single day.",
       ]}
       faqs={[
         {
-          q: "What is the primary difference between Live-In Care and 24-Hour Shift Care?",
-          a: "Live-In Care involves a single caregiver who resides in the home, receives dedicated sleep time (8 hours per night in a private room), and provides daytime care with overnight presence for clients who sleep through the night. 24-Hour Shift Care uses rotating shifts of awake caregivers (such as three 8-hour or two 12-hour shifts) where an alert caregiver is actively monitoring the client at all times, designed for clients with frequent nighttime waking or high medical acuity.",
+          q: "What is the difference between Live-In Care and 24-Hour Shift Care?",
+          a: "In Live-In Care, a dedicated caregiver resides in the home, assists throughout the daytime and evening, and is provided a private bedroom for 8 hours of uninterrupted sleep each night. In 24-Hour Shift Care, caregivers work rotating awake shifts (such as two 12-hour shifts) so that an alert caregiver is awake and actively monitoring the client throughout the night. Live-In Care is best for seniors who sleep soundly, while 24-Hour Shift Care is essential for those who wake frequently or wander at night.",
         },
         {
           q: "What household accommodations are required for a live-in caregiver?",
-          a: "The client must provide a private, furnished bedroom with a door for privacy (including a comfortable bed, linens, and clothing storage), access to a full bathroom, and meals/food during their stay, in compliance with Virginia labor standards.",
+          a: "The client's home must provide a private, fully furnished bedroom with a bed, clean linens, and storage for personal belongings, as well as full access to a bathroom and kitchen facilities, and an environment that permits 8 hours of uninterrupted sleep each night.",
         },
         {
-          q: "What are the sleeping requirements for a live-in caregiver?",
-          a: "Under Virginia and federal labor guidelines, a live-in caregiver must be provided with an uninterrupted 8-hour sleep period, of which at least 5 hours must be continuous unbroken sleep. If a client regularly wakes multiple times per night requiring extended care, our awake 24-Hour Shift Care service is the appropriate fit.",
+          q: "How are meals handled for the live-in caregiver?",
+          a: "Typically, the live-in caregiver eats meals prepared in the home alongside the client using groceries provided by the household, or the family provides a modest food stipend. The caregiver prepares fresh, wholesome home-cooked meals for both the client and themselves.",
         },
         {
-          q: "What happens when the live-in caregiver takes days off or vacations?",
-          a: "Archangels assigns a qualified secondary backup live-in caregiver who is fully oriented to your loved one's RN Plan of Care. When your primary caregiver takes scheduled days off or time off, the backup caregiver steps in seamlessly so coverage is never interrupted.",
+          q: "How many days per week does a live-in caregiver work?",
+          a: "A single live-in caregiver typically works 3 to 5 consecutive days per week. To provide complete 7-day-a-week coverage, we assign a primary caregiver and a secondary co-caregiver who share the week, ensuring high familiarity while keeping both caregivers well-rested.",
         },
         {
-          q: "Is live-in care more cost-effective than 24-hour rotating shift care?",
-          a: "Yes. For seniors who sleep soundly through the night, live-in care is typically significantly more economical than paying for three separate 8-hour awake shifts every 24 hours, while still providing full-time daytime assistance and overnight security in the home.",
+          q: "What happens if the client wakes up during the night?",
+          a: "A live-in caregiver can assist with occasional, brief nighttime bathroom needs (up to once or twice). However, if the client wakes frequently or requires extensive awake monitoring throughout the night, the arrangement must be transitioned to 24-Hour Shift Care to comply with labor laws and ensure caregiver alertness.",
         },
         {
-          q: "Can we try live-in care on a trial basis before making a long-term decision?",
-          a: "Yes. We encourage a structured two-week trial period so that the client, family, and caregiver can ensure that personal chemistry, household routines, and sleeping patterns align comfortably before establishing an ongoing schedule.",
+          q: "How is live-in care billed compared to hourly care?",
+          a: "Live-in care is billed at a flat, predictable daily rate rather than an hourly rate. This makes live-in care significantly more cost-effective for families who need comprehensive all-day support and presence compared to paying for 16 or 24 individual hourly units.",
         },
         {
-          q: "What tasks does a live-in caregiver perform during the day?",
-          a: "The live-in caregiver assists with bathing, grooming, dressing, toileting, transfers, medication reminders, preparing breakfast, lunch, and dinner, light housekeeping, laundry, running errands, grocery shopping, and providing rich, engaging companionship.",
+          q: "What tasks are included in live-in care?",
+          a: "Live-in care includes full assistance with bathing, dressing, grooming, and toileting hygiene; planning and cooking three daily meals; light housekeeping, laundry, and bed linen changes; medication reminders; mobility assistance; transportation to appointments; and companionship.",
         },
         {
-          q: "What if my loved one's nighttime care needs increase over time?",
-          a: "Our supervising Registered Nurse monitors overnight logs closely. If your loved one's health declines and they begin waking frequently throughout the night, our RN will coordinate a smooth transition from live-in care to our awake rotating-shift 24-Hour Care model.",
+          q: "How does Archangels match a live-in caregiver with my loved one?",
+          a: "Because a live-in caregiver shares the living environment, personality compatibility is vital. We carefully evaluate cooking styles, daily habits, communication preferences, and personal interests to select a caregiver who will feel like a natural, harmonious fit in the home.",
         },
         {
-          q: "Can a live-in caregiver drive my loved one to appointments and shopping?",
-          a: "Yes. Live-in caregivers can provide transportation and accompaniment to doctor visits, community events, religious services, and grocery errands, assisting with vehicle transfers and mobility throughout the outing.",
+          q: "How does the Registered Nurse supervise live-in care?",
+          a: "Our RN conducts the initial in-home assessment, writes the Plan of Care, performs regular in-person supervisory visits, audits daily shift logs, and communicates regularly with family members and physicians to adjust care as needs change.",
         },
         {
-          q: "How does the Registered Nurse oversee a live-in care arrangement?",
-          a: "The RN conducts the initial in-home assessment, writes the personalized Plan of Care, performs regular supervisory visits to evaluate caregiver performance and client satisfaction, audits care logs, and updates the care plan as health needs change.",
+          q: "Can live-in care be arranged for temporary periods, such as after surgery?",
+          a: "Yes. Live-in care can be arranged on a short-term basis (e.g., 2 to 6 weeks) following a hospital discharge, stroke rehabilitation, or orthopedic surgery to provide intensive support while regaining independence, or as a permanent long-term living arrangement.",
         },
       ]}
       related={[
         { slug: "24-hour-care", label: "24-Hour Care" },
         { slug: "personal-care", label: "Personal Care Services" },
         { slug: "rn-supervision", label: "RN Supervision & Oversight" },
-        { slug: "companionship", label: "Companionship & Social Engagement" },
-        { slug: "respite-care", label: "Respite Care & Family Support" },
         { slug: "memory-care", label: "Alzheimer's & Memory Care" },
+        { slug: "transition-care", label: "Transition to Home Care" },
+        { slug: "companionship", label: "Companionship & Social Engagement" },
       ]}
     />
   );

@@ -2294,3 +2294,211 @@ button {
     display: none;
   }
 }
+
+/* ---------- Enhanced Editorial Service Detail Sections ---------- */
+.care-levels-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.care-level-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px 34px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.care-level-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.care-level-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.care-level-badge {
+  display: inline-block;
+  background: var(--pine-tint);
+  color: var(--pine-deep);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(91, 155, 160, 0.3);
+}
+
+.care-level-badge.accent {
+  background: var(--terracotta-tint);
+  color: #8c3b24;
+  border-color: rgba(201, 150, 42, 0.3);
+}
+
+.care-level-card h3 {
+  font-size: 22px;
+  color: var(--pine-deep);
+  margin: 0 0 4px;
+}
+
+.care-level-subtitle {
+  font-size: 14px;
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
+.care-level-desc {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.care-level-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px 20px;
+  background: var(--ivory-deep);
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+}
+
+.care-level-items li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.care-level-items li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--terracotta);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* Care Categories Breakdown */
+.care-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.care-category-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 28px 26px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.care-category-card h3 {
+  font-size: 18.5px;
+  color: var(--pine-deep);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.care-category-card h3::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  flex-shrink: 0;
+}
+
+.care-category-desc {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.care-category-tasks {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px dashed var(--line);
+  padding-top: 14px;
+}
+
+.care-category-tasks li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.care-category-tasks li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  top: -1px;
+  color: var(--gold);
+  font-size: 16px;
+}
+
+/* Differences & Comparison Section */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.comparison-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--pine);
+  border-radius: var(--radius-md);
+  padding: 24px 22px;
+  box-shadow: var(--shadow-card);
+}
+
+.comparison-card h4 {
+  font-size: 16.5px;
+  color: var(--pine-deep);
+  margin-bottom: 8px;
+}
+
+.comparison-card p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0;
+}

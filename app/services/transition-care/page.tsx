@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import ServiceDetailLayout from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Transition to Home Care Richmond VA | Post-Hospital Support",
+  title: "Transition to Home Care Richmond VA | Hospital to Home | Archangels Personal Care",
   description:
-    "Fast-start, RN-supervised post-hospital discharge and surgery recovery support in Richmond, Mechanicsville & Hanover County. Fall prevention, medication reminders & readmission reduction. Call 804-903-8133.",
+    "Safe, RN-supervised hospital-to-home and rehab discharge transition care in Richmond, Mechanicsville & Hanover County. Dedicated non-skilled support preventing readmissions, falls, and medication errors. Call 804-903-8133.",
   alternates: {
     canonical: "https://www.archangelspersonalcare.com/services/transition-care",
   },
   openGraph: {
-    title: "Transition to Home Care Richmond VA | Post-Hospital Support",
+    title: "Transition to Home Care Richmond VA | Hospital to Home | Archangels Personal Care",
     description:
-      "Fast-start, RN-supervised support for the critical days after hospital discharge or surgery in Richmond, Mechanicsville & Hanover County.",
+      "Safe, RN-supervised hospital-to-home transition care in Richmond, Mechanicsville & Hanover County, helping seniors recover and avoid hospital readmission.",
     url: "https://www.archangelspersonalcare.com/services/transition-care",
     siteName: "Archangels Personal Care",
     type: "website",
@@ -22,141 +22,256 @@ export default function TransitionCarePage() {
   return (
     <ServiceDetailLayout
       slug="transition-care"
-      eyebrow="Transition to Home Care"
+      eyebrow="Hospital-to-Home Transition Care"
       title="Transition to Home Care in Richmond, VA"
-      intro="Rapid-start, RN-supervised non-skilled support for the critical 30-day window following a hospital discharge, major surgery, or rehabilitation facility stay — helping seniors recover safely at home, regain independence, and avoid preventable hospital readmissions."
-      heroImg="https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg"
-      heroAlt="Caregiver safely assisting a client walking with a walker after hospital discharge"
+      intro="Safe, coordinated non-skilled personal care and settling-in support for seniors returning home from a hospital stay, surgery, or rehabilitation center — helping older adults recover safely, regain strength, and prevent costly hospital readmissions across Richmond, Mechanicsville, and Hanover County."
+      heroImg="https://www.archangelspersonalcare.com/images/recovery-support.jpg"
+      heroAlt="Caregiver safely assisting an older adult returning home after a hospital stay"
       whoFor={[
-        "Seniors being discharged home from VCU Health, Bon Secours, Henrico Doctors', or local rehabilitation centers who are not yet back to baseline strength",
-        "Individuals recovering from joint replacement surgery (hip, knee, shoulder), cardiac procedures, or major abdominal surgery requiring hands-on mobility help",
-        "Aging adults who experienced acute illness (such as pneumonia, sepsis, or UTI) resulting in severe physical weakness, balance loss, or fatigue",
-        "Families facing an imminent hospital discharge without a clear, safe caregiving plan established at home",
-        "Adult children who live out of town or cannot take weeks off work to provide full-time post-surgical care for an aging parent",
-        "Seniors managing multiple new prescription medications, wound care precautions, and physical therapy exercise regimens after discharge",
+        "Seniors being discharged from VCU Health, Bon Secours, Henrico Doctors', or local subacute rehab facilities who need immediate settling-in assistance at home",
+        "Older adults recovering from total joint replacement (hip or knee), spinal surgery, or general surgery requiring temporary transfer and hygiene support",
+        "Individuals recovering from pneumonia, cardiac episodes, stroke, or severe infections who experience lingering fatigue and mobility weakness",
+        "Aging adults with multiple new discharge prescriptions who need a structured non-skilled reminder system to avoid medication errors",
+        "Family members who work full-time or live out of town and cannot physically take weeks off to manage a parent's full-time post-hospital recovery",
+        "Seniors at high risk for 30-day hospital readmissions due to fall hazards, poor nutritional intake, or living alone during recovery",
       ]}
       signs={[
-        "An upcoming hospital or rehab discharge date with no family member available to assist with daytime mobility, meals, and hygiene",
-        "Severe dizziness, leg weakness, or high fall risk when attempting to stand, walk to the bathroom, or climb entrance stairs",
-        "A stack of new hospital discharge paperwork with confusing medication changes, discontinued prescriptions, and follow-up appointment schedules",
-        "An empty refrigerator, uncleaned home, and cluttered pathways that pose immediate fall hazards for a returning patient",
-        "A previous history of hospital readmissions within 30 days of discharge due to falls, medication errors, or dehydration at home",
-        "Family caregivers feeling completely overwhelmed by the sudden physical demands of post-hospital recovery care",
+        "A hospital discharge planner or doctor advising that your loved one cannot safely be left home alone during the first 2 to 4 weeks after discharge",
+        "Difficulty standing up from a bed or chair without significant physical assistance or experiencing dizziness when standing",
+        "A lengthy list of new discharge medications that differ completely from the medications taken prior to the hospital admission",
+        "Weight loss, diminished appetite, or a home that has an empty refrigerator and lack of fresh groceries following an extended hospital stay",
+        "Unopened discharge instruction packets and scheduled follow-up physician appointments with no reliable transportation or physical escort",
+        "Family caregivers feeling anxious about how to safely transfer their loved one into the shower or out of bed without causing reinjury",
+      ]}
+      careLevels={[
+        {
+          badge: "Stage 1: The First 48 Hours",
+          title: "Discharge Day & 48-Hour Home Stabilization",
+          subtitle: "Immediate home readiness, pharmacy pickup, and safe settling-in",
+          description:
+            "The first 48 hours post-discharge carry the highest risk for falls and medication confusion. Our team prepares the home before arrival, picks up discharge prescriptions, assists with vehicle transfers, and provides intensive settling-in care.",
+          items: [
+            "Home safety inspection: clearing pathways, adjusting bed height, stocking fresh food",
+            "Door-to-door transportation home from the hospital or rehabilitation center",
+            "Stopping at the pharmacy to pick up all new discharge prescription medications",
+            "Safe physical transfer from vehicle into the home and settling comfortably into bed",
+            "Preparing a comforting, easily digestible meal and encouraging initial hydration",
+          ],
+        },
+        {
+          badge: "Stage 2: Weeks 1 & 2",
+          title: "Acute Recovery & Fall Prevention",
+          subtitle: "Hands-on ADL assistance, PT exercise encouragement, and medication tracking",
+          description:
+            "During the initial two weeks of recovery, our Certified Nursing Assistants provide comprehensive hands-on personal hygiene, shower transfers with safety equipment, strict medication reminder schedules, and accompaniment to follow-up clinic visits.",
+          items: [
+            "Assisting with warm showers using shower chairs, grab bars, and non-slip mats",
+            "Helping with dressing, compression garments, and surgical site protection",
+            "Timed medication reminders aligned with hospital discharge summaries",
+            "Encouraging gentle prescribed physical therapy home exercise routines",
+            "Accompaniment and wheelchair transport to post-operative doctor appointments",
+          ],
+        },
+        {
+          badge: "Stage 3: Weeks 3 & 4",
+          title: "Step-Down to Independence & Normal Routines",
+          subtitle: "Gradual reduction of hours as physical stamina and self-reliance return",
+          description:
+            "As physical strength returns and surgical healing progresses, our Registered Nurse reassesses the client. We gradually step down care hours from intensive daily coverage to short morning or companion visits until full independence is restored.",
+          items: [
+            "Transitioning from direct physical help to standby supervisory assistance",
+            "Encouraging self-reliance with meal preparation and light mobility walks",
+            "RN reassessment validating that rehabilitation goals have been achieved",
+            "Seamless options to maintain ongoing weekly companion or housekeeping visits",
+            "Zero long-term contract lock-in: discontinue services as soon as recovery is complete",
+          ],
+        },
+      ]}
+      careCategories={[
+        {
+          category: "Pre-Discharge Coordination & Home Readiness",
+          description:
+            "Preparing the physical home environment before the client walks through the front door.",
+          tasks: [
+            "Coordinating directly with hospital case managers and social workers",
+            "Inspecting the home, turning on climate control, and stocking the pantry",
+            "Ensuring durable medical equipment (walkers, commodes, shower chairs) is in place",
+            "Arranging seamless door-to-door pickup from the discharge lounge",
+          ],
+        },
+        {
+          category: "Safe Ambulation, Transfers & Mobility Mechanics",
+          description:
+            "Preventing dangerous falls and protecting surgical incisions during every physical transition.",
+          tasks: [
+            "Safe bed-to-chair, chair-to-standing, and car transfers using gait belts",
+            "Guiding walking with standard walkers, rollators, crutches, or canes",
+            "Continuous pathway audits to remove loose rugs, clutter, and pet toys",
+            "Assisting with safe toilet and commode transfers without joint strain",
+          ],
+        },
+        {
+          category: "Medication Reminders & Discharge Alignment",
+          description:
+            "Bridging hospital discharge orders into clear, non-skilled daily routines that eliminate confusion.",
+          tasks: [
+            "Reviewing new prescription lists against pre-admission medication bottles",
+            "Prompting scheduled doses from pre-filled organizers at designated mealtimes",
+            "Tracking pain medication intervals and hydration to prevent constipation",
+            "Alerting the family and supervising RN if unexpected side effects appear",
+          ],
+        },
+        {
+          category: "Post-Surgical Healing Nutrition & Hydration",
+          description:
+            "Cooking wholesome, nutrient-dense meals that promote tissue healing and restore energy.",
+          tasks: [
+            "Preparing protein-rich, easily digestible breakfasts, lunches, and dinners",
+            "Accommodating post-surgical dietary restrictions (low-sodium, diabetic, soft)",
+            "Providing constant hydration reminders with fresh water, herbal teas, and juices",
+            "Kitchen sanitization, dishwashing, and proper refrigerated food storage",
+          ],
+        },
+        {
+          category: "Transportation to Follow-Up Doctor Appointments",
+          description:
+            "Ensuring vital post-discharge medical checkups are never missed due to transportation hurdles.",
+          tasks: [
+            "Driving and escorting to surgical follow-ups, wound checks, and primary care visits",
+            "Navigating clinic parking, elevators, waiting rooms, and check-in desks",
+            "Taking notes on follow-up physician instructions for family members",
+            "Picking up updated prescriptions on the way home",
+          ],
+        },
       ]}
       included={[
-        "Seamless coordination with hospital discharge planners, case managers, and rehabilitation social workers",
-        "Rapid onboarding and service deployment, often starting within 24 to 48 hours—or same-day for urgent discharges",
-        "Preparation of the home environment before arrival: picking up discharge prescriptions, stocking groceries, and clearing pathways",
-        "Hands-on assistance with safe bed-to-chair transfers, ambulation with walkers, and bathroom mobility support",
-        "Patient, dignity-centered personal care, including bathing, sponge baths, dressing, and personal grooming assistance",
-        "Strict non-skilled medication reminders aligned with new discharge summaries and organized pillboxes",
-        "Planning and preparation of nourishing, easy-to-digest meals tailored to post-surgical dietary restrictions and hydration needs",
-        "Safe accompaniment and transportation coordination for post-discharge follow-up doctor appointments and therapy visits",
-        "Close Registered Nurse monitoring during the high-risk 30-day recovery window, tracking functional milestones",
-        "Planned, flexible step-down of care hours as physical strength, stamina, and self-reliance return",
+        "Pre-discharge planning and coordination with hospital social workers and discharge planners",
+        "Door-to-door transportation from the facility, stopping for pharmacy prescription pickups",
+        "Immediate home readiness: stocking fresh groceries, preparing the bed, and clearing fall hazards",
+        "Hands-on personal care assistance with showering, bathing, dressing, and personal hygiene",
+        "Transfer assistance between bed, chair, and commode using proper body mechanics",
+        "Nutritious meal preparation tailored to post-surgical recovery diets and healing hydration",
+        "Medication reminders on a strict schedule synchronized with hospital discharge orders",
+        "Reinforcing non-clinical physical therapy home exercise routines ordered by your therapist",
+        "Accompaniment and transportation to post-discharge medical and follow-up appointments",
+        "Comprehensive Registered Nurse oversight, in-home safety evaluation, and care plan updates",
       ]}
-      note="Regulatory Scope & Clinical Demarcation: Transition to Home Care provided by Archangels Personal Care LLC is non-skilled personal care, mobility assistance, and homemaking under RN supervision. We do not provide skilled clinical home health nursing, sterile surgical wound care, physical therapy, or medication administration. We collaborate closely alongside your home health agency and physical therapists."
+      differences={[
+        {
+          title: "Transitional Home Care vs. Skilled Home Health Services",
+          desc: "Skilled home health provides brief clinical visits (30–60 minutes) for wound dressing changes, physical therapy, or injections. Archangels provides continuous non-skilled personal care, transfers, meal prep, and supervision for 4 to 24 hours a day between those clinical visits.",
+        },
+        {
+          title: "In-Home Transition Care vs. Subacute Rehab Facilities",
+          desc: "Subacute rehab facilities involve communal institutional living with high overhead costs. In-home transition care allows individuals to recover faster, sleep better, and avoid facility-acquired infections in their own familiar beds.",
+        },
+        {
+          title: "Professional Caregivers vs. Family Medical Leave",
+          desc: "Taking weeks of unpaid time off work to lift, bathe, and monitor a recovering parent creates severe financial and emotional strain. Our caregivers handle the physical labor, allowing family members to support their loved one without career interruption.",
+        },
+      ]}
+      note="Non-Skilled Recovery Scope: Archangels Personal Care LLC provides non-skilled personal care, mobility support, and settling-in assistance. We do not provide skilled physical therapy, occupational therapy, sterile wound dressing changes, or clinical medication administration."
       scenario={{
-        title: "The First 48 Hours Home from Hip Replacement Surgery",
-        text: "At 1:30 PM, an Archangels caregiver arrives at a client's home in Richmond two hours before the client is discharged from the hospital following a partial hip replacement. The caregiver immediately prepares the recovery space: placing non-slip mats in the bathroom, clearing throw rugs from the hallway, picking up new pain and antibiotic prescriptions from the pharmacy, and stocking the refrigerator with fresh soups and fruits. When the client arrives home by medical transport, the caregiver greets him with steady transfer assistance, helping him settle into his lift recliner with proper leg elevation. Over the next forty-eight hours, she assists him with sponge bathing, prepares high-protein meals, prompts his scheduled medication reminders, and encourages him to practice his prescribed physical therapy ankle pumps and walking drills. The supervising RN visits on day three, confirming that recovery is progressing smoothly without any complications.",
+        title: "From Hospital Discharge to Settled Comfort at Home",
+        text: "Following a three-day hospital stay for hip replacement surgery, a senior is discharged on a Thursday afternoon. An Archangels caregiver meets the client and her daughter at the hospital discharge area, assists the client into the vehicle, and drives directly to the local pharmacy to pick up her new post-operative prescriptions. Upon arriving at the Mechanicsville home, the caregiver assists the client inside with steadying walker support, settles her into a comfortable recliner with supportive pillows, and brings a warm cup of herbal tea. The caregiver prepares a light, protein-rich chicken soup, reviews the pre-filled medication organizer for evening doses, and ensures that the walker pathway to the bathroom is completely clear of rugs and cords. Over the next two weeks, the caregiver provides daily morning personal care and transportation to physical therapy, helping the client regain independence safely without a hospital readmission.",
       }}
       steps={[
         {
-          title: "Pre-Discharge Intake Call",
-          desc: "Call 804-903-8133 as soon as a discharge date is anticipated. We gather key details on the medical procedure, mobility restrictions, and discharge timing.",
+          title: "Pre-Discharge Intake Consultation",
+          desc: "Call 804-903-8133 while your loved one is still in the hospital or rehab. We coordinate with discharge planners, discuss timelines, and map out immediate settling-in needs.",
         },
         {
-          title: "RN Discharge Plan Review",
-          desc: "Our Registered Nurse coordinates with hospital case managers or reviews discharge summaries to author an individualized transitional Plan of Care.",
+          title: "In-Home RN Safety & Assessment Visit",
+          desc: "Our Registered Nurse meets the client at home upon discharge (or prior to arrival) to evaluate mobility, bathroom safety, medication schedules, and author the Plan of Care.",
         },
         {
-          title: "Home Readiness & Prescription Pickup",
-          desc: "We ensure the home environment is safe and stocked before arrival, including clearing pathways, picking up discharge medications, and setting up recovery areas.",
+          title: "Caregiver Matched for Recovery Needs",
+          desc: "We assign an experienced CNA or PCA skilled in transfer mechanics, post-surgical precautions, and patient encouragement to support daily recovery.",
         },
         {
-          title: "Day-of-Discharge Arrival Support",
-          desc: "Your matched CNA or PCA is on site the moment your loved one arrives home, providing safe transfer help, settling them comfortably, and preparing their first meal.",
+          title: "Intensive Early Recovery Support",
+          desc: "Care begins immediately on discharge day, providing intensive assistance with transfers, personal hygiene, meals, medication prompts, and appointment escorts.",
         },
         {
-          title: "Structured Recovery & Step-Down",
-          desc: "Our RN conducts frequent check-ins during the critical first month, gradually scaling down hours as strength, mobility, and confidence are restored.",
+          title: "Gradual Step-Down as Strength Returns",
+          desc: "As physical therapy progresses and self-reliance is restored, our RN reassesses and scales down care hours smoothly until our assistance is no longer needed.",
         },
       ]}
       benefits={[
         {
-          title: "Dramatically Reduces Readmission Risks",
-          desc: "By providing dedicated support for mobility, hydration, nutrition, and medication compliance, we prevent the primary causes of 30-day hospital readmissions.",
+          title: "Proactively Preventing Readmissions",
+          desc: "The majority of 30-day post-hospital readmissions are caused by falls, missed medications, and poor nutrition—the exact risks our transition care eliminates.",
         },
         {
-          title: "Rapid Deployment for Sudden Discharges",
-          desc: "Hospital discharges often happen with short notice; our care team is structured to mobilize and start care within 24 to 48 hours—or same-day when needed.",
+          title: "Immediate Readiness on Discharge Day",
+          desc: "We coordinate with hospital social workers to ensure home readiness, pharmacy pickups, and settling-in support are seamlessly in place the moment you arrive.",
         },
         {
-          title: "Seamless Collaboration with Home Health",
-          desc: "We coordinate with visiting home health nurses and physical therapists, reinforcing non-clinical exercise routines and safety precautions between clinical visits.",
+          title: "Safe, Confident Transfer Mechanics",
+          desc: "Our trained caregivers protect healing surgical incisions and weight-bearing joints using proper body mechanics, gait belts, and bathroom safety equipment.",
         },
         {
-          title: "A Bridge to Independence with No Lock-In",
-          desc: "Our transitional care is designed as a temporary bridge; we celebrate recovery milestones and scale down care hours as your loved one regains independence.",
+          title: "Completely Flexible Recovery Timelines",
+          desc: "Start with full-time or daily care for the first two weeks post-surgery and step down to a few hours a week as strength improves, with no rigid long-term lock-in.",
         },
       ]}
       approach={[
-        "The first thirty days following a discharge from a hospital, rehabilitation center, or surgical facility represent the most vulnerable window in a senior's recovery journey. National healthcare data indicates that nearly one in five seniors discharged from a hospital experiences a readmission within thirty days. These setbacks rarely happen because of the original medical condition; they occur because of preventable home complications: falling while trying to reach the bathroom alone, confusion over newly altered prescription regimens, severe dehydration, or lack of nutrition during acute weakness. At Archangels Personal Care LLC, our Transition to Home Care service is engineered specifically to eliminate these hazards and ensure a safe, smooth recovery at home.",
-        "A successful transition begins before the patient ever walks through their front door. Whenever possible, our care coordination team collaborates directly with hospital discharge planners, case managers, and rehabilitation social workers across the Richmond metropolitan area. Our Registered Nurse reviews discharge instructions, weight-bearing limitations, transfer precautions, and dietary recommendations. We can coordinate picking up newly prescribed medications from the hospital pharmacy, grocery shopping for wholesome recovery foods, and ensuring the home is clean, warm, and free of floor hazards prior to the client's arrival.",
-        "The first 48 hours at home require focused, vigilant support. When a senior arrives home post-surgery, they are often disoriented, exhausted, and in pain. Our Certified Nursing Assistants (CNAs) and Personal Care Aides (PCAs) provide confident, steady assistance with vehicle-to-home transfers, positioning in bed or recliners with proper limb support, and managing immediate personal hygiene needs. Having an experienced caregiver present eliminates the panic and physical strain that family members often face during day-one transitions.",
-        "Medication management oversight is critical during post-hospital recovery. Discharges almost always involve significant changes to an individual's medication regimen: previous medications may be paused, new antibiotics or blood thinners introduced, and pain management schedules established. Our supervising RN reviews the new discharge medication summary, helps the family organize pre-filled pillboxes, and establishes strict non-skilled reminder protocols for our caregivers. Caregivers prompt the client to take doses at exact intervals, log compliance, and track adequate fluid intake.",
-        "Under our Registered Nurse supervision framework, transitional care plans receive intense clinical monitoring. Our RN visits the home during the initial recovery week to evaluate mobility gains, monitor surgical site dressing appearance (reporting any visible drainage changes to the family and clinical home health team), check for ankle swelling or shortness of breath, and review daily caregiver logs. If any subtle warning signs arise, our RN contacts the family and primary physician immediately, allowing minor issues to be treated before an emergency room visit becomes necessary.",
-        "Transitional care is fundamentally designed as a bridge toward independence. Unlike permanent custodial care, the goal of post-hospital recovery support is to help the client regain their baseline strength and self-sufficiency. As physical therapy progresses and the client begins walking independently and managing personal hygiene, our RN collaborates with the family to gradually step down care hours—transitioning from full 12-hour or 24-hour coverage down to a few morning hours, and eventually concluding services when full independence is achieved.",
+        "The transition from a hospital or subacute rehabilitation facility back to the home is one of the most vulnerable periods in an older adult's healthcare journey. Studies consistently show that nearly one in five seniors discharged from a hospital is readmitted within 30 days. The primary drivers of these readmissions are rarely medical treatment failures; instead, they are preventable home-based complications: dangerous falls during unassisted bathroom trips, confusion regarding multiple new discharge medications, severe dehydration and poor nutrition, and missed follow-up appointments. At Archangels Personal Care LLC, our Transition to Home Care program is specifically engineered to bridge the gap between hospital discharge and full home independence.",
+        "Our transition support begins before your loved one even leaves the facility. Our care coordination team connects with hospital discharge planners, social workers, or case managers at facilities like VCU Health, Bon Secours, Henrico Doctors', or Sheltering Arms. We review the anticipated discharge summary, verify transportation logistics, and ensure that durable medical equipment (such as standard walkers, commodes, or shower chairs) will be in place before the client arrives home.",
+        "Discharge day requires immediate, hands-on attention. Our caregiver can meet your family at the hospital, assist with vehicle transfers, drive to the local pharmacy to pick up all newly prescribed medications, and escort your loved one safely into the home. Once inside, the caregiver helps them settle comfortably into bed or a supportive recliner, prepares a fresh, comforting meal, checks room temperature, and establishes a calm, healing environment. The caregiver inspects the home immediately, removing throw rugs, electrical cords, or clutter that could cause a devastating post-surgical fall.",
+        "Medication management reconciliation is a vital element of safe transitions. When seniors return home, they often have a dozen new prescription bottles from the hospital that conflict with old medications sitting in their medicine cabinets. Under Registered Nurse oversight, our RN inspects pre-filled organizers against the official hospital discharge summary, helps families clear out discontinued medications, and establishes a structured non-skilled medication reminder schedule so that every dose of antibiotics, blood thinners, or pain medications is prompted at the correct time.",
+        "During the first two to three weeks of acute recovery, our Certified Nursing Assistants (CNAs) and Personal Care Aides (PCAs) provide the physical muscle and encouragement needed for safe healing. We assist with warm showers using shower chairs and grab bars, dress clients in loose-fitting clothing that protects surgical incisions, prepare wholesome protein-rich meals that accelerate tissue repair, and assist with safe transfers between beds and chairs using gait belts. We also provide safe door-to-door transportation to post-operative doctor visits, ensuring your loved one never misses a crucial follow-up checkup.",
+        "Transition care is designed to be temporary, flexible, and adaptive. As your loved one works with visiting physical and occupational therapists and regains mobility, our supervising RN regularly re-evaluates their capabilities. In collaboration with the family, we gradually step down care hours—for example, transitioning from 8 hours a day down to 4 hours a day, and eventually to occasional companion check-ins—ensuring your family only pays for the exact level of support needed as independence is successfully restored.",
       ]}
       faqs={[
         {
-          q: "How quickly can transition home care start after a hospital discharge?",
-          a: "We specialize in rapid-response care. In many cases, we can complete an RN assessment and mobilize a caregiver within 24 to 48 hours of your call. If you contact us a day or two before the scheduled discharge date, our caregiver can be waiting at the house the exact moment your loved one arrives home.",
+          q: "Why is the first 30 days post-hospital discharge so critical?",
+          a: "The first 30 days carry the highest risk for falls, medication mix-ups, surgical wound complications, and emergency room readmissions due to physical weakness and altered medication regimens. Professional in-home transition care provides hands-on transfer assistance, meal prep, and medication reminders that mitigate these risks and support complete recovery.",
         },
         {
-          q: "Do you coordinate directly with hospital discharge planners and social workers?",
-          a: "Yes. With your authorization, our care coordinators and RN communicate directly with case managers, discharge planners, and social workers at VCU Health, Bon Secours, Henrico Doctors', and local rehab centers to align on timing, transfer precautions, and discharge instructions.",
+          q: "Can Archangels pick up my loved one directly from the hospital on discharge day?",
+          a: "Yes. Our caregivers can meet your family at the hospital discharge lounge, assist with vehicle transfers, stop at the pharmacy to pick up discharge prescriptions, and escort your loved one safely into the home to settle in comfortably.",
         },
         {
-          q: "Do you provide clinical wound care or physical therapy after surgery?",
-          a: "No. Archangels provides non-skilled personal care, mobility transfers, fall prevention, meal prep, and medication reminders under RN oversight. Clinical wound care, physical therapy, and skilled nursing are provided by a home health agency ordered by your physician. We work alongside your home health team seamlessly.",
+          q: "How does Archangels transition care work alongside visiting home health nurses?",
+          a: "Visiting home health nurses and physical therapists typically visit for only 30 to 60 minutes a few times a week for clinical tasks. Archangels provides non-skilled personal care, transferring, meals, hydration, and companionship for 4 to 24 hours a day, filling the crucial hours between home health visits.",
         },
         {
-          q: "Can caregivers pick up prescriptions from the pharmacy on discharge day?",
-          a: "Yes. Our caregivers can pick up newly prescribed discharge medications, medical supplies, and groceries to ensure the home is completely stocked and prepared when the client arrives from the hospital.",
+          q: "Can you help sort out new discharge medications from old medications?",
+          a: "Yes. Under Registered Nurse oversight, our RN reviews pre-filled organizers against official hospital discharge summaries, helping families identify discontinued medications and establishing clear, structured reminder schedules for caregivers to prompt doses at designated times.",
         },
         {
-          q: "How long does transitional post-hospital care typically last?",
-          a: "Transitional care durations vary based on the surgery or illness. Many families utilize intensive care for the first 2 to 4 weeks of acute recovery, gradually reducing hours as the client regains mobility and strength. You are never locked into an ongoing contract.",
+          q: "What if my loved one only needs transition care for two or three weeks?",
+          a: "That is completely fine. Transition care is designed to be short-term and flexible. You can utilize our services for two weeks, four weeks, or however long recovery takes. There are no long-term contracts locking you into unwanted care once full independence is regained.",
         },
         {
-          q: "What if my loved one needs around-the-clock 24-hour care for the first few days home?",
-          a: "We can easily structure continuous 24-hour awake shift coverage for the initial 3 to 7 days post-surgery, transitioning down to daytime or hourly visits as recovery stabilizes.",
+          q: "How quickly can transition care be arranged if discharge happens sooner than expected?",
+          a: "We specialize in rapid-response hospital transitions. In many cases, we can complete an RN intake assessment and place a qualified caregiver within 24 hours—and often same-day—across the Greater Richmond metropolitan area.",
         },
         {
-          q: "How do caregivers help prevent falls during post-surgical recovery?",
-          a: "Caregivers utilize gait belts, clear throw rugs and obstacles, provide steady hands-on support during all walking and standing transfers, assist with shower benches, and ensure the client does not attempt to walk alone while dizzy or under the influence of pain medications.",
+          q: "Can caregivers drive my loved one to post-operative follow-up appointments?",
+          a: "Yes. Caregivers provide safe door-to-door transportation and physical accompaniment to surgeon follow-ups, wound clinics, and physical therapy sessions, assisting with walkers, wheelchairs, and waiting room check-ins.",
         },
         {
-          q: "Can caregivers assist with non-clinical physical therapy home exercises?",
-          a: "Yes. Caregivers can encourage and accompany clients through gentle non-clinical exercise routines (such as walking laps in the hallway or practicing range-of-motion stretches) prescribed by their licensed physical therapist.",
+          q: "What tasks can caregivers assist with during joint replacement (hip/knee) recovery?",
+          a: "For joint replacement recovery, caregivers assist with safe shower bench transfers, dressing (including putting on compression stockings with adaptive devices), meal preparation, icing joint schedules, keeping pathways clear, and encouraging prescribed physical therapy home walking drills.",
         },
         {
-          q: "What happens if a complication or fever develops after discharge?",
-          a: "Our caregivers are trained to monitor and document changes from baseline. If a client develops a fever, increased swelling, or unusual pain, the caregiver immediately alerts our supervising RN and the family, who can then contact the surgeon or home health nurse for guidance.",
+          q: "How does the Registered Nurse oversee transition care?",
+          a: "Our RN conducts the in-home assessment upon discharge, creates the written Plan of Care based on hospital discharge instructions, supervises assigned caregivers, performs regular supervisory check-ins, and adjusts care hours as recovery progresses.",
         },
         {
-          q: "Is post-hospital transitional home care covered by Medicare?",
-          a: "Medicare covers intermittent skilled home health visits (physical therapy and skilled nurse check-ins) but does not cover non-skilled personal care, continuous transfer assistance, or homemaking. Our transitional care is paid privately or through Long-Term Care Insurance.",
+          q: "Is transition to home care covered by Medicare or standard medical insurance?",
+          a: "Non-skilled in-home transition care (personal care, meal prep, companion support) is typically paid privately or through Long-Term Care Insurance policies. Medicare covers intermittent skilled home health visits (physical therapy, skilled nursing) but does not cover non-skilled custodial caregivers.",
         },
       ]}
       related={[
         { slug: "personal-care", label: "Personal Care Services" },
-        { slug: "24-hour-care", label: "24-Hour Care" },
         { slug: "rn-supervision", label: "RN Supervision & Oversight" },
+        { slug: "24-hour-care", label: "24-Hour Care" },
         { slug: "respite-care", label: "Respite Care & Family Support" },
         { slug: "live-in-care", label: "Live-In Care" },
-        { slug: "parkinsons-care", label: "Parkinson's Care Support" },
+        { slug: "palliative-care", label: "Palliative Care Support" },
       ]}
     />
   );

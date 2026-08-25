@@ -43,19 +43,133 @@ export default function ParkinsonsCarePage() {
         "Dressing and morning grooming taking upwards of an hour, leaving the individual physically drained and exhausted before the day has begun",
         "Family members feeling anxious leaving their loved one home alone due to unpredictable motor fluctuations and sudden mobility loss",
       ]}
-      included={[
-        "Unhurried, patient assistance with morning and evening dressing, grooming, bathing, and personal hygiene",
-        "Adaptive dressing assistance, managing buttons, zippers, velcro fasteners, compression socks, and adaptive footwear",
-        "Carefully timed medication reminders aligned with strict neurological schedules to optimize motor 'on' periods",
-        "Mobility ambulation support, transfer assistance, and cueing techniques to navigate gait freezing episodes safely",
-        "Proactive fall-risk mitigation, pathway clearing, and bathroom transfer support using proper body mechanics",
-        "Meal preparation, cutting food into manageable portions, and assisting with adaptive weighted utensils and cups",
-        "Encouraging daily gentle stretching routines and non-clinical home exercise recommendations provided by physical therapists",
-        "Accompaniment and safe transportation to neurology visits, movement disorder clinics, and physical therapy sessions",
-        "Light household cleaning, client laundry, bed linen changes, and keeping walkways clear of clutter and trip hazards",
-        "Vital respite care for primary family caregivers, providing trusted coverage to prevent burnout and physical exhaustion",
+      careLevels={[
+        {
+          badge: "Stage 1: Mild / Early",
+          title: "Early-Stage Parkinson's Mobility & Routine Support",
+          subtitle: "Pacing daily living tasks, tremor adaptation, and medication adherence",
+          description:
+            "During early Parkinson's, individuals remain largely independent but benefit from unhurried assistance with fine motor tasks (buttons, zippers, handwriting), precisely timed medication reminders, and companionship during daily walking exercises.",
+          items: [
+            "Paced assistance with morning hygiene and grooming without rushing",
+            "Utilizing adaptive buttonhooks, velcro closures, and zipper pulls",
+            "Strictly timed medication reminders aligned with neurological schedules",
+            "Accompaniment on gentle daily neighborhood walks to maintain stride length",
+            "Nutritious breakfast and meal preparation supporting digestive regularity",
+          ],
+        },
+        {
+          badge: "Stage 2: Fluctuating / Mid",
+          title: "Mid-Stage Parkinson's & 'On/Off' Cycle Management",
+          subtitle: "Hands-on transfer assistance, freezing cueing, and fall prevention",
+          description:
+            "As motor fluctuations become more pronounced, mobility shifts dramatically between medication doses. Caregivers provide steady transfer assistance during 'off' periods, visual/verbal cueing to overcome freezing episodes, and full shower support.",
+          items: [
+            "Synchronizing challenging daily activities during peak 'on' medication windows",
+            "Safe transfer support using gait belts between beds, recliners, and commodes",
+            "Visual and auditory rhythmic cueing techniques to overcome gait freezing",
+            "Hands-on shower assistance utilizing shower benches and grab bars",
+            "Adaptive dining assistance using weighted utensils, non-spill cups, and soft textures",
+            "Essential respite care giving family caregivers physical relief from transfer strain",
+          ],
+        },
+        {
+          badge: "Stage 3: Advanced / Complex",
+          title: "Advanced Parkinson's & Comprehensive Daily Care",
+          subtitle: "Total physical assistance, wheelchair mobility, and 24/7 supervision",
+          description:
+            "In advanced Parkinson's, severe muscle rigidity, postural instability, and cognitive slowing require comprehensive hands-on support. Caregivers provide total physical hygiene, wheelchair transfer support, pureed diet assistance, and overnight vigilance.",
+          items: [
+            "Complete physical bed sponge bathing, gentle grooming, and skin breakdown prevention",
+            "Frequent body repositioning in bed or specialized recliners to ease stiffness",
+            "Patient dining and hydration pacing with swallow-safe food preparations",
+            "Safe wheelchair ambulation and door-to-door transportation to neurology clinics",
+            "Continuous 24-Hour awake shift rotation for round-the-clock home safety",
+          ],
+        },
       ]}
-      note="Regulatory Scope & Clinical Alignment: Archangels Personal Care LLC provides non-skilled personal care, mobility assistance, and daily living support under Registered Nurse oversight. We do not provide skilled physical therapy, occupational therapy, speech therapy, or clinical medication administration. Our caregivers work alongside your medical providers to support established therapy goals at home."
+      careCategories={[
+        {
+          category: "Motor Fluctuation & Medication Timing Pacing",
+          description:
+            "Structuring daily living activities around dopamine replacement medication cycles to maximize ease of movement.",
+          tasks: [
+            "Prompting exact medication dosing intervals to prevent motor 'off' slumps",
+            "Scheduling bathing, dressing, and mobility walks during peak 'on' hours",
+            "Allowing thirty minutes post-medication for muscle stiffness to ease before transfers",
+            "Documenting daily motor response patterns for the supervising RN and neurologist",
+          ],
+        },
+        {
+          category: "Tremor-Adapted Personal Care & Dressing",
+          description:
+            "Providing patient, dignified assistance with tasks hindered by resting tremors and fine motor stiffness.",
+          tasks: [
+            "Assisting with upper and lower body clothing, compression socks, and footwear",
+            "Utilizing adaptive dressing aids like buttonhooks, zipper pulls, and elastic laces",
+            "Providing steadying support for toothbrushing, electric shaving, and hair grooming",
+            "Maintaining an unhurried, calming demeanor that prevents tremor exacerbation",
+          ],
+        },
+        {
+          category: "Gait Freezing Mitigation & Safe Transfers",
+          description:
+            "Utilizing evidence-based movement strategies to break freezing episodes and prevent catastrophic falls.",
+          tasks: [
+            "Guiding wide, arcing turns instead of pivoting to prevent balance loss",
+            "Using rhythmic verbal counting ('one-two-one-two') to initiate walking rhythm",
+            "Placing visual cues on floors across doorways and thresholds to prompt stepping",
+            "Employing two-point gait belt transfer techniques for chair and commode transitions",
+          ],
+        },
+        {
+          category: "Dining Assistance & Adaptive Utensils",
+          description:
+            "Making mealtime safe, dignified, and enjoyable despite tremors and chewing/swallowing fatigue.",
+          tasks: [
+            "Preparing foods in manageable, bite-sized pieces or soft textures",
+            "Setting the table with weighted utensils, non-slip placemats, and ergonomic cups",
+            "Encouraging slow, deliberate swallowing and upright posture during meals",
+            "Tracking daily hydration and fiber intake to support healthy digestion",
+          ],
+        },
+        {
+          category: "Therapy Exercise Reinforcement (LSVT BIG & LOUD)",
+          description:
+            "Reinforcing non-clinical movement and vocal exercises prescribed by your physical and speech therapists.",
+          tasks: [
+            "Encouraging daily large-amplitude movement practice (BIG arm swings and high steps)",
+            "Promoting vocal volume exercises during conversation and reading aloud",
+            "Assisting with safe indoor walking drills in clutter-free hallways",
+            "Logging physical activity milestones in the daily care log",
+          ],
+        },
+      ]}
+      included={[
+        "Fall-risk-aware mobility & transfer assistance",
+        "Dressing and grooming assistance adapted for tremors",
+        "Medication reminders on a consistent schedule",
+        "Meal preparation & feeding assistance",
+        "Exercise and walk companionship",
+        "Safety-focused home assistance",
+        "Transportation & appointment escorts",
+        "Respite for family caregivers",
+      ]}
+      differences={[
+        {
+          title: "Specialized Parkinson's Care vs. General Home Care",
+          desc: "General caregivers may inadvertently rush seniors or pull during transfers. Our Parkinson's caregivers are trained in tremor adaptation, freezing cueing techniques, and synchronization with dopamine medication schedules.",
+        },
+        {
+          title: "Non-Skilled Parkinson's Care vs. Physical/Occupational Therapy",
+          desc: "Physical and occupational therapists provide clinical rehabilitation evaluations and design exercise regimens. Archangels provides daily hands-on personal care, transferring, and routine reinforcement between therapy sessions.",
+        },
+        {
+          title: "In-Home Parkinson's Support vs. Facility Placement",
+          desc: "Parkinson's symptoms fluctuate hourly and thrive on custom one-on-one timing. In-home care ensures your loved one receives personalized assistance on their exact timeline rather than waiting on communal facility staffing.",
+        },
+      ]}
+      note="Service scope: care is non-skilled and non-clinical. We do not provide physical therapy, occupational therapy, or medication administration — we coordinate around any care your neurologist or therapy team has ordered."
       scenario={{
         title: "A Morning Visit Paced Around Parkinson's Rhythms",
         text: "A caregiver arrives at 7:30 AM, knowing that mornings require patience due to overnight muscle stiffness. She begins by offering a warm glass of water and reminding the client to take his morning dose of carbidopa/levodopa, which was pre-filled in his organizer. Rather than rushing him out of bed, she gives the medication thirty minutes to take effect while tidying the bedroom and warming towels in the bathroom. When his motor function improves, she assists him with a safe shower, using a shower chair and grab bars. For dressing, she allows him to button his shirt using an adaptive buttonhook, providing steadying support without taking over the task. In the kitchen, she serves scrambled eggs and oatmeal with weighted utensils that dampen hand tremors. When they practice a short walk to the sunroom, she uses rhythmic vocal cues to guide him smoothly through the doorway, completely avoiding a freezing episode.",
