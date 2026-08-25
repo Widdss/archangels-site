@@ -91,7 +91,7 @@ export default function CareNowPage() {
 
             <div className="split-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://www.archangelspersonalcare.com/images/caregiver-black-with-elderly.jpg" alt="Certified nursing assistant providing dignified personal care to client at home" />
+              <img src="/images/caregiver-black-with-elderly.jpg" alt="Certified nursing assistant providing dignified personal care to client at home" />
             </div>
           </div>
         </div>

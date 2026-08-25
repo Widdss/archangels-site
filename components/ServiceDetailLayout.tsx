@@ -27,11 +27,19 @@ export type CareDifference = {
 const SITE_URL = "https://www.archangelspersonalcare.com";
 
 const DEFAULT_STAGGERED_IMAGES = [
-  "https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg",
-  "https://www.archangelspersonalcare.com/images/caregiver-black-with-elderly.jpg",
-  "https://www.archangelspersonalcare.com/images/quality-of-life.jpg",
-  "https://www.archangelspersonalcare.com/images/recovery-support.jpg",
+  "/images/nurse-with-patient.jpg",
+  "/images/caregiver-black-with-elderly.jpg",
+  "/images/quality-of-life.jpg",
+  "/images/recovery-support.jpg",
 ];
+
+const normalizeImg = (src?: string) => {
+  if (!src) return "/images/nurse-with-patient.jpg";
+  if (src.startsWith("https://www.archangelspersonalcare.com/")) {
+    return src.replace("https://www.archangelspersonalcare.com", "");
+  }
+  return src;
+};
 
 export default function ServiceDetailLayout({
   slug,
@@ -130,7 +138,7 @@ export default function ServiceDetailLayout({
 
       {/* HERO */}
       <section className="care-hero">
-        <div className="care-hero-photo" style={{ backgroundImage: `url(${heroImg})` }} />
+        <div className="care-hero-photo" style={{ backgroundImage: `url(${normalizeImg(heroImg)})` }} />
         <div className="wrap">
           <span className="eyebrow" style={{ color: "#f0c968", justifyContent: "center" }}>{eyebrow}</span>
           <h1>{title}</h1>
@@ -155,7 +163,7 @@ export default function ServiceDetailLayout({
           </div>
           <div className="split-photo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={heroImg} alt={heroAlt} />
+            <img src={normalizeImg(heroImg)} alt={heroAlt} />
           </div>
         </div>
       </section>
@@ -193,7 +201,7 @@ export default function ServiceDetailLayout({
             <div className="staggered-care-container">
               {careLevels.map((lvl, index) => {
                 const isEven = index % 2 === 1;
-                const rowImg = lvl.image || DEFAULT_STAGGERED_IMAGES[index % DEFAULT_STAGGERED_IMAGES.length];
+                const rowImg = normalizeImg(lvl.image || DEFAULT_STAGGERED_IMAGES[index % DEFAULT_STAGGERED_IMAGES.length]);
 
                 return (
                   <div className={`staggered-row ${isEven ? "reverse" : ""} reveal`} key={lvl.title}>

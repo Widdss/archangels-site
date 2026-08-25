@@ -363,7 +363,7 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="split-photo" style={{ maxWidth: 900, margin: "0 auto" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg" alt="Registered nurse providing RN-supervised home care services in Richmond VA" />
+            <img src="/images/nurse-with-patient.jpg" alt="Registered nurse providing RN-supervised home care services in Richmond VA" />
           </div>
         </div>
       </section>

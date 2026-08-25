@@ -11,7 +11,7 @@ export default function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="logo-mark-footer"
-                src="https://www.archangelspersonalcare.com/logo.png"
+                src="/logo.png"
                 alt="Archangels Personal Care logo"
               />
               <strong style={{ color: "#faf6ee", fontFamily: "var(--font-display)", fontSize: 17 }}>

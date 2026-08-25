@@ -25,7 +25,7 @@ export default function MemoryCarePage() {
       eyebrow="Alzheimer's & Dementia Memory Care"
       title="Alzheimer's & Memory Care in Richmond, VA"
       intro="Compassionate, specialized non-skilled home care for individuals living with Alzheimer's disease, vascular dementia, Lewy body dementia, and related cognitive conditions — delivering patient, dignified daily living support under experienced Registered Nurse supervision."
-      heroImg="https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg"
+      heroImg="/images/nurse-with-patient.jpg"
       heroAlt="Dementia-trained caregiver engaging in a soothing memory activity with an older adult"
       whoFor={[
         "Families navigating an initial diagnosis of Alzheimer's disease, vascular dementia, Lewy body, or other memory conditions seeking safe in-home routines",

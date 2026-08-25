@@ -25,7 +25,7 @@ export default function CompanionshipPage() {
       eyebrow="Companionship & Social Engagement"
       title="Companionship & Social Engagement in Richmond, VA"
       intro="Meaningful human connection, intellectual stimulation, and joyful engagement for older adults — helping seniors across Richmond, Mechanicsville, and Hanover County combat loneliness, stay active, and thrive in the comfort of home."
-      heroImg="https://www.archangelspersonalcare.com/images/quality-of-life.jpg"
+      heroImg="/images/quality-of-life.jpg"
       heroAlt="Friendly companion caregiver sharing a joyful conversation and tea with a senior client"
       whoFor={[
         "Seniors living alone who miss regular, stimulating conversation, laughter, and warm, authentic human companionship throughout the week",

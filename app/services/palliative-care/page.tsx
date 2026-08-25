@@ -25,7 +25,7 @@ export default function PalliativeCarePage() {
       eyebrow="Palliative Care Support"
       title="Palliative Care Support in Richmond, VA"
       intro="Compassionate, non-medical daily living support, energy conservation assistance, and family relief for individuals living with serious, chronic, or complex illnesses — delivered under Registered Nurse supervision to enhance comfort and quality of life alongside ongoing medical treatments."
-      heroImg="https://www.archangelspersonalcare.com/images/quality-of-life.jpg"
+      heroImg="/images/quality-of-life.jpg"
       heroAlt="Compassionate caregiver offering comfort-focused daily living support to a senior"
       whoFor={[
         "Individuals actively receiving curative or life-prolonging treatments for serious illnesses (such as cancer chemotherapy, congestive heart failure, COPD, or kidney disease) who need daily living support at home",

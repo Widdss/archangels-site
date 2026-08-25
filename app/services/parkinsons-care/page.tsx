@@ -25,7 +25,7 @@ export default function ParkinsonsCarePage() {
       eyebrow="Parkinson's Care Support"
       title="Parkinson's Care Support in Richmond, VA"
       intro="Patient, specialized non-skilled home care tailored to the motor fluctuations, mobility challenges, and daily living needs of individuals living with Parkinson's disease — delivered under experienced Registered Nurse supervision across Richmond, Mechanicsville, and Hanover County."
-      heroImg="https://www.archangelspersonalcare.com/images/caregiver-black-with-elderly.jpg"
+      heroImg="/images/caregiver-black-with-elderly.jpg"
       heroAlt="Caregiver patiently assisting an older adult managing Parkinson's mobility challenges"
       whoFor={[
         "Individuals diagnosed with Parkinson's disease experiencing motor symptoms such as resting tremors, muscle rigidity, slow movement (bradykinesia), or postural instability",

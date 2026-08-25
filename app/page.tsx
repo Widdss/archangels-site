@@ -94,21 +94,21 @@ export default function HomePage() {
             <div className="photo-card">
               <div className="photo-card-img">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://www.archangelspersonalcare.com/images/caregiver-black-with-elderly.jpg" alt="Home care professional providing personal care assistance to elderly client in Hanover County" />
+                <img src="/images/caregiver-black-with-elderly.jpg" alt="Home care professional providing personal care assistance to elderly client in Hanover County" />
               </div>
               <span className="photo-card-label"><span className="dot" />Personal care, delivered with dignity</span>
             </div>
             <div className="photo-card">
               <div className="photo-card-img">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg" alt="Certified nursing assistant providing dignified personal care to client at home" />
+                <img src="/images/nurse-with-patient.jpg" alt="Certified nursing assistant providing dignified personal care to client at home" />
               </div>
               <span className="photo-card-label"><span className="dot" />Caregivers our families trust</span>
             </div>
             <div className="photo-card">
               <div className="photo-card-img">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://www.archangelspersonalcare.com/images/quality-of-life.jpg" alt="Registered nurse providing professional RN supervision and care coordination services" />
+                <img src="/images/quality-of-life.jpg" alt="Registered nurse providing professional RN supervision and care coordination services" />
               </div>
               <span className="photo-card-label"><span className="dot" />Every plan, RN supervised</span>
             </div>

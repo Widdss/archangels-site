@@ -25,7 +25,7 @@ export default function TwentyFourHourCarePage() {
       eyebrow="24-Hour Around-the-Clock Care"
       title="24-Hour Home Care in Richmond, VA"
       intro="Continuous, around-the-clock non-skilled personal care, attentive monitoring, and companionship delivered by a dedicated team of alert caregivers across coordinated shifts — under ongoing Registered Nurse oversight."
-      heroImg="https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg"
+      heroImg="/images/nurse-with-patient.jpg"
       heroAlt="Caregiver providing attentive round-the-clock 24-hour home care"
       whoFor={[
         "Individuals living with advanced Alzheimer's disease, dementia, or cognitive impairment requiring constant awake supervision to prevent wandering, elopement, and confusion",

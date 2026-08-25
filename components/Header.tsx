@@ -35,7 +35,7 @@ export default function Header() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="logo-mark logo-mark-lg"
-            src="https://www.archangelspersonalcare.com/logo.png"
+            src="/logo.png"
             alt="Archangels Personal Care"
           />
         </Link>

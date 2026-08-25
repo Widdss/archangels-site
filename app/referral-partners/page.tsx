@@ -5,7 +5,7 @@ export default function ReferralPartnersPage() {
   return (
     <>
       <section className="care-hero">
-        <div className="care-hero-photo" style={{ backgroundImage: "url(https://www.archangelspersonalcare.com/images/quality-of-life.jpg)" }} />
+        <div className="care-hero-photo" style={{ backgroundImage: "url(/images/quality-of-life.jpg)" }} />
         <div className="wrap">
           <span className="eyebrow" style={{ color: "#f0c968", justifyContent: "center" }}>Referral Partners</span>
           <h1>Partner with a care team you can trust.</h1>
@@ -17,7 +17,7 @@ export default function ReferralPartnersPage() {
         <div className="wrap concierge-split">
           <div className="split-photo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg" alt="Certified nursing assistant providing dignified personal care to client at home" />
+            <img src="/images/nurse-with-patient.jpg" alt="Certified nursing assistant providing dignified personal care to client at home" />
           </div>
           <div>
             <span className="eyebrow">Why Partners Choose Us</span>

@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, type FormEvent } from "react";
 import { IconSend, IconX } from "./Icons";
 
-const LOGO_URL = "https://www.archangelspersonalcare.com/logo.png";
+const LOGO_URL = "/logo.png";
 
 type Msg = { role: "user" | "bot"; text: string };
 

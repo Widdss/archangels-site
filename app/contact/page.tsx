@@ -10,7 +10,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="care-hero">
-        <div className="care-hero-photo" style={{ backgroundImage: "url(https://www.archangelspersonalcare.com/images/caregiver-black-with-elderly.jpg)" }} />
+        <div className="care-hero-photo" style={{ backgroundImage: "url(/images/caregiver-black-with-elderly.jpg)" }} />
         <div className="wrap">
           <span className="eyebrow" style={{ color: "#f0c968", justifyContent: "center" }}>Contact Us</span>
           <h1>We&apos;re here to help.</h1>
@@ -54,7 +54,7 @@ export default function ContactPage() {
 
             <div className="split-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://www.archangelspersonalcare.com/images/recovery-support.jpg" alt="Registered nurse providing professional RN supervision and care coordination services" />
+              <img src="/images/recovery-support.jpg" alt="Registered nurse providing professional RN supervision and care coordination services" />
             </div>
           </div>
         </div>

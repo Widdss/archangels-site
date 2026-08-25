@@ -25,7 +25,7 @@ export default function EndOfLifeCarePage() {
       eyebrow="End-of-Life Comfort Care"
       title="End-of-Life Comfort Care in Richmond, VA"
       intro="Compassionate, non-medical comfort support and bedside presence for clients and families navigating the final stages of life — working in seamless harmony alongside your licensed hospice team to ensure serenity, dignity, and warmth in the comfort of home."
-      heroImg="https://www.archangelspersonalcare.com/images/quality-of-life.jpg"
+      heroImg="/images/quality-of-life.jpg"
       heroAlt="Compassionate caregiver offering peaceful, comfort-focused bedside presence to an older adult"
       whoFor={[
         "Families with a loved one enrolled in hospice care who need continuous non-medical bedside presence between intermittent hospice nurse visits",

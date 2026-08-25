@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="care-hero">
-        <div className="care-hero-photo" style={{ backgroundImage: "url(https://www.archangelspersonalcare.com/images/quality-of-life.jpg)" }} />
+        <div className="care-hero-photo" style={{ backgroundImage: "url(/images/quality-of-life.jpg)" }} />
         <div className="wrap">
           <span className="eyebrow" style={{ color: "#f0c968", justifyContent: "center" }}>About Us</span>
           <h1>Mechanicsville&apos;s VDH-regulated Home Care Organization.</h1>
@@ -39,7 +39,7 @@ export default function AboutPage() {
             </p>
             <div className="split-photo" style={{ marginTop: 26 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://www.archangelspersonalcare.com/images/caregiver-black-with-elderly.jpg" alt="Home care professional providing personal care assistance to elderly client in Hanover County" />
+              <img src="/images/caregiver-black-with-elderly.jpg" alt="Home care professional providing personal care assistance to elderly client in Hanover County" />
             </div>
           </div>
           <div className="concierge-panel">

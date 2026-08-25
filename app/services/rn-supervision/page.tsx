@@ -25,7 +25,7 @@ export default function RnSupervisionPage() {
       eyebrow="RN Supervision & Care Oversight"
       title="RN Supervision & Care Oversight in Richmond, VA"
       intro="Professional clinical leadership built into every home care plan. Our Registered Nurses conduct in-home assessments, design individualized care plans, supervise CNA and PCA caregivers, and ensure strict compliance with Virginia Department of Health (VDH) standards."
-      heroImg="https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg"
+      heroImg="/images/nurse-with-patient.jpg"
       heroAlt="Registered Nurse reviewing an individualized home care plan with a senior client"
       whoFor={[
         "Families who want the clinical assurance of a licensed Registered Nurse evaluating, directing, and monitoring home care rather than relying on unguided caregivers",

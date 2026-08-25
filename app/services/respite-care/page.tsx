@@ -25,7 +25,7 @@ export default function RespiteCarePage() {
       eyebrow="Respite Care & Family Support"
       title="Respite Care & Family Support in Richmond, VA"
       intro="Reliable, compassionate relief for family caregivers across Richmond, Mechanicsville, and Hanover County. Step away with complete peace of mind knowing your loved one is receiving professional, RN-supervised care tailored to their established home routine."
-      heroImg="https://www.archangelspersonalcare.com/images/recovery-support.jpg"
+      heroImg="/images/recovery-support.jpg"
       heroAlt="Professional respite caregiver providing attentive support while family takes a needed break"
       whoFor={[
         "Dedicated family caregivers experiencing chronic physical fatigue, emotional burnout, or stress from balancing round-the-clock caregiving duties",

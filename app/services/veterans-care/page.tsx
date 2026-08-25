@@ -25,7 +25,7 @@ export default function VeteransCarePage() {
       eyebrow="Veterans In-Home Care"
       title="Veterans In-Home Care in Richmond, VA"
       intro="Dignified, RN-supervised non-skilled home care honoring the service and sacrifice of military veterans and their surviving spouses — delivering compassionate daily living assistance, routine consistency, and guidance toward VA Aid & Attendance resources across Richmond, Mechanicsville, and Hanover County."
-      heroImg="https://www.archangelspersonalcare.com/images/nurse-with-patient.jpg"
+      heroImg="/images/nurse-with-patient.jpg"
       heroAlt="Caregiver providing respectful, compassionate in-home care to a military veteran"
       whoFor={[
         "Military veterans of the Army, Navy, Air Force, Marines, Coast Guard, or National Guard who wish to age in place safely at home with independence and dignity",

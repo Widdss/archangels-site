@@ -25,7 +25,7 @@ export default function PersonalCarePage() {
       eyebrow="Personal Care Services"
       title="Personal Care Services in Richmond & Mechanicsville, VA"
       intro="Compassionate, non-skilled personal care assistance with activities of daily living — delivered by Certified Nursing Assistants (CNAs) and Personal Care Aides (PCAs) under Registered Nurse supervision, helping seniors remain safe, dignified, and independent in the comfort of home."
-      heroImg="https://www.archangelspersonalcare.com/images/caregiver-black-with-elderly.jpg"
+      heroImg="/images/caregiver-black-with-elderly.jpg"
       heroAlt="Compassionate caregiver assisting an older adult with daily personal care routine"
       whoFor={[
         "Seniors who face physical challenges or safety concerns when managing bathing, showering, dressing, or daily personal grooming independently",

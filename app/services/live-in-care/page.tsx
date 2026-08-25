@@ -25,7 +25,7 @@ export default function LiveInCarePage() {
       eyebrow="Live-In Home Care"
       title="Live-In Home Care in Richmond, VA"
       intro="Continuous, dedicated in-home support provided by a professional caregiver residing in the client's home — delivering daytime personal care, delicious home-cooked meals, light housekeeping, and nighttime security under Registered Nurse oversight."
-      heroImg="https://www.archangelspersonalcare.com/images/caregiver-black-with-elderly.jpg"
+      heroImg="/images/caregiver-black-with-elderly.jpg"
       heroAlt="Dedicated live-in caregiver preparing a meal and sharing conversation with an older adult"
       whoFor={[
         "Seniors who wish to remain in their own homes full-time but require steady daily living assistance, personal care, and the reassuring presence of a caregiver residing in the house",

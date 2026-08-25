@@ -25,7 +25,7 @@ export default function TransitionCarePage() {
       eyebrow="Hospital-to-Home Transition Care"
       title="Transition to Home Care in Richmond, VA"
       intro="Safe, coordinated non-skilled personal care and settling-in support for seniors returning home from a hospital stay, surgery, or rehabilitation center — helping older adults recover safely, regain strength, and prevent costly hospital readmissions across Richmond, Mechanicsville, and Hanover County."
-      heroImg="https://www.archangelspersonalcare.com/images/recovery-support.jpg"
+      heroImg="/images/recovery-support.jpg"
       heroAlt="Caregiver safely assisting an older adult returning home after a hospital stay"
       whoFor={[
         "Seniors being discharged from VCU Health, Bon Secours, Henrico Doctors', or local subacute rehab facilities who need immediate settling-in assistance at home",

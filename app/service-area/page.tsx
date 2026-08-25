@@ -10,7 +10,7 @@ export default function ServiceAreaPage() {
   return (
     <>
       <section className="care-hero">
-        <div className="care-hero-photo" style={{ backgroundImage: "url(https://www.archangelspersonalcare.com/images/recovery-support.jpg)" }} />
+        <div className="care-hero-photo" style={{ backgroundImage: "url(/images/recovery-support.jpg)" }} />
         <div className="wrap">
           <span className="eyebrow" style={{ color: "#f0c968", justifyContent: "center" }}>Service Area</span>
           <h1>Serving families across the Richmond metro.</h1>
