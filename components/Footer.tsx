@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IconFacebook } from "@/components/Icons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -61,7 +62,8 @@ export default function Footer() {
           <a
             id="COCBadgeURL"
             href="https://www.chamberofcommerce.com/business-directory/virginia/quinton/home-health-care-service/2034422750-archangels-personal-care?source=memberwebsite"
-            target="_tab"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <img
               style={{ width: "auto", height: 150 }}
@@ -70,6 +72,19 @@ export default function Footer() {
               alt="Archangels Personal Care Chamber of Commerce member badge"
             />
           </a>
+          <div className="footer-social">
+            <div className="footer-social-links">
+              <a
+                href="https://www.facebook.com/profile.php?id=61570834258187"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
+                aria-label="Archangels Personal Care on Facebook"
+              >
+                <IconFacebook />
+              </a>
+            </div>
+          </div>
         </div>
         <div className="footer-bottom">
           <span>© {year} Archangels Personal Care LLC. VDH-Licensed Home Care Organization.</span>

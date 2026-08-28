@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import GoogleReviews from "@/components/GoogleReviews";
+import HeroChat from "@/components/HeroChat";
 import {
   IconShield,
   IconHeart,
@@ -10,6 +12,15 @@ import {
   IconBolt,
   IconMoon,
 } from "@/components/Icons";
+
+export const metadata: Metadata = {
+  title: "Archangels Personal Care | In-Home Care & RN Supervision in Richmond & Mechanicsville, VA",
+  description:
+    "VDH-licensed, RN-supervised in-home personal care, memory care, 24-hour care, and companionship in Richmond, Mechanicsville, and Hanover County, VA. Call 804-903-8133.",
+  alternates: {
+    canonical: "https://www.archangelspersonalcare.com",
+  },
+};
 
 const TRUST_ITEMS = [
   "VDH-Licensed Home Care Organization",
@@ -52,24 +63,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="hero-card">
-            <div className="hero-card-head">
-              <span className="hero-card-dot" />
-              <div>
-                <div className="hero-card-title">Archangels AI Care Concierge</div>
-                <div className="hero-card-sub">Online now &middot; usually replies instantly</div>
-              </div>
-            </div>
-            <div className="chat-bubble bot">
-              Hi, I&apos;m here to help. Are you looking for care for yourself or a loved one?
-            </div>
-            <div className="chat-bubble user">My mom, she&apos;s 82 and recently had a fall.</div>
-            <div className="chat-bubble bot">
-              I&apos;m sorry to hear that. We offer RN-supervised personal care and fall-prevention
-              support, with same-day availability in Richmond. Want me to have our care team call
-              you within the hour?
-            </div>
-          </div>
+          <HeroChat />
         </div>
       </section>
 
