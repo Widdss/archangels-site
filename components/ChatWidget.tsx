@@ -7,11 +7,31 @@ const LOGO_URL = "/logo.png";
 
 type Msg = { role: "user" | "bot"; text: string };
 
-const GREETING: Msg = {
-  role: "bot",
-  text:
-    "Hi, I'm the Archangels AI Care Concierge. I can answer questions about our services, pricing structure, and availability in Richmond, Chesterfield, Mechanicsville, Hanover County, Henrico, and surrounding areas. What can I help with?",
+type VisitorInfo = {
+  name: string;
+  phone: string;
+  careType: string;
+  timeframe: string;
 };
+
+const CARE_TYPES = [
+  "Personal Care",
+  "Companionship",
+  "Alzheimer's / Memory Care",
+  "24/7 or Live-In Care",
+  "Respite Care",
+  "Not sure yet",
+];
+
+const TIMEFRAMES = ["This week", "This month", "Just researching"];
+
+function greetingFor(info: VisitorInfo): Msg {
+  const firstName = info.name.trim().split(/\s+/)[0] || "there";
+  return {
+    role: "bot",
+    text: `Hi ${firstName}, thanks for sharing that. I'm the Archangels AI Care Concierge — ask me anything about our services, pricing structure, or availability in Richmond, Chesterfield, Mechanicsville, Hanover County, Henrico, and surrounding areas, and our care team will follow up with you shortly too.`,
+  };
+}
 
 // Matches a structured lead-capture marker the AI is instructed to emit once it has
 // gathered enough info to qualify a visitor (see SYSTEM_PROMPT in app/api/chat/route.ts).
@@ -33,18 +53,50 @@ function parseLeadMarker(text: string): { clean: string; lead: Record<string, st
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Msg[]>([GREETING]);
+  const [intakeDone, setIntakeDone] = useState(false);
+  const [intakeStatus, setIntakeStatus] = useState<"idle" | "loading">("idle");
+  const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [showCallback, setShowCallback] = useState(false);
   const [callbackStatus, setCallbackStatus] = useState<"idle" | "loading" | "sent">("idle");
   const scrollRef = useRef<HTMLDivElement>(null);
-  const engagementPinged = useRef(false);
   const leadCaptured = useRef(false);
+  const visitorInfo = useRef<VisitorInfo | null>(null);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, loading]);
+
+  async function submitIntake(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setIntakeStatus("loading");
+    const data = new FormData(e.currentTarget);
+    const info: VisitorInfo = {
+      name: String(data.get("name") || "").trim(),
+      phone: String(data.get("phone") || "").trim(),
+      careType: String(data.get("careType") || "Not sure yet"),
+      timeframe: String(data.get("timeframe") || "Just researching"),
+    };
+    visitorInfo.current = info;
+    leadCaptured.current = true;
+
+    fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        source: "chat-intake",
+        name: info.name,
+        phone: info.phone,
+        careType: info.careType,
+        message: `Started an AI concierge chat. Timeframe: ${info.timeframe}.`,
+      }),
+    }).catch(() => {});
+
+    setMessages([greetingFor(info)]);
+    setIntakeDone(true);
+    setIntakeStatus("idle");
+  }
 
   async function send() {
     const text = input.trim();
@@ -54,24 +106,13 @@ export default function ChatWidget() {
     setInput("");
     setLoading(true);
 
-    if (!engagementPinged.current) {
-      engagementPinged.current = true;
-      fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          source: "chat-engagement",
-          message: `Visitor started chatting with the AI concierge. First message: "${text}"`,
-        }),
-      }).catch(() => {});
-    }
-
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           messages: next.map((m) => ({ role: m.role, text: m.text })),
+          visitor: visitorInfo.current,
         }),
       });
       const data = await res.json();
@@ -99,8 +140,7 @@ export default function ChatWidget() {
         ...cur,
         {
           role: "bot",
-          text:
-            "I'm having trouble connecting right now. Please call us at 804-903-8133, or leave your info below and our team will reach out.",
+          text: "I'm having trouble connecting right now. Please call us at 804-903-8133, or leave your info below and our team will reach out.",
         },
       ]);
     } finally {
@@ -157,47 +197,88 @@ export default function ChatWidget() {
             </button>
           </div>
 
-          <div className="chat-messages" ref={scrollRef}>
-            {messages.map((m, i) => (
-              <div key={i} className={`chat-msg ${m.role === "bot" ? "bot" : "user"}`}>
-                {m.text}
-              </div>
-            ))}
-            {loading && (
-              <div className="chat-msg bot chat-typing">
-                <span /><span /><span />
-              </div>
-            )}
-          </div>
-
-          <div className="chat-input-row">
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && send()}
-              placeholder="Ask a question..."
-            />
-            <button className="chat-send" onClick={send} disabled={loading} aria-label="Send">
-              <IconSend />
-            </button>
-          </div>
-
-          <details className="chat-callback" open={showCallback} onToggle={(e) => setShowCallback((e.target as HTMLDetailsElement).open)}>
-            <summary>Prefer a real person calls you back?</summary>
-            {callbackStatus === "sent" ? (
-              <p style={{ fontSize: 12.5, marginTop: 8, color: "var(--pine-deep)" }}>
-                Got it — our care team will call you shortly.
+          {!intakeDone ? (
+            <div className="chat-intake">
+              <p className="chat-intake-lead">
+                Hi, I&apos;m the Archangels AI Care Concierge. Tell us a little about who needs care
+                so we can point you in the right direction — then ask me anything.
               </p>
-            ) : (
-              <form className="chat-callback-form" onSubmit={submitCallback}>
+              <form className="chat-intake-form" onSubmit={submitIntake}>
                 <input name="name" placeholder="Your name" required />
                 <input name="phone" placeholder="Phone number" required />
-                <button className="chat-callback-btn" type="submit" disabled={callbackStatus === "loading"}>
-                  {callbackStatus === "loading" ? "Sending..." : "Request a callback"}
+                <select name="careType" defaultValue="Not sure yet">
+                  {CARE_TYPES.map((c) => (
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
+                  ))}
+                </select>
+                <select name="timeframe" defaultValue="Just researching">
+                  {TIMEFRAMES.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+                <button className="chat-intake-btn" type="submit" disabled={intakeStatus === "loading"}>
+                  {intakeStatus === "loading" ? "Starting..." : "Start Chatting"}
                 </button>
               </form>
-            )}
-          </details>
+              <p className="chat-intake-skip">
+                Prefer to just call? <a href="tel:8049038133">804-903-8133</a>
+              </p>
+            </div>
+          ) : (
+            <>
+              <div className="chat-messages" ref={scrollRef}>
+                {messages.map((m, i) => (
+                  <div key={i} className={`chat-msg ${m.role === "bot" ? "bot" : "user"}`}>
+                    {m.text}
+                  </div>
+                ))}
+                {loading && (
+                  <div className="chat-msg bot chat-typing">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                )}
+              </div>
+
+              <div className="chat-input-row">
+                <input
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && send()}
+                  placeholder="Ask a question..."
+                />
+                <button className="chat-send" onClick={send} disabled={loading} aria-label="Send">
+                  <IconSend />
+                </button>
+              </div>
+
+              <details
+                className="chat-callback"
+                open={showCallback}
+                onToggle={(e) => setShowCallback((e.target as HTMLDetailsElement).open)}
+              >
+                <summary>Prefer a real person calls you back?</summary>
+                {callbackStatus === "sent" ? (
+                  <p style={{ fontSize: 12.5, marginTop: 8, color: "var(--pine-deep)" }}>
+                    Got it — our care team will call you shortly.
+                  </p>
+                ) : (
+                  <form className="chat-callback-form" onSubmit={submitCallback}>
+                    <input name="name" placeholder="Your name" required />
+                    <input name="phone" placeholder="Phone number" required />
+                    <button className="chat-callback-btn" type="submit" disabled={callbackStatus === "loading"}>
+                      {callbackStatus === "loading" ? "Sending..." : "Request a callback"}
+                    </button>
+                  </form>
+                )}
+              </details>
+            </>
+          )}
         </div>
       )}
     </>
