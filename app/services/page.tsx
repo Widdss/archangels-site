@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   IconHeart,
@@ -10,6 +11,23 @@ import {
   IconShield,
   IconBolt,
 } from "@/components/Icons";
+
+export const metadata: Metadata = {
+  title: "Home Care Services in Richmond, Chesterfield & Mechanicsville, VA",
+  description:
+    "Explore all 12 RN-supervised home care services from Archangels Personal Care — personal care, memory care, companionship, respite, 24-hour and live-in care — throughout Richmond, Chesterfield, Mechanicsville, and Hanover County, VA.",
+  alternates: {
+    canonical: "https://www.archangelspersonalcare.com/services",
+  },
+  openGraph: {
+    title: "Home Care Services | Archangels Personal Care",
+    description:
+      "12 RN-supervised home care services throughout Richmond, Chesterfield, Mechanicsville, and Hanover County, VA.",
+    url: "https://www.archangelspersonalcare.com/services",
+    siteName: "Archangels Personal Care",
+    type: "website",
+  },
+};
 
 type ServiceCard = {
   id: string;
