@@ -22,17 +22,11 @@ YOUR JOB:
 5. Keep a warm, human, reassuring tone — never robotic or salesy. This is often someone worried about a parent or spouse.
 
 VETTING / QUALIFYING VISITORS
-You are also the first line of lead qualification, not just an FAQ bot. Once a visitor shows real interest (not just browsing), naturally work these into the conversation, one at a time, never as an interrogation:
-- Who needs care (themselves or a loved one) and roughly what's going on.
-- What type of care fits (personal care, companionship, dementia/Alzheimer's care, respite, 24/7, etc).
-- Whether they're in Richmond, Chesterfield, Mechanicsville, Hanover County, Henrico, or one of our surrounding service counties. If they're clearly outside it, say so honestly rather than capturing the lead.
-- Roughly how soon they need care to start (this week, this month, just researching).
-- Their name and best phone number, so a real coordinator can follow up.
-
-Do not demand all of this before being helpful — answer their actual question first, every time. Only ask a qualifying question when it fits naturally.
+The visitor already completed a short intake form before this conversation started, so you will usually be given their name, phone number, care type interest, and timeframe below under "KNOWN VISITOR INFO" — never ask them to repeat information you've already been given. Use their first name naturally in conversation. Your job here is simply to answer their questions well and, if it comes up naturally, confirm or refine the care type and timeframe they mentioned. If for some reason no visitor info was provided, you may naturally ask for a name and phone number once they show real interest, so a coordinator can follow up.
 
 LEAD CAPTURE MARKER — IMPORTANT TECHNICAL INSTRUCTION
-Once you have collected AT LEAST a name and a phone number (and ideally the care type and any relevant notes), end your reply with a machine-readable marker on its own line, in exactly this format, with no other text on that line:
+If KNOWN VISITOR INFO is provided below, the lead has already been captured — do NOT emit the marker described here.
+Only if no visitor info was provided and you separately collect AT LEAST a name and a phone number during the conversation, end your reply with a machine-readable marker on its own line, in exactly this format, with no other text on that line:
 [[LEAD name="Full Name" phone="digits only" careType="short label or Not sure yet" notes="one sentence summary of their situation and timeline"]]
 Rules for the marker:
 - Only emit it ONCE per conversation, the first time you have a name + phone number. Never repeat it in later replies.
@@ -41,63 +35,72 @@ Rules for the marker:
 - Never fabricate a name or phone number. Only emit the marker with real information the visitor actually gave you.`;
 
 export async function POST(req: NextRequest) {
-    const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
 
-  let body: { messages?: { role: string; text: string }[] };
-    try {
-          body = await req.json();
-    } catch {
-          return NextResponse.json({ reply: "Sorry, something went wrong on my end." }, { status: 400 });
-    }
+  let body: {
+    messages?: { role: string; text: string }[];
+    visitor?: { name?: string; phone?: string; careType?: string; timeframe?: string } | null;
+  };
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ reply: "Sorry, something went wrong on my end." }, { status: 400 });
+  }
 
   const history = body.messages || [];
+  const visitor = body.visitor;
 
   if (!apiKey) {
-        return NextResponse.json({
-                reply:
-                          "Our AI concierge is finishing setup right now. In the meantime, please call us at 804-903-8133, or leave your name and number below and our care team will call you back.",
-        });
+    return NextResponse.json({
+      reply:
+        "Our AI concierge is finishing setup right now. In the meantime, please call us at 804-903-8133, or leave your name and number below and our care team will call you back.",
+    });
   }
 
   const contents = history.map((m) => ({
-        role: m.role === "user" ? "user" : "model",
-        parts: [{ text: m.text }],
+    role: m.role === "user" ? "user" : "model",
+    parts: [{ text: m.text }],
   }));
 
+  let systemInstruction = SYSTEM_PROMPT;
+  if (visitor && (visitor.name || visitor.phone)) {
+    systemInstruction += `\n\nKNOWN VISITOR INFO (already captured — do not ask for this again):\nName: ${visitor.name || "Unknown"}\nPhone: ${visitor.phone || "Unknown"}\nCare type interest: ${visitor.careType || "Not sure yet"}\nTimeframe: ${visitor.timeframe || "Just researching"}`;
+  }
+
   try {
-        const resp = await fetch(
-                `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`,
-          {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                                system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-                                contents,
-                                generationConfig: { temperature: 0.6, maxOutputTokens: 300 },
-                    }),
-          }
-              );
-
-      if (!resp.ok) {
-              const errText = await resp.text();
-              console.error("Gemini API error:", resp.status, errText);
-              return NextResponse.json({
-                        reply:
-                                    "I'm having a little trouble right now. Please call us at 804-903-8133 and our team will help right away.",
-              });
+    const resp = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: systemInstruction }] },
+          contents,
+          generationConfig: { temperature: 0.6, maxOutputTokens: 300 },
+        }),
       }
+    );
 
-      const data = await resp.json();
-        const reply: string =
-                data?.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text || "").join("") ||
-                "Sorry, could you rephrase that?";
+    if (!resp.ok) {
+      const errText = await resp.text();
+      console.error("Gemini API error:", resp.status, errText);
+      return NextResponse.json({
+        reply:
+          "I'm having a little trouble right now. Please call us at 804-903-8133 and our team will help right away.",
+      });
+    }
 
-      return NextResponse.json({ reply: reply.trim() });
+    const data = await resp.json();
+    const reply: string =
+      data?.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text || "").join("") ||
+      "Sorry, could you rephrase that?";
+
+    return NextResponse.json({ reply: reply.trim() });
   } catch (err) {
-        console.error("Chat route error:", err);
-        return NextResponse.json({
-                reply:
-                          "I'm having trouble connecting right now. Please call us at 804-903-8133, or leave your info and we'll call you back.",
-        });
+    console.error("Chat route error:", err);
+    return NextResponse.json({
+      reply:
+        "I'm having trouble connecting right now. Please call us at 804-903-8133, or leave your info and we'll call you back.",
+    });
   }
 }
