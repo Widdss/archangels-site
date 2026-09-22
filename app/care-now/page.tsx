@@ -1,6 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import IntakeForm from "@/components/IntakeForm";
 import { IconShield, IconClock, IconStethoscope, IconUsers, IconHeart } from "@/components/Icons";
+
+export const metadata: Metadata = {
+  title: "Request Care Now | Same-Day Home Care in Richmond & Chesterfield, VA",
+  description:
+    "Request compassionate, RN-supervised home care today. Same-day availability in Richmond, Chesterfield, Mechanicsville, Hanover County, and Henrico, VA. Call 804-903-8133.",
+  alternates: {
+    canonical: "https://www.archangelspersonalcare.com/care-now",
+  },
+  openGraph: {
+    title: "Request Care Now | Archangels Personal Care",
+    description:
+      "Same-day availability for home care in Richmond, Chesterfield, Mechanicsville, Hanover County, and Henrico, VA.",
+    url: "https://www.archangelspersonalcare.com/care-now",
+    siteName: "Archangels Personal Care",
+    type: "website",
+  },
+};
 
 const SERVING_AREAS = ["Richmond", "Mechanicsville", "Hanover County", "Henrico", "Chesterfield"];
 
