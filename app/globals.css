@@ -2723,3 +2723,63 @@ button {
   line-height: 1.8;
   margin: 0;
 }
+
+/* Chat Intake (pre-chat questionnaire) */
+.chat-intake {
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+
+.chat-intake-lead {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.chat-intake-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-intake-form input,
+.chat-intake-form select {
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  font-family: inherit;
+  background: var(--ivory);
+  color: var(--ink);
+}
+
+.chat-intake-form input:focus,
+.chat-intake-form select:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+
+.chat-intake-btn {
+  background: var(--terracotta);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.chat-intake-skip {
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.chat-intake-skip a {
+  color: var(--terracotta);
+  font-weight: 600;
+}
