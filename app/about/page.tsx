@@ -1,5 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { IconShield, IconUsers, IconHeart, IconStethoscope } from "@/components/Icons";
+
+export const metadata: Metadata = {
+  title: "About Us | VDH-Licensed Home Care in Richmond, Chesterfield & Mechanicsville, VA",
+  description:
+    "Learn about Archangels Personal Care LLC — a VDH-regulated, RN-supervised Home Care Organization serving Richmond, Chesterfield, Mechanicsville, and Hanover County, VA. Our mission, values, and approach to care.",
+  alternates: {
+    canonical: "https://www.archangelspersonalcare.com/about",
+  },
+  openGraph: {
+    title: "About Archangels Personal Care | Richmond & Chesterfield, VA Home Care",
+    description:
+      "A VDH-regulated, RN-supervised Home Care Organization serving Richmond, Chesterfield, Mechanicsville, and Hanover County, VA.",
+    url: "https://www.archangelspersonalcare.com/about",
+    siteName: "Archangels Personal Care",
+    type: "website",
+  },
+};
 
 const VALUES = [
   { title: "Compassion", body: "We approach every client with genuine care and empathy, ensuring each visit is delivered with kindness." },
