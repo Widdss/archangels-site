@@ -1,9 +1,11 @@
 import Link from "next/link";
 
 const AREAS = [
-  "Richmond", "Mechanicsville", "Hanover County", "Henrico", "Chesterfield",
-  "Ashland", "Goochland", "Powhatan", "Midlothian", "Glen Allen",
-  "Petersburg", "Colonial Heights", "Hopewell", "Short Pump",
+  "Richmond", "Chesterfield", "Mechanicsville", "Henrico", "Hanover County",
+  "Ashland", "Goochland", "Powhatan", "Midlothian", "Glen Allen", "Short Pump",
+  "New Kent County", "Charles City County", "Amelia County",
+  "King William County", "Dinwiddie County", "Prince George County",
+  "Petersburg", "Colonial Heights", "Hopewell",
 ];
 
 export default function ServiceAreaPage() {
@@ -14,7 +16,7 @@ export default function ServiceAreaPage() {
         <div className="wrap">
           <span className="eyebrow" style={{ color: "#f0c968", justifyContent: "center" }}>Service Area</span>
           <h1>Serving families across the Richmond metro.</h1>
-          <p>We proudly serve clients throughout Mechanicsville, Hanover County, and surrounding Virginia areas.</p>
+          <p>We proudly serve families throughout Richmond, Chesterfield County, Mechanicsville, and Hanover County — plus the surrounding Central Virginia counties many home care agencies overlook.</p>
         </div>
       </section>
 
@@ -29,6 +31,17 @@ export default function ServiceAreaPage() {
           </div>
           <p style={{ marginTop: 24, fontSize: 13.5, color: "var(--ink-soft)", textAlign: "center" }}>
             * And all surrounding areas — call to confirm coverage for your address.
+          </p>
+        </div>
+      </section>
+
+      <section className="section section-tight reveal">
+        <div className="wrap">
+          <p style={{ fontSize: 16, color: "var(--ink-soft)", textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
+            Many home care agencies stop at the suburbs. We don&apos;t — families in New Kent,
+            Charles City, Amelia, King William, Dinwiddie, and Prince George often have fewer
+            local options for RN-supervised, VDH-licensed care, and we&apos;re glad to serve them
+            with the same standard of care we bring to Richmond and Chesterfield.
           </p>
         </div>
       </section>
