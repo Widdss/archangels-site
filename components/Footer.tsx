@@ -20,8 +20,8 @@ export default function Footer() {
               </strong>
             </div>
             <p style={{ fontSize: 13.5, maxWidth: 260 }}>
-              A VDH-licensed, RN-supervised Home Care Organization serving Richmond, Mechanicsville
-              and Hanover County — paired with a 24/7 AI care concierge.
+              A VDH-licensed, RN-supervised Home Care Organization serving Richmond, Chesterfield,
+              Mechanicsville, and Hanover County — paired with a 24/7 AI care concierge.
             </p>
           </div>
           <div>
@@ -45,7 +45,7 @@ export default function Footer() {
             <h5>Reach Us</h5>
             <ul>
               <li>804-903-8133</li>
-              <li>Richmond · Mechanicsville · Hanover County</li>
+              <li>Richmond · Chesterfield · Mechanicsville · Hanover County</li>
               <li>Available 24 hours a day</li>
             </ul>
           </div>
@@ -53,7 +53,7 @@ export default function Footer() {
         <div className="footer-areas">
           <h5>Service Areas</h5>
           <p>
-            {["Mechanicsville", "Hanover County", "Ashland", "Richmond", "Henrico", "Chesterfield", "Goochland", "Powhatan"].join(" • ")}
+            {["Richmond", "Chesterfield", "Mechanicsville", "Hanover County", "Henrico", "Ashland", "Goochland", "Powhatan", "New Kent", "Amelia", "Charles City"].join(" • ")}
           </p>
           <span>And all surrounding areas</span>
         </div>
