@@ -1,4 +1,22 @@
+import type { Metadata } from "next";
 import IntakeForm from "@/components/IntakeForm";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Archangels Personal Care Richmond & Chesterfield, VA",
+  description:
+    "Get in touch with Archangels Personal Care — call 804-903-8133 or send a message. Serving Richmond, Chesterfield, Mechanicsville, Hanover County, Henrico, and surrounding Virginia counties.",
+  alternates: {
+    canonical: "https://www.archangelspersonalcare.com/contact",
+  },
+  openGraph: {
+    title: "Contact Archangels Personal Care",
+    description:
+      "Serving Richmond, Chesterfield, Mechanicsville, Hanover County, Henrico, and surrounding Virginia counties.",
+    url: "https://www.archangelspersonalcare.com/contact",
+    siteName: "Archangels Personal Care",
+    type: "website",
+  },
+};
 
 const SERVICE_AREAS = [
   "Richmond", "Mechanicsville", "Hanover County", "Henrico", "Chesterfield",
