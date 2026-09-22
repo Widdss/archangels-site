@@ -25,19 +25,25 @@ const body = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.archangelspersonalcare.com"),
   title: {
-    default: "Archangels Personal Care | Home Care Richmond, Mechanicsville & Hanover County, VA",
+    default: "Archangels Personal Care | Home Care in Richmond, Mechanicsville & Chesterfield, VA",
     template: "%s | Archangels Personal Care",
   },
   description:
-    "RN-supervised, VDH-licensed in-home personal care, memory care, 24-hour care, and companionship in Richmond, Mechanicsville, and Hanover County, VA. Call 804-903-8133.",
+    "RN-supervised, VDH-licensed in-home personal care, memory care, 24-hour care, and companionship in Richmond, Mechanicsville, Chesterfield, and Hanover County, VA — plus surrounding counties. Call 804-903-8133.",
   keywords: [
     "Home Care Richmond VA",
+    "Home Care Chesterfield VA",
     "In-Home Care Mechanicsville VA",
+    "Senior Care Chesterfield County",
     "Personal Care Hanover County",
     "Memory Care Richmond",
     "24-Hour Home Care Richmond VA",
     "RN Supervised Home Care",
     "Senior Care Richmond Virginia",
+    "Home Care New Kent County VA",
+    "In-Home Care Goochland VA",
+    "Senior Care Powhatan VA",
+    "Home Care Amelia County VA",
     "Archangels Personal Care",
   ],
   authors: [{ name: "Archangels Personal Care LLC" }],
@@ -52,9 +58,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Archangels Personal Care | Home Care Richmond, Mechanicsville & Hanover County, VA",
+    title: "Archangels Personal Care | Home Care in Richmond, Mechanicsville & Chesterfield, VA",
     description:
-      "RN-supervised, VDH-licensed in-home personal care, memory care, 24-hour care, and companionship in Richmond, Mechanicsville, and Hanover County, VA.",
+      "RN-supervised, VDH-licensed in-home personal care, memory care, 24-hour care, and companionship in Richmond, Mechanicsville, Chesterfield, and Hanover County, VA — plus surrounding counties.",
     url: "https://www.archangelspersonalcare.com",
     siteName: "Archangels Personal Care",
     locale: "en_US",
@@ -70,9 +76,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Archangels Personal Care | Home Care Richmond, VA",
+    title: "Archangels Personal Care | Home Care Richmond & Chesterfield, VA",
     description:
-      "RN-supervised, VDH-licensed in-home personal care, memory care, 24-hour care, and companionship in Richmond, Mechanicsville, and Hanover County, VA.",
+      "RN-supervised, VDH-licensed in-home personal care, memory care, 24-hour care, and companionship in Richmond, Mechanicsville, Chesterfield, and Hanover County, VA.",
     images: ["/images/caregiver-black-with-elderly.jpg"],
   },
   icons: {
@@ -93,7 +99,7 @@ const localBusinessSchema = {
   telephone: "+1-804-903-8133",
   email: "info@archangelspersonalcare.com",
   description:
-    "A VDH-licensed, RN-supervised Home Care Organization providing personal care, memory care, 24-hour care, and companionship across Richmond, Mechanicsville, and Hanover County, VA.",
+    "A VDH-licensed, RN-supervised Home Care Organization providing personal care, memory care, 24-hour care, and companionship across Richmond, Mechanicsville, Chesterfield, and Hanover County, VA, and surrounding Central Virginia counties.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Mechanicsville",
@@ -110,9 +116,20 @@ const localBusinessSchema = {
   areaServed: [
     { "@type": "City", name: "Richmond", "@id": "https://en.wikipedia.org/wiki/Richmond,_Virginia" },
     { "@type": "City", name: "Mechanicsville", "@id": "https://en.wikipedia.org/wiki/Mechanicsville,_Virginia" },
+    { "@type": "AdministrativeArea", name: "Chesterfield County", "@id": "https://en.wikipedia.org/wiki/Chesterfield_County,_Virginia" },
     { "@type": "AdministrativeArea", name: "Hanover County", "@id": "https://en.wikipedia.org/wiki/Hanover_County,_Virginia" },
     { "@type": "AdministrativeArea", name: "Henrico County" },
-    { "@type": "AdministrativeArea", name: "Chesterfield County" },
+    { "@type": "AdministrativeArea", name: "Goochland County" },
+    { "@type": "AdministrativeArea", name: "Powhatan County" },
+    { "@type": "AdministrativeArea", name: "New Kent County" },
+    { "@type": "AdministrativeArea", name: "Charles City County" },
+    { "@type": "AdministrativeArea", name: "Amelia County" },
+    { "@type": "AdministrativeArea", name: "King William County" },
+    { "@type": "AdministrativeArea", name: "Dinwiddie County" },
+    { "@type": "AdministrativeArea", name: "Prince George County" },
+    { "@type": "City", name: "Petersburg" },
+    { "@type": "City", name: "Colonial Heights" },
+    { "@type": "City", name: "Hopewell" },
   ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
