@@ -10,7 +10,7 @@ type Msg = { role: "user" | "bot"; text: string };
 const GREETING: Msg = {
   role: "bot",
   text:
-    "Hi, I'm the Archangels AI Care Concierge. I can answer questions about our services, pricing structure, and availability in Richmond, Mechanicsville, and Hanover County. What can I help with?",
+    "Hi, I'm the Archangels AI Care Concierge. I can answer questions about our services, pricing structure, and availability in Richmond, Chesterfield, Mechanicsville, Hanover County, Henrico, and surrounding areas. What can I help with?",
 };
 
 // Matches a structured lead-capture marker the AI is instructed to emit once it has
@@ -54,8 +54,6 @@ export default function ChatWidget() {
     setInput("");
     setLoading(true);
 
-    // Fire a one-time, lightweight "someone is talking to the concierge" notification
-    // on first interaction, independent of whether a full lead ever gets captured.
     if (!engagementPinged.current) {
       engagementPinged.current = true;
       fetch("/api/lead", {
@@ -82,8 +80,6 @@ export default function ChatWidget() {
 
       setMessages((cur) => [...cur, { role: "bot", text: clean }]);
 
-      // The AI has gathered enough (name/phone/care need) to qualify this as a real
-      // lead — auto-submit it once per session so a coordinator gets notified.
       if (lead && !leadCaptured.current) {
         leadCaptured.current = true;
         fetch("/api/lead", {
