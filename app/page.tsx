@@ -14,9 +14,9 @@ import {
 } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Archangels Personal Care | In-Home Care & RN Supervision in Richmond & Mechanicsville, VA",
+  title: "Archangels Personal Care | In-Home Care & RN Supervision in Richmond & Chesterfield, VA",
   description:
-    "VDH-licensed, RN-supervised in-home personal care, memory care, 24-hour care, and companionship in Richmond, Mechanicsville, and Hanover County, VA. Call 804-903-8133.",
+    "VDH-licensed, RN-supervised in-home personal care, memory care, 24-hour care, and companionship in Richmond, Mechanicsville, Chesterfield, and Hanover County, VA. Call 804-903-8133.",
   alternates: {
     canonical: "https://www.archangelspersonalcare.com",
   },
@@ -39,7 +39,7 @@ export default function HomePage() {
         <div className="wrap hero-inner">
           <div>
             <span className="eyebrow" style={{ color: "#f0c968" }}>
-              Richmond &middot; Mechanicsville &middot; Hanover County
+              Richmond &middot; Chesterfield &middot; Mechanicsville &middot; Hanover County
             </span>
             <h1>Home care that still feels like home.</h1>
             <p className="hero-sub">
@@ -226,7 +226,7 @@ export default function HomePage() {
           <div className="cta-band">
             <div>
               <h3>Don&apos;t wait for a crisis to find care.</h3>
-              <p>Same-day availability for families who need support right now, in Richmond, Mechanicsville, and Hanover County.</p>
+              <p>Same-day availability for families who need support right now, in Richmond, Mechanicsville, Chesterfield, and Hanover County.</p>
             </div>
             <div className="cta-band-actions">
               <a href="tel:8049038133" className="btn" style={{ background: "#fff", color: "var(--terracotta)" }}>
