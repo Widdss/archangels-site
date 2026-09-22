@@ -1,4 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Service Area | Home Care in Richmond, Chesterfield & Surrounding Counties, VA",
+  description:
+    "Archangels Personal Care serves Richmond, Chesterfield, Mechanicsville, Hanover County, Henrico, and surrounding Central Virginia counties including New Kent, Charles City, Amelia, King William, Dinwiddie, and Prince George.",
+  alternates: {
+    canonical: "https://www.archangelspersonalcare.com/service-area",
+  },
+  openGraph: {
+    title: "Service Area | Archangels Personal Care",
+    description:
+      "RN-supervised home care throughout Richmond, Chesterfield, Mechanicsville, Hanover County, and surrounding Central Virginia counties.",
+    url: "https://www.archangelspersonalcare.com/service-area",
+    siteName: "Archangels Personal Care",
+    type: "website",
+  },
+};
 
 const AREAS = [
   "Richmond", "Chesterfield", "Mechanicsville", "Henrico", "Hanover County",
