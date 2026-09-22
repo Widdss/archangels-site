@@ -1,5 +1,23 @@
+import type { Metadata } from "next";
 import IntakeForm from "@/components/IntakeForm";
 import { IconUsers, IconStethoscope, IconClock } from "@/components/Icons";
+
+export const metadata: Metadata = {
+  title: "Referral Partners | Archangels Personal Care Richmond & Chesterfield, VA",
+  description:
+    "Hospitals, discharge planners, physicians, and senior communities: partner with Archangels Personal Care for responsive, RN-supervised home care throughout Richmond, Chesterfield, Mechanicsville, and Hanover County, VA.",
+  alternates: {
+    canonical: "https://www.archangelspersonalcare.com/referral-partners",
+  },
+  openGraph: {
+    title: "Referral Partners | Archangels Personal Care",
+    description:
+      "RN-supervised home care referrals throughout Richmond, Chesterfield, Mechanicsville, and Hanover County, VA.",
+    url: "https://www.archangelspersonalcare.com/referral-partners",
+    siteName: "Archangels Personal Care",
+    type: "website",
+  },
+};
 
 export default function ReferralPartnersPage() {
   return (
