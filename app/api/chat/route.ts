@@ -34,6 +34,56 @@ Rules for the marker:
 - If the visitor is clearly outside the service area, or is a caregiver/vendor/recruiter rather than someone seeking care, do NOT emit the marker.
 - Never fabricate a name or phone number. Only emit the marker with real information the visitor actually gave you.`;
 
+// Try the fast/cheap model first; if it's slow, overloaded, or errors out,
+// fall back to a more established, higher-capacity model rather than
+// surfacing a "call us" message to the visitor. Google's flash-lite tier has
+// been prone to intermittent high-demand throttling (503s / multi-second
+// slowdowns), so this gives every request a second real shot at an actual
+// AI reply before giving up.
+const PRIMARY_MODEL = "gemini-3.5-flash-lite";
+const FALLBACK_MODEL = "gemini-2.5-flash";
+
+async function callGemini(
+  model: string,
+  apiKey: string,
+  systemInstruction: string,
+  contents: { role: string; parts: { text: string }[] }[],
+  timeoutMs: number
+) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const resp = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: systemInstruction }] },
+          contents,
+          generationConfig: { temperature: 0.6, maxOutputTokens: 300 },
+        }),
+        signal: controller.signal,
+      }
+    );
+
+    if (!resp.ok) {
+      const errText = await resp.text();
+      throw new Error(`Gemini API error (${model}): ${resp.status} ${errText}`);
+    }
+
+    const data = await resp.json();
+    const reply: string =
+      data?.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text || "").join("") ||
+      "Sorry, could you rephrase that?";
+
+    return reply.trim();
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
 export async function POST(req: NextRequest) {
   const apiKey = process.env.GEMINI_API_KEY;
 
@@ -67,53 +117,32 @@ export async function POST(req: NextRequest) {
     systemInstruction += `\n\nKNOWN VISITOR INFO (already captured — do not ask for this again):\nName: ${visitor.name || "Unknown"}\nPhone: ${visitor.phone || "Unknown"}\nCare type interest: ${visitor.careType || "Not sure yet"}\nTimeframe: ${visitor.timeframe || "Just researching"}`;
   }
 
-  // Guard against the upstream Gemini call hanging. Vercel force-kills this
-  // function ~25s after the request starts if nothing has been returned yet,
-  // which produces a broken (non-JSON) response the client can't parse —
-  // instead of our own friendly fallback message below. Aborting at 15s
-  // ensures our own catch block always wins the race and the visitor always
-  // gets a clean, fast reply instead of a silent hang.
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 15000);
-
+  // Vercel force-kills this function ~25s after the request starts if
+  // nothing has been returned yet, which produces a broken (non-JSON)
+  // response the client can't parse. Budget: up to 8s for the primary
+  // model, then up to 12s for the fallback — 20s worst case, leaving a
+  // safety margin under the platform's hard 25s cutoff.
   try {
-    const resp = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: systemInstruction }] },
-          contents,
-          generationConfig: { temperature: 0.6, maxOutputTokens: 300 },
-        }),
-        signal: controller.signal,
-      }
-    );
+    const reply = await callGemini(PRIMARY_MODEL, apiKey, systemInstruction, contents, 8000);
+    return NextResponse.json({ reply });
+  } catch (primaryErr) {
+    console.error(`Primary model (${PRIMARY_MODEL}) failed, falling back to ${FALLBACK_MODEL}:`, primaryErr);
 
-    if (!resp.ok) {
-      const errText = await resp.text();
-      console.error("Gemini API error:", resp.status, errText);
+    try {
+      const reply = await callGemini(FALLBACK_MODEL, apiKey, systemInstruction, contents, 12000);
+      return NextResponse.json({ reply });
+    } catch (fallbackErr) {
+      const isTimeout = fallbackErr instanceof Error && fallbackErr.name === "AbortError";
+      console.error(
+        isTimeout
+          ? `Fallback model (${FALLBACK_MODEL}) also timed out`
+          : `Fallback model (${FALLBACK_MODEL}) also failed:`,
+        fallbackErr
+      );
       return NextResponse.json({
         reply:
-          "I'm having a little trouble right now. Please call us at 804-903-8133 and our team will help right away.",
+          "I'm having trouble connecting right now. Please call us at 804-903-8133, or leave your info and we'll call you back.",
       });
     }
-
-    const data = await resp.json();
-    const reply: string =
-      data?.candidates?.[0]?.content?.parts?.map((p: { text?: string }) => p.text || "").join("") ||
-      "Sorry, could you rephrase that?";
-
-    return NextResponse.json({ reply: reply.trim() });
-  } catch (err) {
-    const isTimeout = err instanceof Error && err.name === "AbortError";
-    console.error(isTimeout ? "Chat route timed out waiting on Gemini" : "Chat route error:", err);
-    return NextResponse.json({
-      reply:
-        "I'm having trouble connecting right now. Please call us at 804-903-8133, or leave your info and we'll call you back.",
-    });
-  } finally {
-    clearTimeout(timeoutId);
   }
 }
