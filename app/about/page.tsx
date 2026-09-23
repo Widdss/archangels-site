@@ -30,8 +30,11 @@ export default function AboutPage() {
   return (
     <>
       <section className="care-hero">
-        <div className="care-hero-photo" style={{ backgroundImage: "url(/images/quality-of-life.jpg)" }} />
         <div className="wrap">
+          <div className="care-hero-logo-wrap">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Archangels Personal Care" className="care-hero-logo" />
+          </div>
           <span className="eyebrow" style={{ color: "#f0c968", justifyContent: "center" }}>About Us</span>
           <h1>Mechanicsville&apos;s VDH-regulated Home Care Organization.</h1>
           <p>Dignified, professional care with 24-hour availability and private-pay options.</p>
