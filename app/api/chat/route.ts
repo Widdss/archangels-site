@@ -67,6 +67,15 @@ export async function POST(req: NextRequest) {
     systemInstruction += `\n\nKNOWN VISITOR INFO (already captured — do not ask for this again):\nName: ${visitor.name || "Unknown"}\nPhone: ${visitor.phone || "Unknown"}\nCare type interest: ${visitor.careType || "Not sure yet"}\nTimeframe: ${visitor.timeframe || "Just researching"}`;
   }
 
+  // Guard against the upstream Gemini call hanging. Vercel force-kills this
+  // function ~25s after the request starts if nothing has been returned yet,
+  // which produces a broken (non-JSON) response the client can't parse —
+  // instead of our own friendly fallback message below. Aborting at 15s
+  // ensures our own catch block always wins the race and the visitor always
+  // gets a clean, fast reply instead of a silent hang.
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 15000);
+
   try {
     const resp = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`,
@@ -78,6 +87,7 @@ export async function POST(req: NextRequest) {
           contents,
           generationConfig: { temperature: 0.6, maxOutputTokens: 300 },
         }),
+        signal: controller.signal,
       }
     );
 
@@ -97,10 +107,13 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ reply: reply.trim() });
   } catch (err) {
-    console.error("Chat route error:", err);
+    const isTimeout = err instanceof Error && err.name === "AbortError";
+    console.error(isTimeout ? "Chat route timed out waiting on Gemini" : "Chat route error:", err);
     return NextResponse.json({
       reply:
         "I'm having trouble connecting right now. Please call us at 804-903-8133, or leave your info and we'll call you back.",
     });
+  } finally {
+    clearTimeout(timeoutId);
   }
 }
