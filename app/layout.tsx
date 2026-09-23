@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import ScrollReveal from "@/components/ScrollReveal";
+import ChunkErrorReload from "@/components/ChunkErrorReload";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -250,6 +251,7 @@ export default function RootLayout({
         <Footer />
         <ChatWidget />
         <ScrollReveal />
+        <ChunkErrorReload />
       </body>
     </html>
   );
