@@ -41,7 +41,7 @@ Rules for the marker:
 // slowdowns), so this gives every request a second real shot at an actual
 // AI reply before giving up.
 const PRIMARY_MODEL = "gemini-3.5-flash-lite";
-const FALLBACK_MODEL = "gemini-2.5-flash";
+const FALLBACK_MODEL = "gemini-3.6-flash";
 
 async function callGemini(
   model: string,
@@ -53,6 +53,14 @@ async function callGemini(
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
+  // Gemini 3-family models (e.g. gemini-3.6-flash) strictly enforce their
+  // request schema and reject legacy sampling params like temperature/top-K/
+  // top-P — only maxOutputTokens is safe to send across all model versions.
+  const isGemini3Family = /^gemini-3\./.test(model);
+  const generationConfig = isGemini3Family
+    ? { maxOutputTokens: 300 }
+    : { temperature: 0.6, maxOutputTokens: 300 };
+
   try {
     const resp = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
@@ -62,7 +70,7 @@ async function callGemini(
         body: JSON.stringify({
           system_instruction: { parts: [{ text: systemInstruction }] },
           contents,
-          generationConfig: { temperature: 0.6, maxOutputTokens: 300 },
+          generationConfig,
         }),
         signal: controller.signal,
       }
