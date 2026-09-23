@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { IconChevronDown } from "./Icons";
 import MobileNav from "./MobileNav";
@@ -28,13 +31,47 @@ const NAV_TAIL = [
 ];
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const lastY = useRef(0);
+  const ticking = useRef(false);
+
+  useEffect(() => {
+    lastY.current = window.scrollY;
+
+    function handleScroll() {
+      if (ticking.current) return;
+      ticking.current = true;
+
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+
+        if (y < 40) {
+          // Back near the top — always show the full-size header.
+          setScrolled(false);
+        } else if (y > lastY.current) {
+          // Scrolling down — shrink the header out of the way.
+          setScrolled(true);
+        } else if (y < lastY.current) {
+          // Scrolling up — restore it to full size.
+          setScrolled(false);
+        }
+
+        lastY.current = y;
+        ticking.current = false;
+      });
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <div className="wrap header-inner">
         <Link href="/" className="brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="logo-mark logo-mark-lg"
+            className={`logo-mark logo-mark-lg${scrolled ? " is-shrunk" : ""}`}
             src="/logo.png"
             alt="Archangels Personal Care"
           />

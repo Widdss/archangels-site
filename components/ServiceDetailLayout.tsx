@@ -333,7 +333,7 @@ export default function ServiceDetailLayout({
               <span className="eyebrow" style={{ justifyContent: "center" }}>How It Works</span>
               <h2>Getting started, step by step.</h2>
             </div>
-            <div className="process-steps">
+            <div className="process-steps reveal-stagger">
               {steps.map((s, i) => (
                 <div className="process-step" key={s.title}>
                   <div className="process-step-num">{i + 1}</div>
