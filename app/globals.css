@@ -222,6 +222,11 @@ button {
   background: rgba(250, 246, 238, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 6px 22px rgba(9, 20, 21, 0.12);
 }
 
 .header-inner {
@@ -229,6 +234,11 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 8px 0;
+  transition: padding 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-header.is-scrolled .header-inner {
+  padding: 4px 0;
 }
 
 .brand {
@@ -1077,6 +1087,30 @@ button {
   text-shadow: 0 1px 10px rgba(9, 20, 21, 0.5);
 }
 
+/* About page hero logo (no background photo — brand mark on the dark band instead) */
+.care-hero-logo-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 22px;
+}
+
+.care-hero-logo {
+  height: 132px;
+  width: auto;
+  background: rgba(250, 246, 238, 0.96);
+  border-radius: 24px;
+  padding: 14px 28px;
+  box-shadow: 0 14px 34px rgba(9, 20, 21, 0.4);
+}
+
+@media (max-width: 640px) {
+  .care-hero-logo {
+    height: 92px;
+    padding: 10px 20px;
+    border-radius: 18px;
+  }
+}
+
 .care-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1605,6 +1639,7 @@ button {
      near-white header background makes that square visually disappear while
      leaving the mark's ink colors intact. */
   mix-blend-mode: multiply;
+  transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (max-width: 900px) {
@@ -1613,6 +1648,19 @@ button {
 
 @media (max-width: 640px) {
   .logo-mark-lg { height: 108px; }
+}
+
+/* Shrunk state while the page is scrolled down (see Header.tsx) */
+.logo-mark-lg.is-shrunk {
+  height: 64px;
+}
+
+@media (max-width: 900px) {
+  .logo-mark-lg.is-shrunk { height: 56px; }
+}
+
+@media (max-width: 640px) {
+  .logo-mark-lg.is-shrunk { height: 48px; }
 }
 
 .logo-mark-footer {
