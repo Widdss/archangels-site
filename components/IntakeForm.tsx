@@ -2,6 +2,12 @@
 
 import { useState, type FormEvent } from "react";
 
+declare global {
+  interface Window {
+    reportLeadConversion?: () => void;
+  }
+}
+
 const CARE_TYPES = [
   "Hourly / Part-Time Care",
   "Daily Care (8-12 hour shifts)",
@@ -42,6 +48,7 @@ export default function IntakeForm() {
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
       form.reset();
+      window.reportLeadConversion?.();
     } catch (err) {
       setStatus("error");
       setErrorMsg("Something went wrong sending your request. Please call us at 804-903-8133 and we'll get you taken care of right away.");

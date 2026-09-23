@@ -3,6 +3,12 @@
 import { useState, useRef, useEffect, type FormEvent } from "react";
 import { IconSend, IconX } from "./Icons";
 
+declare global {
+  interface Window {
+    reportLeadConversion?: () => void;
+  }
+}
+
 const LOGO_URL = "/logo.png";
 
 type Msg = { role: "user" | "bot"; text: string };
@@ -93,6 +99,8 @@ export default function ChatWidget() {
       }),
     }).catch(() => {});
 
+    window.reportLeadConversion?.();
+
     setMessages([greetingFor(info)]);
     setIntakeDone(true);
     setIntakeStatus("idle");
@@ -134,6 +142,7 @@ export default function ChatWidget() {
             message: lead.notes || "Qualified via AI Care Concierge conversation.",
           }),
         }).catch(() => {});
+        window.reportLeadConversion?.();
       }
     } catch {
       setMessages((cur) => [
@@ -164,6 +173,7 @@ export default function ChatWidget() {
         }),
       });
       setCallbackStatus("sent");
+      window.reportLeadConversion?.();
     } catch {
       setCallbackStatus("idle");
     }
