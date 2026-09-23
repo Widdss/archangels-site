@@ -1,6 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export const runtime = "edge";
+// Deliberately NOT "edge": every request from this route on the Edge Runtime
+// was hanging for the full timeout with zero response (not even an error)
+// while the exact same Gemini endpoint responded in ~130ms from a normal
+// browser connection — pointing to Vercel's shared Edge Runtime egress being
+// throttled/blackholed by Google for this endpoint, not real Gemini latency.
+// The Node.js serverless runtime uses a different network path (AWS Lambda
+// egress) and avoids that shared edge IP pool.
+export const runtime = "nodejs";
+export const maxDuration = 30;
 
 const SYSTEM_PROMPT = `You are the "AI Care Concierge" for Archangels Personal Care LLC, a VDH-licensed, RN-supervised Home Care Organization serving Richmond, Chesterfield County, Mechanicsville, Hanover County, and Henrico, Virginia — plus surrounding Central Virginia counties.
 
