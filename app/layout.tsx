@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Fraunces, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -143,6 +144,61 @@ const localBusinessSchema = {
   priceRange: "$$",
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is home care?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Home care is professional in-home assistance with personal care services including activities of daily living, companionship, and support to help seniors and elderly individuals maintain independence at home.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide Alzheimer's and dementia care?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, Archangels Personal Care provides specialized Alzheimer's and dementia care services with trained caregivers experienced in memory care, behavioral support, and safety management for individuals with cognitive decline.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is your home care available 24 hours a day?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, we offer 24-hour home care services with flexible scheduling options from hourly visits to live-in care, available 7 days a week throughout Richmond, Mechanicsville, Chesterfield, and Hanover County.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What areas do you serve?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We serve Richmond, Mechanicsville, Hanover County, Henrico, Chesterfield, and surrounding Central Virginia counties throughout the Richmond metropolitan region in Virginia.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are you VDH licensed and regulated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, Archangels Personal Care LLC is a VDH-regulated Home Care Organization operating under Virginia regulations with professional RN supervision and comprehensive background checks for all caregivers.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you accept insurance or Medicare?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We operate on a private-pay model with flexible payment options and work with select third-party payers including MedLife. Contact us to discuss payment arrangements.",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -155,8 +211,40 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </head>
       <body>
+        {/* Google Ads conversion tracking + dynamic phone-call tracking (parity with legacy site) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18079984856"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'AW-18079984856');
+
+            // Phone Call Conversion Tracking (swaps displayed number for a Google forwarding number)
+            gtag('config', 'AW-18079984856/_R7CCMSOoqocENJZmq1D', {
+              'phone_conversion_number': '8049038133'
+            });
+
+            // Call this after any lead form (care-now, contact, chat intake) is submitted successfully
+            window.reportLeadConversion = function () {
+              gtag('event', 'conversion', {
+                'send_to': 'AW-18079984856/lnuhCO3V9pwcENjZmq1D',
+                'value': 1.0,
+                'currency': 'USD'
+              });
+            };
+          `}
+        </Script>
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
