@@ -133,16 +133,14 @@ export async function POST(req: NextRequest) {
     systemInstruction += `\n\nKNOWN VISITOR INFO (already captured — do not ask for this again):\nName: ${visitor.name || "Unknown"}\nPhone: ${visitor.phone || "Unknown"}\nCare type interest: ${visitor.careType || "Not sure yet"}\nTimeframe: ${visitor.timeframe || "Just researching"}`;
   }
 
-  // Vercel force-kills this function ~25s after the request starts if
-  // nothing has been returned yet, which produces a broken (non-JSON)
-  // response the client can't parse. Rather than trying one model, waiting
-  // for it to fully time out, and only then trying a second one (which just
-  // adds both timeouts together), fire both models at once and use whichever
-  // answers first. This roughly halves worst-case latency and gives each
-  // model a much longer individual runway (20s) to ride out ordinary demand
-  // spikes, while the shared 20s cap still leaves a safety margin under the
-  // platform's hard 25s cutoff.
-  const RACE_TIMEOUT_MS = 20000;
+  // This function's maxDuration is 30s (see top of file). Rather than trying
+  // one model, waiting for it to fully time out, and only then trying a
+  // second one (which just adds both timeouts together), fire both models at
+  // once and use whichever answers first. This roughly halves worst-case
+  // latency and gives each model a long runway (26s) to ride out Gemini's
+  // intermittent multi-second stalls under high demand, while still leaving
+  // a small buffer under the platform's 30s cutoff.
+  const RACE_TIMEOUT_MS = 26000;
 
   try {
     const reply = await Promise.any([
