@@ -127,30 +127,27 @@ export async function POST(req: NextRequest) {
 
   // Vercel force-kills this function ~25s after the request starts if
   // nothing has been returned yet, which produces a broken (non-JSON)
-  // response the client can't parse. Budget: up to 8s for the primary
-  // model, then up to 12s for the fallback — 20s worst case, leaving a
-  // safety margin under the platform's hard 25s cutoff.
-  try {
-    const reply = await callGemini(PRIMARY_MODEL, apiKey, systemInstruction, contents, 8000);
-    return NextResponse.json({ reply });
-  } catch (primaryErr) {
-    console.error(`Primary model (${PRIMARY_MODEL}) failed, falling back to ${FALLBACK_MODEL}:`, primaryErr);
+  // response the client can't parse. Rather than trying one model, waiting
+  // for it to fully time out, and only then trying a second one (which just
+  // adds both timeouts together), fire both models at once and use whichever
+  // answers first. This roughly halves worst-case latency and gives each
+  // model a much longer individual runway (20s) to ride out ordinary demand
+  // spikes, while the shared 20s cap still leaves a safety margin under the
+  // platform's hard 25s cutoff.
+  const RACE_TIMEOUT_MS = 20000;
 
-    try {
-      const reply = await callGemini(FALLBACK_MODEL, apiKey, systemInstruction, contents, 12000);
-      return NextResponse.json({ reply });
-    } catch (fallbackErr) {
-      const isTimeout = fallbackErr instanceof Error && fallbackErr.name === "AbortError";
-      console.error(
-        isTimeout
-          ? `Fallback model (${FALLBACK_MODEL}) also timed out`
-          : `Fallback model (${FALLBACK_MODEL}) also failed:`,
-        fallbackErr
-      );
-      return NextResponse.json({
-        reply:
-          "I'm having trouble connecting right now. Please call us at 804-903-8133, or leave your info and we'll call you back.",
-      });
-    }
+  try {
+    const reply = await Promise.any([
+      callGemini(PRIMARY_MODEL, apiKey, systemInstruction, contents, RACE_TIMEOUT_MS),
+      callGemini(FALLBACK_MODEL, apiKey, systemInstruction, contents, RACE_TIMEOUT_MS),
+    ]);
+    return NextResponse.json({ reply });
+  } catch (err) {
+    const errors = err instanceof AggregateError ? err.errors : [err];
+    console.error(`Both ${PRIMARY_MODEL} and ${FALLBACK_MODEL} failed:`, errors);
+    return NextResponse.json({
+      reply:
+        "I'm having trouble connecting right now. Please call us at 804-903-8133, or leave your info and we'll call you back.",
+    });
   }
 }
