@@ -239,7 +239,7 @@ export default function RootLayout({
             // Call this after any lead form (care-now, contact, chat intake) is submitted successfully
             window.reportLeadConversion = function () {
               gtag('event', 'conversion', {
-                'send_to': 'AW-18079984856/lnuhCO3V9pwcENjZmq1D',
+                'send_to': 'AW-18079984856/-9A8CLLSiaocENjZmq1D',
                 'value': 1.0,
                 'currency': 'USD'
               });
