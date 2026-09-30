@@ -97,6 +97,7 @@ export default function HeroChat() {
             message: lead.notes || "Qualified via Hero AI Care Concierge conversation.",
           }),
         }).catch(() => {});
+        window.reportLeadConversion?.();
       }
     } catch {
       setMessages((cur) => [
