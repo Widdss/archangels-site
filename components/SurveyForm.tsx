@@ -255,7 +255,7 @@ export default function SurveyForm() {
         ))}
         <textarea
           style={{ ...input, minHeight: 80, marginTop: 8 }}
-          placeholder="Anything else you would like us to offer?"
+          placeholder="Your feedback is valued. Share any other thoughts here."
           value={wantsText}
           onChange={(e) => setWantsText(e.target.value)}
         />
